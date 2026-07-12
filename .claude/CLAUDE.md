@@ -40,12 +40,20 @@
 ## 改了任何 md → 重建打印合订本
 
 ```bash
+node tools/lint-docs.mjs       # 查对话残留
 node tools/build-onepage.mjs   # → ONEPAGE.md + ONEPAGE.html
 ```
 
-pre-commit 会自动跑并把产物加入提交。
+pre-commit 会自动跑（lint → build → 加入提交），任一步红灯拒绝提交。
 
 **新增 md 必须登记进 `tools/onepage.order`**，否则构建失败——不允许被静默漏出打印版。
+
+### 脚本放 `tools/`，不放 `.claude/skills/`
+
+**因为 git 钩子要调它们。** 别人 clone 这个仓库、从不装 Claude，`git commit` 也得能跑——
+项目不该依赖 Claude 的配置目录。
+
+（skill 可以装脚本，这不是能力限制，是架构选择。）
 
 ---
 
