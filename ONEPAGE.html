@@ -1,0 +1,2365 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>育儿嫂招聘与管理 · 打印合订本</title>
+<style>
+  :root { --line:#d5d5d5; --muted:#666; --accent:#8a1c1c; }
+  * { box-sizing: border-box; }
+  body {
+    font: 10.5pt/1.65 -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color:#111; max-width: 820px; margin: 0 auto; padding: 32px 24px;
+  }
+  h1 { font-size: 20pt; margin: 0 0 .6em; padding-bottom:.3em; border-bottom: 3px solid var(--accent); }
+  h2 { font-size: 14pt; margin: 1.6em 0 .5em; padding-left:.4em; border-left: 4px solid var(--accent); }
+  h3 { font-size: 12pt; margin: 1.2em 0 .4em; }
+  h4 { font-size: 11pt; margin: 1em 0 .3em; color: var(--muted); }
+  p, li { margin: .35em 0; }
+  ul, ol { padding-left: 1.6em; margin: .4em 0; }
+  code { background:#f2f2f2; padding: .1em .35em; border-radius:3px; font-size: .9em; }
+  hr { border:0; border-top:1px solid var(--line); margin: 1.4em 0; }
+  a { color: inherit; text-decoration: none; border-bottom: 1px dotted #aaa; }
+  blockquote {
+    margin: .8em 0; padding: .6em 1em; background:#faf7f2;
+    border-left: 3px solid #c9a227; page-break-inside: avoid;
+  }
+  blockquote > :first-child { margin-top:0; } blockquote > :last-child { margin-bottom:0; }
+  table { border-collapse: collapse; width: 100%; margin: .8em 0; font-size: 9.5pt; }
+  th, td { border: 1px solid var(--line); padding: .45em .6em; text-align: left; vertical-align: top; }
+  th { background:#f4f2ef; font-weight: 600; }
+  tr { page-break-inside: avoid; }
+  .chapter { page-break-before: always; }
+  .chapter:first-of-type { page-break-before: avoid; }
+
+  @page { size: A4; margin: 14mm 12mm; }
+  @media print {
+    body { max-width: none; padding: 0; font-size: 9.5pt; }
+    a { border-bottom: 0; }
+    h1, h2, h3, h4 { page-break-after: avoid; }
+    table, blockquote, ul, ol { page-break-inside: auto; }
+  }
+</style>
+</head>
+<body>
+<p>&lt;!-- 本文件由 tools/build-onepage.mjs 自动生成，不要手改。 --&gt;</p>
+<p>&lt;!-- 改内容请改各个源 md，提交时 pre-commit 会自动重建。 --&gt;</p>
+<h1>育儿嫂招聘与管理 · 打印合订本</h1>
+<blockquote><p>由 <code>nanny-playbook</code> 的 19 个文件合成。<strong>不要手改这个文件</strong>——改源 md，提交时自动重建。</p></blockquote>
+<h2>目录</h2>
+<ol>
+<li><a href="#readme">README</a></li>
+<li><a href="#岗位定义">岗位定义</a></li>
+<li><a href="#1-初筛">1-初筛</a></li>
+<li><a href="#2-材料核验">2-材料核验</a></li>
+<li><a href="#3-背调">3-背调</a></li>
+<li><a href="#4-面试">4-面试</a></li>
+<li><a href="#5-实操测试">5-实操测试</a></li>
+<li><a href="#6-试工">6-试工</a></li>
+<li><a href="#标准答案">标准答案</a></li>
+<li><a href="#急救">急救</a></li>
+<li><a href="#陋习清单">陋习清单</a></li>
+<li><a href="#月龄重点">月龄重点</a></li>
+<li><a href="#危险信号">危险信号</a></li>
+<li><a href="#候选人评分表">候选人评分表</a></li>
+<li><a href="#红线清单">红线清单</a></li>
+<li><a href="#合同条款">合同条款</a></li>
+<li><a href="#每日记录表">每日记录表</a></li>
+<li><a href="#每日记录表-空白">每日记录表-空白</a></li>
+<li><a href="#上岗后">上岗后</a></li>
+</ol>
+<section id="readme" class="chapter">
+<h1>nanny-playbook</h1>
+<p>找育儿嫂的一整套剧本：怎么筛、怎么验、怎么问、怎么试、签什么、上岗后怎么管。</p>
+<p><strong>五道关，逐关淘汰。</strong> 一次面试问不出人品。</p>
+<hr>
+<h2>五道关</h2>
+<table><thead><tr><th>关</th><th>做什么</th><th>时长</th><th>文件</th></tr></thead><tbody>
+<tr><td>0</td><td><strong>先把岗位定义清楚</strong></td><td>你自己填</td><td><a href="#岗位定义">岗位定义.md</a></td></tr>
+<tr><td>1</td><td>电话初筛</td><td>15 分钟</td><td><a href="#1-初筛">流程/1-初筛.md</a></td></tr>
+<tr><td>2</td><td>材料核验（身份证 / 无犯罪 / 体检 / 征信）</td><td>她去办，你验</td><td><a href="#2-材料核验">流程/2-材料核验.md</a></td></tr>
+<tr><td>3</td><td>背调（打给前雇主）</td><td>每家 10 分钟</td><td><a href="#3-背调">流程/3-背调.md</a></td></tr>
+<tr><td>4</td><td>正式面试</td><td>1–1.5 小时</td><td><a href="#4-面试">流程/4-面试.md</a></td></tr>
+<tr><td>4</td><td>实操测试</td><td>30 分钟</td><td><a href="#5-实操测试">流程/5-实操测试.md</a></td></tr>
+<tr><td>5</td><td>带薪试工 3–7 天</td><td>最后的照妖镜</td><td><a href="#6-试工">流程/6-试工.md</a></td></tr>
+</tbody></table>
+<p><strong>签约</strong>：<a href="#合同条款">模板/合同条款.md</a> + <a href="#红线清单">模板/红线清单.md</a></p>
+<p><strong>上岗后</strong>：<a href="#上岗后">上岗后.md</a> + <a href="#每日记录表">模板/每日记录表.md</a></p>
+<hr>
+<h2>目录</h2>
+<p>```</p>
+<p>岗位定义.md          【要填】不定义岗位，面试就没有评判标准</p>
+<p>上岗后.md            日常机制：记录表、摄像头、复盘、看孩子</p>
+<p>流程/                按顺序执行</p>
+<p>  1-初筛.md          15 分钟电话，四个问题</p>
+<p>  2-材料核验.md      体检项目清单 + 征信报告怎么读</p>
+<p>  3-背调.md          打给前雇主的话术（最有效的一关）</p>
+<p>  4-面试.md          提问方法 + 全部题库</p>
+<p>  5-实操测试.md      让她当场做的 9 项</p>
+<p>  6-试工.md          3–7 天看什么</p>
+<p>参考/                查的，不是执行的</p>
+<p>  急救.md            标准答案：窒息 / CPR / 发烧 / 坠床 / 烫伤 / 误食</p>
+<p>  陋习清单.md        民间陋习 + 怎么用预设式问法问出来</p>
+<p>  月龄重点.md        0–3 / 3–6 / 6–12 / 1–3 岁，重点和头号风险</p>
+<p>  危险信号.md        一票否决 / 高度警惕</p>
+<p>模板/                打印、填写、签字</p>
+<p>  候选人评分表.md    横向对比多个候选人</p>
+<p>  每日记录表.md      模板 + 填写规则 + 怎么判读 + 怎么识别编的表</p>
+<p>  每日记录表-空白.md 直接打印</p>
+<p>  红线清单.md        13 条 + 签字页</p>
+<p>  合同条款.md        15 条必写</p>
+<p>```</p>
+<hr>
+<h2>面试当天带什么</h2>
+<p>打印这四个：</p>
+<ol>
+<li><a href="#4-面试">流程/4-面试.md</a> —— 照着问</li>
+<li><a href="#每日记录表-空白">模板/每日记录表-空白.md</a> —— 让她当场填一张</li>
+<li><a href="#候选人评分表">模板/候选人评分表.md</a> —— 当场打分，别靠回忆</li>
+<li><a href="#红线清单">模板/红线清单.md</a> —— 面试末尾逐条念给她听，看反应</li>
+</ol>
+<p>手边留着 <a href="#急救">参考/急救.md</a> 对答案。</p>
+<hr>
+<h2>三个最容易被跳过、也最值钱的动作</h2>
+<ol>
+<li><strong>无犯罪记录证明</strong> —— 户籍地派出所开。最硬的一条，绝大多数家庭省掉了。</li>
+<li><strong>自己打电话给前雇主</strong>，问一句：<strong>"如果您再生一个，还会请她吗？"</strong> —— 犹豫本身就是答案。</li>
+<li><strong>让她把急救做出来给你看</strong>，别接受口头描述。</li>
+</ol>
+<hr>
+<h2>两条贯穿始终的原则</h2>
+<p><strong>能看的都要看，能做的都要做。</strong> 身份证、无犯罪、体检、征信、背调——五样一个都不能省。这不是不信任，是给孩子上保险。</p>
+<p><strong>态度要平和。</strong> 好阿姨也在挑雇主，上来像审犯人一样过一遍，好的直接就走了。红线讲清楚，但话要说明白：</p>
+<blockquote><p><strong>这些规矩是为了孩子，也是为了保护你自己——出了事，白纸黑字、记录在案，对谁都是保护。</strong></p></blockquote>
+<hr>
+<h2>免责声明</h2>
+<ul>
+<li><strong><a href="#急救">参考/急救.md</a> 不能替代正规急救培训。</strong> 它是用来<strong>在面试中判断对方会不会</strong>的对照表，不是让你照着学。真要用，去红十字会或医院上一门婴幼儿急救课——你和她都该上。</li>
+<li>所有医学相关内容仅供参考，<strong>具体判断以儿科医生为准</strong>。孩子的情况以你的儿保医生说的为准。</li>
+<li>用工形式、个人信息处理、摄像头安装的合规要求，各地不同，<strong>以当地法规和你的律师意见为准</strong>。摄像头<strong>不得</strong>安装在住家阿姨的卧室和卫生间。</li>
+<li>本仓库不构成医疗、法律或用工建议。</li>
+</ul>
+<hr>
+</section>
+<section id="岗位定义" class="chapter">
+<h1>岗位定义【要填】</h1>
+<blockquote><p>不定义岗位，面试就没有评判标准，最后只能凭"感觉这人还行"。</p>
+<p><strong>开始找人之前先把这张表填完。</strong> 它是后面每一关的判据。</p></blockquote>
+<blockquote><p>⚠️ <strong>这是空白模板。填好的版本不要提交到公开仓库</strong>——孩子月龄、家庭构成、预算、常去的医院都是个人信息。</p>
+<p>复制一份到 <code>本地/</code>（已 gitignore）或仓库外面再填。</p></blockquote>
+<hr>
+<h2>孩子</h2>
+<ul>
+<li><strong>月龄</strong>：______（决定技能重点的全部权重 → <a href="#月龄重点">参考/月龄重点.md</a>）</li>
+<li>体重 / 特殊情况（早产、过敏、湿疹、心脏、黄疸未退……）：______________________</li>
+<li>目前喂养方式：□ 纯母乳　□ 纯配方奶　□ 混合</li>
+<li>目前一天大概几顿、每顿多少：______________________</li>
+<li>儿保医生 / 常去的医院：______________________</li>
+</ul>
+<h2>岗位形态</h2>
+<ul>
+<li>□ 住家　□ 不住家（每天 ___ 点到 ___ 点）</li>
+<li><strong>夜班算不算她的</strong>：□ 算（___ 点到 ___ 点）　□ 不算</li>
+<ul>
+<li>夜奶谁喂：______</li>
+<li>起夜谁管：______</li>
+<li>超出约定次数怎么算：______</li>
+</ul>
+</ul>
+<blockquote><p>夜班是成本大头，也是日后最容易翻脸的一条。<strong>必须现在写死。</strong></p></blockquote>
+<h2>工作范围（穷举，不许写"等""其他"）</h2>
+<ul>
+<li>□ 带孩子</li>
+<li>□ 做辅食</li>
+<li>□ 给全家做饭（几个人：___，几餐：___）</li>
+<li>□ 洗孩子的衣服</li>
+<li>□ 洗大人的衣服</li>
+<li>□ 打扫（范围：______________________）</li>
+<li>□ 买菜</li>
+<li>□ 其他：______________________</li>
+</ul>
+<blockquote><p><strong>这一条说不清楚，三个月后必吵架。</strong> 合同里逐条抄过去。</p></blockquote>
+<h2>家里还有谁</h2>
+<ul>
+<li>日常跟她对接的人是：______</li>
+<li>老人在不在家：□ 在（<strong>必须参加面试</strong>）　□ 不在</li>
+<li>家里还有：□ 宠物　□ 其他孩子　□ 其他：______</li>
+</ul>
+<h2>钱和假</h2>
+<ul>
+<li>本地行情（先查）：______ 元/月</li>
+<li>预算：______ 元/月</li>
+</ul>
+<blockquote><p><strong>明显低于市价的，一定有问题——好阿姨不缺工作。</strong></p></blockquote>
+<ul>
+<li>月休：___ 天　□ 固定（每月 ___ 号）　□ 灵活</li>
+<li><strong>春节</strong>：□ 必须在岗　□ 可以回家（这条先问死，是刚需）</li>
+<li>法定节假日怎么算：______</li>
+<li>试用期：___ 天（带薪）</li>
+<li>发薪日：每月 ___ 号，<strong>打她本人的卡</strong></li>
+</ul>
+<h2>硬性要求（写下来，面试时照着核）</h2>
+<ul>
+<li>□ 不抽烟</li>
+<li>□ 接受公共区域 + 婴儿房摄像头</li>
+<li>□ 接受每日填记录表</li>
+<li>□ 春节在岗</li>
+<li>□ 会 / 愿意学婴儿急救</li>
+<li>□ 其他：______________________</li>
+</ul>
+<hr>
+<h2>填完之后</h2>
+<p>把这几条抄进：</p>
+<ul>
+<li><a href="#1-初筛">流程/1-初筛.md</a>——电话里前四个问题</li>
+<li><a href="#合同条款">模板/合同条款.md</a>——第 2、3、4 条</li>
+</ul>
+<hr>
+</section>
+<section id="1-初筛" class="chapter">
+<h1>第一关：电话初筛（15 分钟）</h1>
+<blockquote><p>目的不是了解她，是<strong>快速淘汰</strong>。绝大多数人在这一关出局，别浪费双方时间。</p>
+<p>判据来自 <a href="#岗位定义">岗位定义.md</a>。</p></blockquote>
+<hr>
+<h2>四个问题，问完就够</h2>
+<table><thead><tr><th>#</th><th>问</th><th>不合 = 直接结束</th></tr></thead><tbody>
+<tr><td>1</td><td>我们家孩子 ___ 个月，你带过这个月龄的吗？带过多久？</td><td>没带过这个月龄</td></tr>
+<tr><td>2</td><td>这个岗位是住家 / 不住家，你能接受吗？</td><td>不能</td></tr>
+<tr><td>3</td><td><strong>夜里要带睡，起夜喂奶也是你的。</strong> 能接受吗？</td><td>不能，或含糊</td></tr>
+<tr><td>4</td><td><strong>春节不能回家。</strong> 能接受吗？</td><td>不能</td></tr>
+</tbody></table>
+<p><strong>四条有一条不合，后面全免谈。</strong> 客气地结束，别勉强。</p>
+<hr>
+<h2>顺带问，成本很低</h2>
+<ul>
+<li>你现在有工作吗？什么时候能来？</li>
+<li>上一份做了多久？为什么走的？（<strong>记下来，后面正式面试要交叉对</strong>）</li>
+<li>你自己的孩子多大？现在谁在带？（孩子太小 → 随时可能被叫回去）</li>
+<li>老家哪里？</li>
+</ul>
+<hr>
+<h2>提前把丑话说在前面（省掉后面全部无用功）</h2>
+<p>原话这么说：</p>
+<blockquote><p>"有几条我先说清楚，你听听能不能接受：</p>
+<p>一、要提供<strong>身份证、无犯罪记录证明、体检报告、征信报告</strong>，体检是我们陪你去指定医院。</p>
+<p>二、要给我<strong>两个前雇主的电话</strong>，我会自己打过去。</p>
+<p>三、家里公共区域和婴儿房有<strong>摄像头</strong>（你的房间和卫生间不装）。</p>
+<p>四、每天要<strong>填一张记录表</strong>——喂了几次、多少毫升、大小便、睡眠。</p>
+<p>五、<strong>不抽烟。</strong></p>
+<p>这几条都是硬的。你要是觉得哪条接受不了，咱们就不耽误时间了。"</p></blockquote>
+<p><strong>这段话本身就是一道筛子。</strong> 反应分三种：</p>
+<table><thead><tr><th>反应</th><th>判读</th></tr></thead><tbody>
+<tr><td>"行，都可以" / 主动说"应该的"</td><td>继续</td></tr>
+<tr><td>犹豫，问"为什么要征信"——<strong>这是正常的</strong>，解释一下（不是查穷富，是看财务是否失控）</td><td>继续</td></tr>
+<tr><td>抵触、觉得"你们事真多"、找理由绕开某一条</td><td><strong>结束</strong></td></tr>
+</tbody></table>
+<hr>
+<p><strong>过了这一关 → <a href="#2-材料核验">2-材料核验.md</a></strong></p>
+<hr>
+</section>
+<section id="2-材料核验" class="chapter">
+<h1>第二关：材料核验</h1>
+<blockquote><p>收到的材料（身份证、征信、体检、无犯罪记录）<strong>存在这个仓库之外</strong>。</p>
+<p>这是公开仓库，只放指南。<strong>没选上的人，材料看完就删。</strong></p></blockquote>
+<hr>
+<h2>要她提供的五样</h2>
+<table><thead><tr><th>#</th><th>材料</th><th>怎么办</th><th>备注</th></tr></thead><tbody>
+<tr><td>1</td><td><strong>身份证原件</strong></td><td>当面核对人证一致，拍照留存</td><td></td></tr>
+<tr><td>2</td><td><strong>无犯罪记录证明</strong></td><td>户籍地派出所开，或公安政务小程序本人申请电子版</td><td><strong>最硬的一条，绝大多数家庭跳过了</strong></td></tr>
+<tr><td>3</td><td><strong>个人信用报告（详版）</strong></td><td>她本人打印，见下</td><td>要详版，不要简版</td></tr>
+<tr><td>4</td><td><strong>体检报告</strong></td><td><strong>你陪同 / 指定医院</strong>，见下</td><td>防代检</td></tr>
+<tr><td>5</td><td><strong>两家前雇主的电话</strong></td><td>→ <a href="#3-背调">3-背调.md</a></td><td>你自己打</td></tr>
+</tbody></table>
+<p>另外向<strong>中介</strong>要：正规合同、雇主责任险、换人条款（多久内可免费换、换几次、怎么退费）。</p>
+<hr>
+<h1>体检</h1>
+<p><strong>三个月内、正规医院、你陪同或指定医院</strong>（防代检）。</p>
+<h2>按传播途径配项</h2>
+<p>她能把病传给孩子的路只有四条。<strong>按路配项，缺一条就是一个洞。</strong></p>
+<table><thead><tr><th>路</th><th>她怎么传</th><th>要查</th></tr></thead><tbody>
+<tr><td><strong>呼吸道</strong></td><td>咳嗽、说话、打喷嚏</td><td>活动性肺结核</td></tr>
+<tr><td><strong>粪口 / 口口</strong> ⭐</td><td>她的手、她的嘴 → 孩子的嘴</td><td>甲肝、戊肝、伤寒、痢疾、幽门螺杆菌</td></tr>
+<tr><td><strong>皮肤接触</strong></td><td>抱、洗澡、换尿布</td><td>疥疮、真菌、化脓性 / 渗出性皮肤病</td></tr>
+<tr><td>血液 / 性</td><td>——</td><td>对孩子的实际风险很低，见下</td></tr>
+</tbody></table>
+<p><strong>粪口那一组是重点。</strong> 她做辅食、给孩子拿食物、试温度、擦嘴、换完尿布再去弄吃的——全走这条路。</p>
+<hr>
+<h2>必检清单</h2>
+<p>⭐ <strong>「验收」这一列是关键。</strong></p>
+<p>名字相近但<strong>方法不同</strong>的项目，查出来的东西完全不一样。报告上没出现验收栏里的字样，<strong>这项就等于没做</strong>——哪怕单子上打了勾。</p>
+<table><thead><tr><th>要查什么</th><th>申请单上写</th><th>为什么</th><th>✅ 报告上必须出现</th></tr></thead><tbody>
+<tr><td><strong>活动性肺结核</strong></td><td>胸部 X 线 / 胸部 DR</td><td>密切接触，婴儿易感</td><td>「胸部正位片」「胸部 DR」「胸透」<br>❌ <strong>「结核杆菌抗体」不算</strong>——血清学抗体检测准确性差，WHO 不推荐用它诊断结核。要查潜伏感染做 <strong>T-SPOT.TB</strong></td></tr>
+<tr><td><strong>甲肝</strong></td><td>甲型肝炎抗体</td><td><strong>粪口传播。</strong> 法定禁止从事接触直接入口食品的病种</td><td>「甲肝抗体」「抗-HAV」</td></tr>
+<tr><td><strong>戊肝</strong></td><td>戊型肝炎抗体</td><td><strong>粪口传播。</strong> 同上</td><td>「戊肝抗体」「抗-HEV」</td></tr>
+<tr><td><strong>伤寒 / 痢疾</strong><br>（沙门氏菌、志贺氏菌）</td><td><strong>粪便培养</strong></td><td><strong>粪口传播。</strong> 只要她碰辅食就必须查</td><td>「<strong>粪便培养</strong>」<br>❌ <strong>「便常规」不算</strong>——那是<strong>镜检</strong>，看虫卵、潜血、白细胞，<strong>查不了细菌</strong></td></tr>
+<tr><td><strong>幽门螺杆菌</strong></td><td><strong>C13 / C14 尿素呼气试验</strong></td><td>喂饭、试温、共餐传染</td><td>「<strong>呼气试验</strong>」<br>❌ <strong>「幽门螺杆菌抗体」不算</strong>——抗体只说明「<strong>感染过</strong>」，治愈后仍阳性数年，<strong>查不出现在还有没有</strong></td></tr>
+<tr><td><strong>皮肤病</strong></td><td>皮肤科检查<br>（疥疮、真菌、化脓性 / 渗出性皮肤病）</td><td>抱、洗澡、换尿布，皮肤直接接触</td><td>皮肤科或外科的皮肤检查结论</td></tr>
+<tr><td><strong>基础</strong></td><td>血常规、肝功能、肾功能</td><td>打底</td><td>——</td></tr>
+<tr><td>丙肝、梅毒、HIV</td><td>——</td><td>对孩子风险低，但常规体检普遍包含，做了就做了</td><td>——</td></tr>
+</tbody></table>
+<p><strong>这三条最容易被糊弄过去：结核、粪便、幽门螺杆菌。</strong> 项目名看着都对，方法全是错的。<strong>拿到报告，对着验收栏一个字一个字核。</strong></p>
+<hr>
+<h2>呼吸道，再多问一句</h2>
+<ul>
+<li><strong>最近有没有长期咳嗽？</strong> 成人百日咳会传染给还没打完疫苗的婴儿</li>
+<li>建议她每年打<strong>流感疫苗</strong>（你出钱，很便宜）</li>
+</ul>
+<hr>
+<h2>乙肝：不建议单独要求</h2>
+<ul>
+<li>乙肝<strong>不经日常接触、共餐、拥抱传播</strong></li>
+<li><strong>孩子出生 24 小时内已接种第一针乙肝疫苗</strong>，完成三针后有保护性抗体</li>
+<li>2010 年人社部 / 教育部 / 卫生部三部委明令：入学和就业体检<strong>不得要求开展乙肝项目检测</strong>。法定的食品从业禁忌病种里也没有乙肝——因为它不走消化道</li>
+</ul>
+<p>私人雇佣的法律约束比用人单位松，但<strong>科学依据确实弱</strong>。你自己权衡。</p>
+<hr>
+<h2>怎么买</h2>
+<table><thead><tr><th>#</th><th>买什么</th><th>覆盖</th></tr></thead><tbody>
+<tr><td>1</td><td><strong>健康证</strong><br>（食品 / 公共场所从业人员健康合格证）</td><td><strong>粪口那一组</strong>（甲肝、戊肝、伤寒、痢疾）+ 胸片 + 皮肤<br><strong>这是地板，必须有</strong></td></tr>
+<tr><td>2</td><td>一个常规体检套餐</td><td>血常规、肝肾功、丙肝 / 梅毒 / HIV、内外科</td></tr>
+<tr><td>3</td><td><strong>单独加项</strong></td><td><strong>幽门螺杆菌 C13 / C14 呼气试验</strong><br>健康证的粪检若不含培养，单加<strong>粪便培养</strong></td></tr>
+</tbody></table>
+<p><strong>健康证是为「接触直接入口食品的人」设计的</strong>——查的正好是粪口那一组，而这一组恰恰是常规体检套餐最常漏的。<strong>两个不能互相替代。</strong></p>
+<p>各地健康证的具体项目略有差异。<strong>拿到报告，还是对着上面的验收栏逐项核。</strong></p>
+<hr>
+<h2>面试时你自己再看一眼</h2>
+<p>体检报告看不出来的，眼睛能看出来：</p>
+<ul>
+<li><strong>让她把两只手伸出来。</strong> 手癣、灰指甲、湿疹破溃，一眼就见</li>
+<li>指甲长不长？涂没涂指甲油？</li>
+<li>身上有没有烟味</li>
+</ul>
+<hr>
+<h2>上岗前约定好</h2>
+<p>她一旦有<strong>呼吸道症状 / 腹泻 / 皮疹</strong>，立刻停止接触孩子。</p>
+<p><strong>谁来顶班、扣不扣钱，写进合同</strong>——不然她会瞒着带病上岗。</p>
+<hr>
+<h1>征信报告怎么读</h1>
+<p><strong>要详版（明细版），不要简版。</strong> 简版只有概要，没有明细和查询记录，看不出东西。</p>
+<p><strong>获取渠道</strong>（她本人操作，每年前两次免费）：</p>
+<ul>
+<li>中国人民银行征信中心官网 <code>ipcrs.pbccrc.org.cn</code></li>
+<li>各家银行手机 App</li>
+<li>云闪付 App</li>
+<li>人民银行网点自助机</li>
+</ul>
+<h2>先说清楚为什么查</h2>
+<p><strong>不是查她穷不穷。</strong> 白户（完全没有信贷记录）非常常见，<strong>白户不是污点</strong>。</p>
+<p>查的是<strong>现金流是否失控</strong>——一个财务崩盘、被催债追着跑的人，在你家里接触现金、首饰、门禁、孩子，风险是实打实的。</p>
+<p>这段话最好当面讲给她听，她才不会觉得受辱。</p>
+<h2>① 逾期及违约信息概要</h2>
+<ul>
+<li><strong>呆账 / 核销 / 资产处置 / 保证人代偿</strong> → <strong>一票否决</strong></li>
+</ul>
+<p>  这几个字的意思是"她真的还不上了"</p>
+<ul>
+<li><strong>当前逾期</strong> → 高度警惕，问清楚</li>
+<li>累计逾期看"<strong>连三累六</strong>"（连续 3 个月逾期，或累计 6 次逾期）——银行的坏账线，直接借用</li>
+</ul>
+<h2>② 信贷交易明细</h2>
+<ul>
+<li><strong>看笔数，不看金额。</strong> 网贷 / 小额贷公司<strong>超过 3 笔</strong>就危险</li>
+</ul>
+<p>  多头借贷是现金流断裂的前兆，<strong>比一笔大额房贷危险得多</strong></p>
+<ul>
+<li>信用卡使用率长期 &gt;90% → 拆东墙补西墙</li>
+<li><strong>担保记录</strong>——她给别人担保过？这是或有负债。问清楚给谁担保的、对方还得上吗（农村家庭这种事很多）</li>
+<li>还款记录是 <strong>24 个月的状态码</strong>：</li>
+<ul>
+<li><code>N</code> = 正常</li>
+<li>数字 <code>1</code>–<code>7</code> = 逾期档（<code>1</code> 是逾期 1–30 天，往上递增，<code>7</code> 是逾期 180 天以上）</li>
+<li><strong>一排 N 里夹几个数字</strong>，就是问题所在</li>
+</ul>
+</ul>
+<h2>③ 公共信息明细</h2>
+<ul>
+<li><strong>强制执行、民事判决、欠税、行政处罚</strong> → 有就一票否决，直接结束</li>
+</ul>
+<h2>④ 查询记录（最关键的一页，也最少人看）</h2>
+<ul>
+<li>看<strong>近半年</strong>的机构查询记录</li>
+<li>查询原因写着"<strong>贷款审批</strong>""<strong>信用卡审批</strong>"的叫<strong>硬查询</strong></li>
+<li><strong>半年内硬查询 ≥ 6 次 = 她在到处借钱</strong></li>
+</ul>
+<blockquote><p>哪怕一笔都没批下来、报告干干净净没有一条负债，<strong>这一页也已经把真相写在脸上了</strong>。</p></blockquote>
+<ul>
+<li>"贷后管理""本人查询"不算硬查询，不用管</li>
+</ul>
+<h2>⑤ 顺手交叉验证</h2>
+<p>报告里有"<strong>居住信息</strong>""<strong>职业信息</strong>""<strong>手机号</strong>"——<strong>跟她口述的简历对一遍</strong>。对不上就追问。</p>
+<h2>⑥ 免费公开渠道，五分钟搞定</h2>
+<p>输姓名 + 身份证号就行：</p>
+<ul>
+<li><strong>中国执行信息公开网</strong>——失信被执行人 / 被执行人</li>
+<li><strong>中国裁判文书网</strong>——涉诉记录</li>
+</ul>
+<hr>
+<h2>最灵的其实不是报告，是行为</h2>
+<ul>
+<li>急着预支工资</li>
+<li>频繁借钱</li>
+<li>老家总有急事要钱</li>
+<li><strong>工资要求打别人的卡</strong>（她自己的账户可能因涉赌涉诈被冻结了）</li>
+</ul>
+<hr>
+<p><strong>过了这一关 → <a href="#3-背调">3-背调.md</a></strong></p>
+<hr>
+</section>
+<section id="3-背调" class="chapter">
+<h1>第三关：背调（最有效的一关）</h1>
+<blockquote><p><strong>要至少两家前雇主的电话，你自己打，不通过中介转达。</strong></p>
+<p>这一关的信息密度比面试高得多——前雇主已经和她朝夕相处过几个月，你只有两个小时。</p></blockquote>
+<hr>
+<h2>话术（从软到硬，别一上来就查户口）</h2>
+<p><strong>1. 破冰，先给她说好话的空间</strong></p>
+<blockquote><p>"她在您家带的孩子多大？带了多久？"</p>
+<p>"她最擅长哪块？"</p></blockquote>
+<p>对方会放松，也会先说好的一面。<strong>让她说完。</strong></p>
+<p><strong>2. 对口径</strong></p>
+<blockquote><p>"为什么离开的？"</p></blockquote>
+<p>和她本人说的对一遍。对不上，记下来，正式面试时追问。</p>
+<p><strong>3. 用软话问硬事</strong></p>
+<blockquote><p>"有没有什么地方是您当时觉得<strong>可以更好</strong>的？"</p></blockquote>
+<p>比"她有什么缺点"更容易问出真话——前一句给对方一个体面的台阶。</p>
+<p><strong>4. 杀手锏</strong></p>
+<blockquote><p><strong>"如果您再生一个，还会请她吗？"</strong></p></blockquote>
+<p><strong>这一句最杀。犹豫本身就是答案。</strong></p>
+<p>真心推荐的人会立刻说"会啊"。任何形式的停顿、"这个嘛……"、"看情况"，都要往下追。</p>
+<p><strong>5. 考她会不会隐瞒</strong></p>
+<blockquote><p>"她带的这段时间，有没有发生过什么意外？磕了碰了、生过病？她当时是怎么处理的？"</p></blockquote>
+<p>听的是：<strong>孩子出事时，她第一时间是告诉家长，还是先想说辞。</strong></p>
+<hr>
+<h2>危险信号</h2>
+<table><thead><tr><th>信号</th><th>判读</th></tr></thead><tbody>
+<tr><td>电话打不通 / 是空号</td><td>电话是假的</td></tr>
+<tr><td>对方支支吾吾，"还行吧""挺好的"就没了</td><td>不想说坏话，但也不愿意推荐</td></tr>
+<tr><td>"她人挺好的，就是……" 后面不说了</td><td><strong>就是</strong>后面那半句才是重点，追问</td></tr>
+<tr><td>中介坚持"我们帮您问，您别自己打"</td><td>中介在挡</td></tr>
+<tr><td>每份工作都做不满 3 个月</td><td>见 <a href="#危险信号">参考/危险信号.md</a></td></tr>
+<tr><td>只能提供中介出具的"好评"</td><td>一文不值</td></tr>
+</tbody></table>
+<hr>
+<h2>记下来</h2>
+<p>打完两个电话，在 <a href="#候选人评分表">模板/候选人评分表.md</a> 里填掉"背调"那一栏——<strong>这一栏是一票否决项</strong>。</p>
+<hr>
+<p><strong>过了这一关 → <a href="#4-面试">4-面试.md</a></strong></p>
+<hr>
+</section>
+<section id="4-面试" class="chapter">
+<h1>第四关：面试（题库）</h1>
+<blockquote><h2>⚠️ 先去读 <a href="#标准答案">参考/标准答案.md</a></h2>
+<p><strong>这一页只有「问什么」，没有「什么是对的」。</strong></p>
+<p>你不知道正确答案，就判断不了她答得对不对——她说"先粉后水"，你听不出问题。</p>
+<p>而且<strong>你是家长</strong>：她休假、她辞职、她做错了，最后兜底的都是你。这些东西你迟早要会。</p>
+<p><strong>面试前把标准答案读一遍。</strong> 到了桌上你就不用翻书了。</p></blockquote>
+<blockquote><p>老人如果在家常住，<strong>必须参加面试</strong>——真正跟她朝夕相处的是老人，不是你。</p></blockquote>
+<p><strong>答案在哪：</strong></p>
+<table><thead><tr><th>模块</th><th>答案</th></tr></thead><tbody>
+<tr><td>育儿硬技能、卫生、边界与冲突、<strong>情景题</strong></td><td><a href="#标准答案">参考/标准答案.md</a></td></tr>
+<tr><td>急救</td><td><a href="#急救">参考/急救.md</a></td></tr>
+<tr><td>民间陋习（含每一条的问法）</td><td><a href="#陋习清单">参考/陋习清单.md</a></td></tr>
+<tr><td>按月龄该重点问什么</td><td><a href="#月龄重点">参考/月龄重点.md</a></td></tr>
+</tbody></table>
+<hr>
+<h2>0. 提问方法（比题目本身更重要）</h2>
+<p><strong>别问是非题。</strong> "你会不会把尿？"——她知道标准答案是"不会"。你什么都问不出来。</p>
+<h3>① 预设式——把陋习当成默认前提，让她在你的前提里回答</h3>
+<blockquote><p>"你之前带的孩子，<strong>一般几个月开始把尿</strong>？"</p>
+<p>"孩子<strong>多大开始喂水</strong>的？"</p></blockquote>
+<h3>② 开放式——不给方向，看她第一个想到什么</h3>
+<blockquote><p>"孩子发烧了，你<strong>怎么</strong>处理？"（等她自己说出捂汗、酒精、退热贴）</p>
+<p>"孩子便秘了怎么办？"（等她说开塞露、肥皂条）</p></blockquote>
+<h3>③ 情景追问——给具体场景，然后追到底</h3>
+<blockquote><p>"你一个人在家，孩子从床上掉下来了。<strong>接下来五分钟你做什么？</strong>"</p>
+<p>→ "然后呢？" → "如果他吐了呢？" → "<strong>如果我电话打不通呢？</strong>"</p></blockquote>
+<h3>④ 复述交叉——同一件事隔半小时再问一遍</h3>
+<p>看口径对不对得上。<strong>撒谎的人第二遍会飘。</strong></p>
+<h3>⚠️ 绝对不要给暗示</h3>
+<blockquote><p>"我们家是不让把尿的哦，你会把尿吗？"</p></blockquote>
+<p>——这题白问了。</p>
+<hr>
+<h2>1. 履历真实性</h2>
+<ul>
+<li><strong>按时间顺序口述</strong>每一份工作：孩子多大、带了多久、住在哪个区、为什么走</li>
+<li><strong>空窗期必须交代清楚</strong></li>
+<li>和 <a href="#3-背调">3-背调.md</a> 里前雇主说的对一遍</li>
+<li>和征信报告里的"居住信息""职业信息"对一遍</li>
+</ul>
+<p><strong>关于证书</strong>：育婴师证 / 月嫂证参考价值很低（国家职业资格目录已取消育婴员，现在是社会机构发证）。</p>
+<p><strong>但可以反过来用</strong>：问"证在哪考的？培训了多久？学了什么？"——用来测她的真实水平。</p>
+<hr>
+<h2>2. 育儿硬技能</h2>
+<p>按月龄加权 → <a href="#月龄重点">参考/月龄重点.md</a></p>
+<p><strong>喂</strong></p>
+<ul>
+<li><strong>冲奶</strong>：水温多少？<strong>先放水还是先放粉</strong>？多少水配几勺？</li>
+<li>能不能多舀一勺"长得快"？（<strong>不能</strong>，肾脏负担）</li>
+<li>奶粉开封多久内用完？（1 个月）</li>
+<li><strong>试奶温怎么试</strong>？（滴手腕内侧。<strong>用嘴尝的直接扣分</strong>）</li>
+<li>奶瓶怎么消毒？多久一次？</li>
+<li><strong>母乳储存</strong>：冷藏多久？冷冻多久？怎么解冻？（<strong>能用微波炉吗？——不能</strong>）</li>
+<li><strong>拍嗝</strong>：拍多久？拍不出来怎么办？（现场演示 → <a href="#5-实操测试">5-实操测试.md</a>）</li>
+<li><strong>吐奶 vs 呛奶</strong>怎么区分？各自怎么处理？</li>
+</ul>
+<p><strong>抱、换、洗</strong></p>
+<ul>
+<li>新生儿怎么抱？几个月能竖抱？</li>
+<li>换尿布：女宝宝怎么擦？（<strong>从前往后</strong>）红屁股怎么处理？（保持干燥 + 护臀膏，<strong>不是撒爽身粉</strong>）</li>
+<li>洗澡：水温？先洗哪里？脐带没脱落怎么洗？耳朵进水怎么办？</li>
+</ul>
+<p><strong>睡</strong></p>
+<ul>
+<li>怎么哄睡？会不会抱睡、奶睡、摇睡？</li>
+<li><strong>孩子该怎么躺？</strong>（仰卧）</li>
+<li><strong>床上能放什么？</strong>（<strong>什么都不能放</strong>——枕头、被子、床围、毛绒玩具、定型枕，一样都不行）</li>
+</ul>
+<p><strong>哭</strong></p>
+<ul>
+<li><strong>"孩子哭了，你第一步做什么？"</strong></li>
+<ul>
+<li>✅ 排查：饿了 / 尿了 / 困了 / 热了 / 不舒服</li>
+<li>❌ 直接抱起来摇</li>
+<li>❌ <strong>"哭一会儿没事，锻炼肺活量"</strong> → <strong>一票否决</strong></li>
+</ul>
+</ul>
+<p><strong>日常</strong></p>
+<ul>
+<li>一天怎么安排？（会不会读绘本、做抚触、被动操，还是只管喂饱了事）</li>
+<li><strong>会不会给孩子看手机 / 电视？</strong></li>
+</ul>
+<p><strong>辅食（到月龄再问）</strong></p>
+<ul>
+<li>第一口吃什么？什么时候加？一次加几种？（<strong>一种，观察 3 天</strong>）</li>
+<li><strong>加不加盐？</strong>（1 岁内<strong>不加盐、不加糖、不加蜂蜜</strong>）</li>
+<li>过敏了怎么看、怎么办？</li>
+<li>3 岁前不能给什么？（整颗坚果、果冻、爆米花、整颗葡萄、大块肉）</li>
+</ul>
+<hr>
+<h2>3. 急救 ⭐</h2>
+<blockquote><p><strong>这是唯一"答错了孩子会没命"的模块。</strong></p>
+<p>标准答案 → <a href="#急救">参考/急救.md</a>。不会的，要么淘汰，要么上岗前你出钱送她去培训。</p></blockquote>
+<ul>
+<li><strong>"孩子噎住了，你做给我看。"</strong>（现场演示，别光说）</li>
+<li>会不会婴儿心肺复苏？</li>
+<li><strong>孩子发烧，你怎么处理？</strong>（开放式，等她自己说出捂汗 / 酒精 / 私自喂药）</li>
+<li>多少度算发烧？什么情况必须立刻去医院？</li>
+<li>摔下床 / 磕到头怎么办？</li>
+<li>烫伤怎么办？</li>
+<li>误食了东西怎么办？</li>
+</ul>
+<p><strong>最重要的一题：</strong></p>
+<blockquote><p><strong>"你一个人在家，孩子出事了。你做的第一件事是什么？"</strong></p></blockquote>
+<p>✅ <strong>先急救 / 打 120，同时通知家长。</strong></p>
+<p>这题真正考的是——她会不会因为怕担责任而<strong>隐瞒、拖延、先想说辞</strong>。</p>
+<p><strong>再问：</strong> 家附近哪家儿童医院？打 120 怎么报地址？</p>
+<hr>
+<h2>4. 民间陋习筛查</h2>
+<blockquote><p><strong>用预设式问，别用是非题。</strong> 全清单 + 每一条的问法 → <a href="#陋习清单">参考/陋习清单.md</a></p></blockquote>
+<p>现场至少排这几条（危害最大的）：</p>
+<ul>
+<li><strong>捂汗退烧 / 酒精擦浴</strong>（能致死）</li>
+<li><strong>私自喂药</strong>（尤其"保婴丹"含朱砂，即汞）</li>
+<li><strong>把屎把尿</strong></li>
+<li><strong>摇晃哄睡 / 抛高高</strong></li>
+<li><strong>嘴对嘴喂 / 用嘴试奶温 / 嚼碎了喂</strong></li>
+<li><strong>孩子病了或磕了，瞒着不说</strong></li>
+</ul>
+<hr>
+<h2>5. 卫生</h2>
+<ul>
+<li><strong>进门第一件事做什么？</strong></li>
+</ul>
+<p>  → <strong>这条不用问。看她进门时怎么做。比十道题都准。</strong></p>
+<ul>
+<li>接触孩子前洗手吗？做辅食前？上完厕所？</li>
+<li>多久洗一次澡洗一次头？</li>
+<li><strong>会不会亲孩子？</strong>（<strong>红线</strong>。成人携带的疱疹病毒对新生儿可能致命）</li>
+<li><strong>指甲——当场看。</strong> 长指甲、涂指甲油、戴戒指手链的，是习惯问题，不是一句"我剪掉"能改的</li>
+<li><strong>抽烟吗？家里人抽烟吗？</strong></li>
+<ul>
+<li>本人抽烟 → <strong>一票否决</strong></li>
+<li>家人抽烟 → 休息日回来必须洗澡换衣服（三手烟留在头发和衣服上）</li>
+</ul>
+<li>化妆、喷香水吗？</li>
+</ul>
+<hr>
+<h2>6. 边界与冲突（决定她能待多久）</h2>
+<ul>
+<li><strong>"我的做法和你的经验不一样，你怎么办？"</strong></li>
+</ul>
+<p>  ✅ 听雇主的</p>
+<p>  ❌ <strong>"我带过多少个孩子了，你们年轻人不懂"</strong> → 红旗</p>
+<ul>
+<li><strong>"和老人意见不合怎么办？"</strong></li>
+</ul>
+<p>  住家阿姨最大的雷区。<strong>所以老人必须在场，看她怎么当着老人的面回答这题。</strong></p>
+<ul>
+<li><strong>"上一份工作最不开心的是什么？"</strong></li>
+</ul>
+<p>  <strong>逢人就说前雇主坏话的，直接排除</strong>——她下一个说的就是你。</p>
+<ul>
+<li>"被冤枉了（东西丢了、孩子磕了）你怎么办？"</li>
+<li>"孩子半夜闹觉，连着哭一个小时，你会烦吗？发过火吗？"</li>
+<li>"你觉得一个好雇主应该是什么样的？"（反向摸她的期待和雷点）</li>
+<li>"被辞退过吗？为什么？"</li>
+</ul>
+<hr>
+<h2>7. 作息与工作范围</h2>
+<p>对着 <a href="#岗位定义">岗位定义.md</a> 逐条过：</p>
+<ul>
+<li><strong>夜里带不带睡？起夜几次？夜奶谁喂？</strong></li>
+<li><strong>除了带孩子，做不做饭？给几个人做？洗不洗大人的衣服？打扫到什么程度？</strong></li>
+</ul>
+<p>  → <strong>这一条说不清楚，三个月后必吵架</strong></p>
+<ul>
+<li>一天作息：几点起、几点睡、午休多久（有些阿姨要求午休 2 小时）</li>
+<li>月休几天？固定还是灵活？<strong>春节回不回家？</strong></li>
+<li><strong>休息日回家后，回来必须洗澡换衣服</strong>——接受吗？</li>
+<li>加班怎么算？出差 / 旅行带不带她去？</li>
+<li><strong>手机</strong>：带孩子的时候能不能刷手机、发语音？（红线）</li>
+<li><strong>能不能带老乡、亲戚、朋友进家门？</strong>（红线：绝对不行）</li>
+<li><strong>摄像头</strong>：公共区域 + 婴儿房，<strong>不装她的卧室和卫生间</strong>（装了违法）</li>
+</ul>
+<p>  她可以有顾虑，但<strong>强烈抗拒是个信号</strong></p>
+<ul>
+<li><strong>辞职提前多久通知？</strong>（<strong>至少 30 天</strong>。不写这条，她哪天说走就走，你家直接瘫痪）</li>
+</ul>
+<hr>
+<h2>8. 每日记录 ⭐</h2>
+<blockquote><p>这一条既是筛子，也是日后管理的抓手。表格 → <a href="#每日记录表">模板/每日记录表.md</a></p></blockquote>
+<p><strong>原话这么问：</strong></p>
+<blockquote><p>"我们家每天要填一张记录表——每次喂奶几点、多少毫升、实际喝了多少、拍嗝打出来没有、吐没吐；还有尿了几次、大便几次什么颜色、睡了多久。<strong>每次喂完当场填，不能事后补。</strong> 每天下班前拍照发到家庭群。</p>
+<p>你之前填过吗？能填吗？"</p></blockquote>
+<p><strong>看反应：</strong></p>
+<table><thead><tr><th>反应</th><th>判读</th></tr></thead><tbody>
+<tr><td>爽快答应，还能说出自己以前怎么记的</td><td>好</td></tr>
+<tr><td>"行，可以"</td><td>正常</td></tr>
+<tr><td>面露难色、含糊其辞</td><td><strong>可能不识字或写不来数字</strong>——用 <a href="#5-实操测试">5-实操测试.md</a> 测出来，<strong>不是淘汰项</strong></td></tr>
+<tr><td><strong>"我记性好，不用记"</strong></td><td><strong>一票否决。</strong> 拒绝留痕的人，出了事你手上什么证据都没有</td></tr>
+<tr><td>"填这个太麻烦了 / 你们年轻人事真多"</td><td><strong>一票否决。</strong> 这句话背后是"我不接受被监督"</td></tr>
+</tbody></table>
+<p><strong>再补一问：</strong></p>
+<blockquote><p>"如果哪天记录表上出现异常——比如奶量突然少了一半，或者大便发白——你会怎么做？"</p></blockquote>
+<p>✅ <strong>立刻电话告诉家长，不等下班。</strong></p>
+<hr>
+<h2>9. 家庭与财务背景</h2>
+<ul>
+<li>老家哪里？家里几口人？</li>
+<li><strong>她自己的孩子多大？现在谁在带？</strong>（孩子太小 → 随时可能被叫回去）</li>
+<li>配偶做什么？会不会经常来找她、在家门口等她？</li>
+<li>父母身体怎么样？有没有大病？</li>
+<li><strong>未来一年有没有确定要请假的事？</strong>（婚丧、盖房、老家农忙、孩子中高考）</li>
+<li><strong>有没有欠债？有没有网贷？有没有人催债？家里有人赌博吗？</strong></li>
+</ul>
+<p>  （和征信报告对一遍 → <a href="#2-材料核验">2-材料核验.md</a>）</p>
+<ul>
+<li><strong>工资打你本人的卡吗？</strong>（说要打老公 / 儿子卡的，<strong>追问为什么</strong>）</li>
+</ul>
+<hr>
+<h2>10. 自我评价与成长 ⭐</h2>
+<blockquote><p><strong>别用 OKR 那套。</strong> 别让她"定目标""说关键结果""自评绩效"——她听不懂，只会把她逼成鹦鹉，你什么也测不到。</p>
+<p>而且<strong>能把自评说漂亮的人，往往是被中介辅导过的</strong>。你要的不是会答的人。</p>
+<p><strong>要测的东西是对的（她有没有自我觉察），换个问法就行：不让她定指标，让她评自己做过的具体事。</strong></p>
+<p>答案 → <a href="#标准答案">参考/标准答案.md</a> §十二</p></blockquote>
+<table><thead><tr><th>#</th><th>问</th><th>真正在测什么</th></tr></thead><tbody>
+<tr><td>1</td><td><strong>"上一个孩子你带到几个月？你觉得自己带得怎么样？有没有哪件事，现在回想觉得当时可以做得更好？"</strong></td><td><strong>整套里最值钱的一题。</strong><br>能主动承认自己出过错的人，出了事才会<strong>第一时间告诉你</strong></td></tr>
+<tr><td>2</td><td><strong>"你觉得一个好育儿嫂和一个一般的育儿嫂，差别在哪？"</strong></td><td>她心里<strong>有没有标准</strong>。没有标准的人不可能改进</td></tr>
+<tr><td>3</td><td><strong>"三个月后如果我们对你不满意，你觉得会是因为什么？"</strong></td><td>让她<strong>自己说出失败模式</strong>——比你去猜准得多</td></tr>
+<tr><td>4</td><td><strong>"你现在还在学新东西吗？从哪学的？"</strong></td><td>她是不是<strong>停止更新</strong>了</td></tr>
+</tbody></table>
+<hr>
+<h2>11. 情景题 ⭐（最能看出真人）</h2>
+<blockquote><p>技能题她可以背，<strong>情景题要现场组织</strong>。而且<strong>每一题都要追问到底</strong>。</p>
+<p>全部答案 + 追问路径 → <a href="#标准答案">参考/标准答案.md</a> §十三</p></blockquote>
+<table><thead><tr><th>#</th><th>情景</th><th>真正在测什么</th></tr></thead><tbody>
+<tr><td>1</td><td><strong>"你一个人在家，孩子从床上摔下来了。接下来五分钟你做什么？"</strong><br>追问："如果他没哭呢？" → "如果我电话打不通呢？"</td><td>会不会<strong>瞒事</strong>；知不知道"不哭比哭更危险"</td></tr>
+<tr><td>2</td><td><strong>"孩子吃辅食噎住了，脸憋红，说不出话。做给我看。"</strong></td><td>急救。<strong>必须演示</strong></td></tr>
+<tr><td>3</td><td><strong>"孩子发烧 38.2℃，我们在上班回不来。你怎么办？"</strong></td><td>会不会<strong>私自喂药</strong>、<strong>捂汗</strong>、酒精擦身</td></tr>
+<tr><td>4</td><td><strong>"你在做饭，孩子在客厅玩。听见'咚'一声，然后没声音了。"</strong><br>追问："那你做饭的时候，孩子一般在哪儿？"</td><td>追问才是正题——<strong>她会不会把孩子单独留在另一个房间</strong></td></tr>
+<tr><td>5</td><td><strong>"我家老人非要给孩子把尿，你怎么办？"</strong></td><td>她会<strong>放弃你的规矩</strong>，还是<strong>跟老人硬刚</strong>，还是<strong>上报给你</strong></td></tr>
+<tr><td>6</td><td><strong>"孩子磕了个包，不严重。我们晚上才回来。你什么时候告诉我们？"</strong></td><td><strong>明着送分。</strong> 答"等你们回来说"的，是真会瞒事</td></tr>
+<tr><td>7</td><td><strong>"孩子不肯吃饭，追着喂也不吃。"</strong></td><td>追喂、逼吃、拿手机哄着喂</td></tr>
+<tr><td>8</td><td><strong>"孩子把玩具扔了一地，你怎么让他捡？"</strong></td><td><strong>恐吓式管教</strong>（"再不收警察抓你"）</td></tr>
+</tbody></table>
+<hr>
+<h2>11. 面试末尾：把红线念一遍</h2>
+<p>打开 <a href="#红线清单">模板/红线清单.md</a>，<strong>逐条念给她听</strong>。</p>
+<p>不是为了吓她，是看她的反应——<strong>对"不许亲孩子""不许喂药""要填表"表现出抵触或不以为然的，就是答案。</strong></p>
+<hr>
+<p><strong>接着做 → <a href="#5-实操测试">5-实操测试.md</a></strong></p>
+<hr>
+</section>
+<section id="5-实操测试" class="chapter">
+<h1>第四关（下半场）：实操测试</h1>
+<blockquote><p><strong>说得好不如做得好。</strong></p>
+<p>准备：一个仿真娃娃、一罐奶粉、一个奶瓶、一片尿不湿、一张<a href="#每日记录表-空白">空白记录表</a>、一支笔。</p></blockquote>
+<hr>
+<h2>九项，当场做</h2>
+<h3>1. 冲一瓶奶</h3>
+<p>看：</p>
+<ul>
+<li><strong>洗不洗手</strong>（第一个动作）</li>
+<li>水温对不对</li>
+<li><strong>先水后粉</strong>还是先粉后水</li>
+<li>配比准不准（有没有多舀"长得快"）</li>
+<li>摇匀手法——<strong>剧烈摇会起大量气泡 → 胀气</strong></li>
+<li><strong>怎么试温</strong>：滴手腕内侧 ✅　／　<strong>用嘴尝</strong> ❌</li>
+</ul>
+<h3>2. 抱起来 + 拍嗝</h3>
+<p>看：</p>
+<ul>
+<li><strong>护不护头颈</strong></li>
+<li>空心掌还是实掌</li>
+<li>拍的位置对不对</li>
+<li>拍多久</li>
+</ul>
+<h3>3. 换尿布</h3>
+<p>看：</p>
+<ul>
+<li>擦拭方向（女宝宝<strong>从前往后</strong>）</li>
+<li><strong>有没有始终留一只手在孩子身上</strong></li>
+<li><strong>会不会转身去拿东西时，把孩子单独留在台面上</strong> ← 这一项最要命</li>
+</ul>
+<h3>4. 洗澡演示</h3>
+<p>看：</p>
+<ul>
+<li><strong>先测水温还是先脱衣服</strong></li>
+<li>托法（护头颈、防滑）</li>
+<li>耳朵怎么防水</li>
+<li>脐带没脱落怎么处理</li>
+</ul>
+<h3>5. 海姆立克演示 ⭐</h3>
+<p>直接说：</p>
+<blockquote><p><strong>"孩子噎住了，你做给我看。"</strong></p></blockquote>
+<p>对照 <a href="#急救">参考/急救.md</a> 判对错。<strong>别接受口头描述，让她做出来。</strong></p>
+<h3>6. 和孩子互动 3 分钟 / 读一段绘本</h3>
+<p>看<strong>眼神和语气</strong>。是真的喜欢孩子，还是在表演给你看。</p>
+<p>顺带看：<strong>孩子在她怀里，身体是软的还是僵的。</strong></p>
+<h3>7. 念一下奶粉罐上的配比表</h3>
+<p>温和地测识字水平。<strong>别直接问"你识字吗"</strong>——问不出真话，也伤人。</p>
+<h3>8. 用手机做三件事</h3>
+<ul>
+<li>拍一段视频发给你</li>
+<li>发个定位</li>
+<li>打个车</li>
+</ul>
+<p>顺便测：会不会用温奶器、消毒锅、辅食机、洗碗机、洗烘一体机。</p>
+<h3>9. 当场填一张记录表 ⭐</h3>
+<p>见下。</p>
+<hr>
+<h2>第 9 项详解：记录表实操</h2>
+<p>递给她一张<strong>空白的每日记录表</strong>和一支笔，口述一个场景：</p>
+<blockquote><p>"早上 6 点 20，喂了 120 毫升配方奶，她喝了 100 毫升，剩了 20。拍嗝打出来了。没有吐奶。</p>
+<p>8 点 15 换尿布，尿了，没有大便。</p>
+<p>9 点睡着，10 点半醒的。</p>
+<p>你把这些填到表上。"</p></blockquote>
+<h3>这一项一次测四样，而且都是直接问问不出来的</h3>
+<table><thead><tr><th>测什么</th><th>怎么看</th></tr></thead><tbody>
+<tr><td><strong>识字与书写</strong></td><td>写不出"配方奶"三个字、数字对不上位——当场就看出来了。<strong>比直接问"你识字吗"体面得多，也准得多</strong></td></tr>
+<tr><td><strong>数字理解</strong></td><td>120 喂了、喝 100、剩 20——这三个数她能不能对上</td></tr>
+<tr><td><strong>配合度</strong></td><td>她是认真填，还是边填边抱怨"这有啥好记的"</td></tr>
+<tr><td><strong>细致程度</strong></td><td>时间填不填分钟？还是随手写个"早上"</td></tr>
+</tbody></table>
+<h3>⚠️ 这一项不是识字淘汰题</h3>
+<p>文化程度低但踏实的阿姨很多，别一刀切。写不来可以改方案：</p>
+<blockquote><p><strong>打勾式表格 + 语音报数</strong> —— 她每次喂完在群里发一条语音（"六点二十，一百二十毫升，喝了一百，嗝打出来了"），你或老人代填。</p></blockquote>
+<p><strong>关键是留痕，不是她亲手写。</strong></p>
+<p>但有一条不能商量：</p>
+<blockquote><p><strong>"我记性好，不用记" —— 一票否决。</strong></p></blockquote>
+<hr>
+<h2>全程同时观察（不用问）</h2>
+<ul>
+<li>她是<strong>盯着你说话</strong>，还是会<strong>自然地看向孩子</strong>？</li>
+<li>指甲长不长？有没有涂指甲油、戴戒指手链？</li>
+<li>身上有没有烟味？</li>
+<li>进门时第一个动作是什么？</li>
+</ul>
+<hr>
+<h2>面试结束后，立刻打分</h2>
+<p><strong>别靠回忆。</strong> 人走了就填 <a href="#候选人评分表">模板/候选人评分表.md</a>——见了三个人之后，你会记混。</p>
+<hr>
+<p><strong>过了这一关 → <a href="#6-试工">6-试工.md</a></strong></p>
+<hr>
+</section>
+<section id="6-试工" class="chapter">
+<h1>第五关：带薪试工 3–7 天</h1>
+<blockquote><p><strong>必须有人全程在家。</strong></p>
+<p>这一关能刷掉前面全部的演技——面试可以准备，七天装不出来。</p></blockquote>
+<hr>
+<h2>看这些</h2>
+<h3>她的动作</h3>
+<ul>
+<li><strong>你不在房间的时候她在干什么</strong>（摄像头回放随机抽查）</li>
+<li><strong>孩子哭的时候，她的第一反应是什么？</strong></li>
+<ul>
+<li>✅ 去查原因（饿了？尿了？困了？不舒服？）</li>
+<li>❌ 先塞奶嘴 / 直接抱起来摇 / 露出不耐烦</li>
+</ul>
+<li>她是<strong>主动做事</strong>，还是<strong>等着被指挥</strong></li>
+<li>玩手机的频率</li>
+<li>她吃饭的时候怎么处理孩子</li>
+</ul>
+<h3>卫生细节（看，不用问）</h3>
+<ul>
+<li>进门洗不洗手</li>
+<li>上完厕所洗不洗手</li>
+<li>做辅食前洗不洗手</li>
+<li>指甲</li>
+</ul>
+<h3>记录表</h3>
+<ul>
+<li><strong>是当场填的，还是下班前一口气补的？</strong></li>
+</ul>
+<p>  → 怎么识别 → <a href="#每日记录表">模板/每日记录表.md</a> §怎么识别"编的表"</p>
+<ul>
+<li>填得细不细？"异常"栏有没有内容？</li>
+</ul>
+<h3>夜里</h3>
+<ul>
+<li><strong>她实际起来几次？</strong></li>
+<li><strong>拿摄像头对一下她说的次数。</strong>（虚报夜班工作量是很常见的）</li>
+</ul>
+<h3>人</h3>
+<ul>
+<li>她跟<strong>老人</strong>怎么相处</li>
+<li>她<strong>累了、被质疑</strong>的时候，情绪是什么样</li>
+<li>她走了以后，房间是什么状态</li>
+</ul>
+<h3>孩子</h3>
+<ul>
+<li><strong>孩子在她怀里，身体是软的还是僵的？</strong></li>
+<li>她走近的时候，孩子什么反应？</li>
+</ul>
+<blockquote><p><strong>孩子不会撒谎。</strong></p></blockquote>
+<hr>
+<h2>试工结束</h2>
+<p>三件事一起看：</p>
+<ol>
+<li><a href="#候选人评分表">模板/候选人评分表.md</a> 的分数</li>
+<li><a href="#危险信号">参考/危险信号.md</a> 有没有命中</li>
+<li><strong>家里人的直觉</strong> —— 别把这个分数化掉。要和她朝夕相处的人（老人、伴侣）的直觉，往往比你的评分表准</li>
+</ol>
+<hr>
+<h2>定了就签</h2>
+<ul>
+<li><a href="#合同条款">模板/合同条款.md</a> —— 15 条必写</li>
+<li><a href="#红线清单">模板/红线清单.md</a> —— <strong>逐条签字</strong>，作为合同附件</li>
+</ul>
+<p><strong>然后 → <a href="#上岗后">上岗后.md</a></strong></p>
+<hr>
+</section>
+<section id="标准答案" class="chapter">
+<h1>标准答案</h1>
+<blockquote><p>⚠️ <strong>这不是查阅表，是面试前你自己要先读一遍的东西。</strong></p>
+<p>两个原因：</p>
+<ol>
+<li><strong>你不知道对的是什么，就判断不了她答得对不对。</strong> 她说"先粉后水"，你听不出问题</li>
+<li><strong>你是家长。</strong> 她休假、她辞职、她做错了，最后兜底的都是你。这些东西你迟早要会</li>
+</ol>
+<p>急救 → <a href="#急救">急救.md</a>　陋习 → <a href="#陋习清单">陋习清单.md</a></p>
+<p>医学内容仅供参考，<strong>具体以你的儿保医生为准</strong>。</p></blockquote>
+<hr>
+<h2>怎么用这份答案</h2>
+<h3>1. 分清「不知道」和「知道错的」</h3>
+<table><thead><tr><th>她的回答</th><th>判读</th></tr></thead><tbody>
+<tr><td><strong>"我不知道，我会问你们 / 查一下 / 打电话问医生"</strong></td><td>✅ <strong>这是好答案。</strong> 比瞎编强一万倍</td></tr>
+<tr><td>"我不知道"，但也不打算去弄清楚</td><td>🟡 追问："那你会怎么办？"</td></tr>
+<tr><td><strong>自信地说出一个错误答案</strong></td><td>❌ <strong>最危险的一种。</strong> 她不知道自己不知道，不会去问，会一直错下去</td></tr>
+</tbody></table>
+<blockquote><p><strong>一个诚实、愿意学、会打电话的人，好过一个什么都会但会瞒事的人。</strong></p>
+<p>技能能教，人品教不了。</p></blockquote>
+<h3>2. 先开放，再追问，最后才对答案</h3>
+<p>别照着念题——会像审讯，好阿姨会被吓走。</p>
+<p>先让她自己说（"孩子哭了你怎么办？"），她说到哪儿算哪儿，<strong>说不到的地方再用追问引</strong>（"那你怎么知道他是饿了还是困了？"）。</p>
+<h3>3. 答错一题不等于淘汰</h3>
+<p>看<strong>分布</strong>：</p>
+<ul>
+<li><strong>陋习类答错</strong>（捂汗、把尿）→ 可以纠正，但要写进红线、上摄像头</li>
+<li><strong>安全类答错</strong>（趴睡、单独留、摇晃）→ 高危，要么淘汰，要么上岗前专门培训 + 强监督</li>
+<li><strong>急救类答错</strong> → 上岗前必须培训，你出钱</li>
+<li><strong>"哭一会儿没事"「不用告诉家长」「捂汗退烧」</strong> → <strong>一票否决，没有商量</strong></li>
+</ul>
+<hr>
+<h1>一、冲奶</h1>
+<h3>Q：先放水还是先放粉？</h3>
+<p><strong>✅ 先水后粉。</strong> 先把温水加到刻度线，<strong>再</strong>加奶粉。</p>
+<p><strong>为什么</strong>：奶粉本身占体积。先放粉、再加水到刻度线，实际水量就少了——<strong>奶会冲浓</strong>。浓度过高 → 肾脏负担、便秘、脱水。</p>
+<p>❌ 先粉后水　❌ "差不多就行"</p>
+<h3>Q：水温多少？</h3>
+<p><strong>✅ 按奶粉罐上标的来</strong>（国内多数标 40–50℃）。</p>
+<blockquote><p>📌 <strong>这里有个真实分歧，你得自己拿主意：</strong></p>
+<p>WHO 建议用<strong>不低于 70℃</strong> 的水冲调，以杀灭奶粉里可能存在的<strong>阪崎肠杆菌</strong>（对早产儿、免疫力低的婴儿风险更高）；国内奶粉罐上普遍标 40–50℃（怕破坏益生菌等热敏成分）。</p>
+<p><strong>面试时不必纠结哪个对——要的是她「按你定的规矩来，不自作主张」。</strong></p></blockquote>
+<h3>Q：怎么试温？</h3>
+<p><strong>✅ 滴几滴在手腕内侧</strong>，温热不烫。</p>
+<p>❌ <strong>用嘴尝 / 用嘴吸奶嘴</strong> —— <strong>红线</strong>（幽门螺杆菌、疱疹病毒）</p>
+<h3>Q：一勺粉配多少水？能不能多舀一勺让孩子长得快？</h3>
+<p><strong>✅ 严格按罐上的配比。</strong> 用罐子<strong>自带的勺</strong>，<strong>平勺</strong>——刮平，<strong>不压实</strong>。</p>
+<p>❌ <strong>多舀一勺</strong> —— 浓度过高，肾脏负担、便秘、脱水</p>
+<p>❌ 少舀 —— 营养不够</p>
+<p>❌ 压实了舀 —— 等于多舀</p>
+<h3>Q：奶粉开封后能放多久？</h3>
+<p><strong>✅ 1 个月</strong>（罐上一般标 3–4 周）。密封、阴凉干燥处。</p>
+<p>❌ <strong>放冰箱</strong> —— 拿进拿出温差会让奶粉受潮结块</p>
+<p>❌ "看着没坏就行"</p>
+<h3>Q：冲好的奶能放多久？</h3>
+<p><strong>✅</strong></p>
+<ul>
+<li>冲好没喝的，室温 <strong>2 小时</strong>内</li>
+<li>冲好放冷藏的，<strong>24 小时</strong>内</li>
+<li><strong>孩子嘴碰过的（喝剩的）——1 小时内没喝完就倒掉</strong>（口水里的细菌会在奶里繁殖）</li>
+</ul>
+<p>❌ 剩奶留到下一顿热一热再喝</p>
+<h3>Q：奶瓶怎么消毒？多久一次？</h3>
+<p><strong>✅ 每次用完立刻洗</strong>（奶瓶刷刷干净，<strong>尤其奶嘴的螺纹和瓶底</strong>），<strong>每天至少消毒一次</strong>——煮沸 5–10 分钟，或蒸汽消毒锅。</p>
+<p>❌ 只用清水冲一冲</p>
+<hr>
+<h1>二、母乳</h1>
+<h3>Q：母乳能放多久？</h3>
+<p><strong>✅ 记住 4–4–6：</strong></p>
+<table><thead><tr><th>存放</th><th>能放多久</th></tr></thead><tbody>
+<tr><td>常温（25℃以下）</td><td><strong>4 小时</strong></td></tr>
+<tr><td>冷藏（4℃）</td><td><strong>4 天</strong></td></tr>
+<tr><td>冷冻（-18℃）</td><td><strong>6 个月</strong>（家用冰箱冷冻室温度波动大，建议 3 个月内用完）</td></tr>
+<tr><td>冷藏解冻后</td><td><strong>24 小时</strong></td></tr>
+<tr><td>加热过、孩子喝剩的</td><td><strong>2 小时内没喝完就倒掉</strong></td></tr>
+</tbody></table>
+<h3>Q：冻奶怎么解冻？</h3>
+<p><strong>✅ 提前一晚放冷藏室慢慢化</strong>，或者<strong>温水浴</strong>（隔着奶瓶泡在温水里）。</p>
+<p>❌ <strong>微波炉</strong> —— 两个问题：<strong>受热极不均匀</strong>，会出现滚烫的"热点"烫伤孩子的嘴；还会破坏母乳里的免疫活性物质</p>
+<p>❌ 开水烫、直接上锅煮</p>
+<h3>Q：解冻后能不能再冻回去？</h3>
+<p><strong>✅ 不能。</strong></p>
+<hr>
+<h1>三、拍嗝</h1>
+<h3>Q：怎么拍？</h3>
+<p><strong>✅</strong></p>
+<ol>
+<li><strong>竖抱</strong>，让孩子的下巴搭在你肩膀上</li>
+<li><strong>一只手始终护住头和颈</strong></li>
+<li>另一只手<strong>空心掌</strong>（手指并拢、掌心凹起，像捧水那样）</li>
+<li>从<strong>下往上</strong>、由外向内，轻拍<strong>背部肩胛骨下方</strong>那一片</li>
+</ol>
+<p><strong>拍 5–10 分钟</strong>，或直到打出嗝。</p>
+<p>❌ <strong>实掌拍</strong> —— 疼</p>
+<p>❌ 拍腰、拍屁股</p>
+<h3>Q：拍不出来怎么办？</h3>
+<p><strong>✅ 换姿势：</strong></p>
+<ul>
+<li><strong>坐位拍嗝</strong>——让孩子坐在你腿上，一只手托住他的下巴和胸口（<strong>别掐脖子</strong>），身体略前倾，另一只手拍背</li>
+<li><strong>趴在腿上拍</strong></li>
+</ul>
+<p>再拍 5 分钟还没有，<strong>可以先竖抱 15–20 分钟再放下</strong>。<strong>不是每次都一定能打出嗝</strong>，拍不出来不代表她做错了。</p>
+<p>❌ 一直拍到孩子哭</p>
+<p>❌ <strong>拍不出来就直接放平躺下</strong> —— 容易吐奶</p>
+<h3>Q：喂完能立刻放下躺平吗？</h3>
+<p><strong>✅ 不能。喂完先竖抱 15–20 分钟。</strong></p>
+<p>放下时——<strong>仰卧平躺</strong>。</p>
+<blockquote><p>⚠️ <strong>这里有个反直觉的点，很多人会做错：</strong></p>
+<p>❌ <strong>不要垫高床头 / 不要垫枕头</strong>。孩子会慢慢往下滑，最后蜷成一团，<strong>反而压迫气道</strong></p>
+<p>❌ <strong>不要侧睡</strong>——会翻成趴睡</p>
+<p><strong>哪怕她担心吐奶，也是仰卧。</strong> 健康婴儿即使溢奶，气道的解剖结构也会保护他</p></blockquote>
+<hr>
+<h1>四、吐奶 vs 呛奶</h1>
+<h3>Q：怎么区分？</h3>
+<table><thead><tr><th></th><th>溢奶 / 吐奶</th><th><strong>呛奶</strong></th></tr></thead><tbody>
+<tr><td>奶去了哪</td><td>从食道回流，<strong>从嘴角流出来或吐出来</strong></td><td><strong>进了气管</strong></td></tr>
+<tr><td>孩子什么样</td><td><strong>没事</strong>，能呼吸，脸色正常</td><td><strong>咳嗽、憋气、脸色发红或发青、哭不出声</strong></td></tr>
+<tr><td>严重程度</td><td>很常见，1 岁前大多自己好</td><td><strong>急症</strong></td></tr>
+</tbody></table>
+<p><strong>分不清 = 危险。</strong></p>
+<h3>Q：呛奶怎么办？</h3>
+<p><strong>✅</strong></p>
+<ol>
+<li><strong>立刻侧身</strong>，或让孩子<strong>趴在你前臂上、头低脚高</strong></li>
+<li>清理口鼻</li>
+<li><strong>拍背</strong></li>
+<li><strong>面色发青、没有呼吸 → 背部拍击 + CPR + 120</strong>（→ <a href="#急救">急救.md</a>）</li>
+</ol>
+<p>❌ <strong>竖抱起来拍</strong> —— 会让奶更往下走</p>
+<p>❌ 往嘴里掏</p>
+<h3>Q：什么样的吐奶要看医生？</h3>
+<p><strong>✅</strong></p>
+<ul>
+<li><strong>喷射状呕吐</strong>（像喷泉一样喷很远）</li>
+<li>吐<strong>绿色</strong>（胆汁）</li>
+<li>吐<strong>咖啡色 / 带血</strong></li>
+<li>伴发烧、体重不涨、精神差</li>
+</ul>
+<hr>
+<h1>五、抱姿</h1>
+<h3>Q：新生儿怎么抱？</h3>
+<p><strong>✅ 一定要托住头和颈。</strong> 3 个月内孩子的脖子撑不住自己的头。</p>
+<ul>
+<li>横抱（摇篮式）：手臂托住头颈和背</li>
+<li>竖抱：一只手托头颈，一只手托屁股</li>
+</ul>
+<p>❌ <strong>只抓着腋下把孩子提起来</strong> —— 头会往后仰</p>
+<h3>Q：几个月能竖抱？</h3>
+<p><strong>✅ 随时都可以短时间竖抱</strong>——喂完拍嗝就是竖抱。</p>
+<p><strong>关键不是"能不能竖"，是"有没有托住头颈"。</strong></p>
+<p><strong>3 个月</strong>左右能自己稳稳抬头了，才可以不用一直托着。</p>
+<blockquote><p>📌 "三个月内不能竖抱"是个<strong>误解</strong>。可以竖，必须托。</p></blockquote>
+<hr>
+<h1>六、换尿布</h1>
+<h3>Q：女宝宝怎么擦？</h3>
+<p><strong>✅ 从前往后</strong>（从尿道口往肛门方向）。</p>
+<p><strong>为什么</strong>：反着擦会把肛门的细菌带到尿道，引起<strong>尿路感染</strong>。</p>
+<p>❌ 从后往前　❌ 来回擦</p>
+<h3>Q：男宝宝要注意什么？</h3>
+<p><strong>✅</strong> 清洁阴囊褶皱；<strong>不要强行翻开包皮</strong>清洗。</p>
+<p>换的时候用湿巾或尿布盖一下——防止被尿一脸。（她要是主动提这个，说明是真带过。）</p>
+<h3>Q：换尿布时你的手放哪？</h3>
+<p><strong>✅ 始终留一只手在孩子身上。</strong></p>
+<p>要转身拿东西 → <strong>把孩子一起抱走</strong>，或者先放回婴儿床。</p>
+<p>❌ <strong>"我就转个身，一秒钟"</strong> —— <strong>一秒钟就够摔下来。</strong> 这是最常见的坠落场景</p>
+<h3>Q：红屁股怎么处理？</h3>
+<p><strong>✅ 四步：</strong></p>
+<ol>
+<li><strong>勤换</strong>——尿了就换，不等湿透</li>
+<li>清水洗或湿巾<strong>轻擦</strong>，然后<strong>拍干</strong>（不是来回搓）</li>
+<li><strong>晾一会儿</strong>，让屁股透气</li>
+<li>涂<strong>护臀膏</strong>（氧化锌类）——<strong>厚厚一层，像抹奶油</strong>，起隔离作用</li>
+</ol>
+<p>❌ <strong>撒爽身粉</strong> —— 粉遇潮结块，反而摩擦刺激；粉尘还可能被吸进肺里</p>
+<p>❌ 湿巾使劲搓</p>
+<p><strong>💡 追问：破皮了、好几天不好怎么办？</strong></p>
+<p><strong>✅ 看医生。</strong> 可能是<strong>真菌感染</strong>（念珠菌），需要抗真菌药膏，普通护臀膏没用。</p>
+<hr>
+<h1>七、洗澡与脐带</h1>
+<h3>Q：水温多少？怎么测？</h3>
+<p><strong>✅ 37–38℃</strong>（接近体温）。用<strong>水温计</strong>；没有就用<strong>手肘内侧或手腕内侧</strong>试。</p>
+<p>❌ <strong>用手掌试</strong> —— 手掌不敏感，觉得"正好"的时候对孩子已经烫了</p>
+<h3>Q：先洗哪里？</h3>
+<p><strong>✅ 从上到下、从干净到脏：</strong></p>
+<p><strong>先洗脸和头</strong>（洗完立刻擦干，防着凉）→ <strong>再脱衣服洗身体</strong> → <strong>最后洗屁股</strong></p>
+<p>❌ 一上来就脱光了往水里放</p>
+<h3>Q：脐带还没脱落怎么洗？</h3>
+<p><strong>✅ 保持干燥是核心。</strong></p>
+<ul>
+<li>脐带残端<strong>脱落前</strong>，尽量<strong>擦浴</strong>（湿毛巾擦身体），或者盆浴时<strong>别让水泡到肚脐</strong></li>
+<li>洗完用棉签蘸<strong>碘伏 / 75% 酒精</strong>消毒脐窝，然后<strong>保持干燥、暴露在外</strong></li>
+<li><strong>尿布要往下折</strong>，别盖住肚脐</li>
+</ul>
+<p>❌ 直接泡水里</p>
+<p>❌ <strong>用纱布把肚脐裹起来</strong> —— 捂着更容易感染</p>
+<p><strong>💡 追问：什么时候掉？流血流脓怎么办？</strong></p>
+<p><strong>✅</strong> 一般 <strong>1–2 周</strong>脱落。<strong>红肿、流脓、有臭味、周围皮肤发红 → 就医</strong>（脐炎）。</p>
+<h3>Q：耳朵进水怎么办？</h3>
+<p><strong>✅</strong> 用<strong>棉球在耳廓外面</strong>吸干；把头侧向进水那边，让水自己流出来。</p>
+<p>❌ <strong>用棉签往耳道里捅</strong> —— 把耳屎推得更深，还可能伤到鼓膜</p>
+<p><strong>✅ 预防</strong>：洗头时用手指按住耳廓、盖住耳道口。</p>
+<h3>Q：多久洗一次？</h3>
+<p><strong>✅ 新生儿不需要天天洗</strong>——皮肤屏障还没长好，洗太勤反而干燥。<strong>2–3 天一次</strong>够了。</p>
+<p>但<strong>每天要清洗</strong>：屁股、脖子、腋下、大腿根这些<strong>褶皱处</strong>（容易积奶渍、汗、口水，捂出湿疹）。</p>
+<p>（夏天出汗多可以天天洗，但<strong>别每次都用沐浴露</strong>。）</p>
+<h3>Q：洗完做什么？</h3>
+<p><strong>✅ 擦干（尤其褶皱处）→ 全身涂保湿霜 → 穿衣服</strong></p>
+<p><strong>保湿是湿疹护理的核心</strong>——<strong>不是等长了湿疹才涂</strong>，是天天涂来预防。</p>
+<hr>
+<h1>八、睡眠 ⭐（最要命的一组）</h1>
+<blockquote><p><strong>婴儿猝死综合征（SIDS）是 1 岁内婴儿的头号杀手。</strong> 这一组答错，不是"观念落后"，是<strong>致命</strong>。</p></blockquote>
+<h3>Q：孩子该怎么躺着睡？</h3>
+<p><strong>✅ 仰卧（背朝下）。每一次睡觉都是——白天小睡也是。</strong></p>
+<p>❌ <strong>趴睡</strong> —— SIDS 最大的风险因素</p>
+<p>❌ <strong>侧睡</strong> —— 会翻成趴睡，同样危险</p>
+<p><strong>💡 追问：那他自己翻过去了呢？</strong></p>
+<p><strong>✅</strong> 会自己<strong>熟练翻身</strong>之后（一般 4–6 个月），他自己翻成趴的，<strong>不用每次翻回来</strong>——但<strong>你放下去的时候必须是仰卧</strong>。</p>
+<h3>Q：婴儿床上能放什么？</h3>
+<p><strong>✅ 什么都不放。</strong></p>
+<p><strong>一张硬床垫 + 一张贴合的床单。就这些。</strong></p>
+<p>❌ 枕头　❌ 被子、毛毯　❌ 床围　❌ 毛绒玩具　❌ <strong>定型枕</strong>　❌ 睡姿固定器、楔形垫</p>
+<p><strong>💡 追问：那冷怎么办？</strong></p>
+<p><strong>✅ 用睡袋</strong>（穿在身上的），不用被子。室温 <strong>20–22℃</strong>。</p>
+<h3>Q：怎么判断孩子冷不冷？摸哪里？</h3>
+<p><strong>✅ 摸后颈 / 后背。</strong> 温热干燥 = 正好；<strong>出汗 = 太热</strong>；发凉 = 冷。</p>
+<p>❌ <strong>摸手脚</strong> —— 婴儿手脚<strong>偏凉是正常的</strong>（末梢循环没发育好）。摸手脚判断，一定会<strong>穿太多、捂太厚</strong></p>
+<blockquote><p>⚠️ 这个错误直接通向<strong>捂热综合征</strong>——每年真的有孩子被捂死。</p></blockquote>
+<h3>Q：穿多少？</h3>
+<p><strong>✅ 跟大人一样，或者比大人多一件。</strong> 判断标准是<strong>摸后颈</strong>。</p>
+<p>❌ <strong>"小孩怕冷，要多穿"</strong> —— 反了。<strong>婴儿更怕热。</strong></p>
+<h3>Q：1 岁前能用枕头吗？</h3>
+<p><strong>✅ 不能。</strong> 窒息风险。而且<strong>婴儿的脊柱是直的，本来就不需要枕头</strong>。</p>
+<p>❌ "睡头型要用定型枕" —— 定型枕是窒息风险，<strong>而且矫正不了头型</strong></p>
+<h3>Q：能和大人一起睡吗？</h3>
+<p><strong>✅ 同房，不同床。</strong> 婴儿床放在大人床边（0–6 个月建议同房），<strong>但不能睡一张床</strong>。</p>
+<p>❌ <strong>同床</strong> —— 大人翻身压住、被子蒙住、床垫太软陷进去</p>
+<p>❌ <strong>抱着孩子在沙发上、扶手椅上睡着</strong> —— <strong>最危险的一种</strong></p>
+<h3>Q：怎么哄睡？</h3>
+<p><strong>✅ 好答案的样子</strong>：她有<strong>一套固定的睡前程序</strong>，每天一样——</p>
+<blockquote><p>洗澡 → 换睡衣 → 喂奶 → 关灯 → 拍睡 / 白噪音</p></blockquote>
+<p>而且知道要在<strong>"困了但还醒着"</strong>的时候放下，让他学着自己入睡。</p>
+<p>🟡 <strong>可以接受</strong>：拍睡、白噪音、襁褓（<strong>4 个月内</strong>；会翻身之后就不能再包了）</p>
+<p>🟡 <strong>偶尔</strong>抱睡、奶睡 —— 现实中很难完全避免，<strong>不是红线</strong>。但<strong>如果她只会这一招</strong>，说明她没有方法</p>
+<p>❌ <strong>摇晃着哄睡</strong> —— <strong>婴儿摇晃综合征</strong>（脑出血，致残致死）</p>
+<p>❌ <strong>拿手机 / 电视哄</strong></p>
+<p>❌ <strong>"哭累了自然就睡了"</strong>（哭声免疫法）—— <strong>一票否决</strong></p>
+<h3>Q：孩子几个月能睡整觉？⭐</h3>
+<blockquote><p><strong>这一题看着是知识题，其实是筛人题。</strong></p>
+<p>对"几个月该睡整觉"有<strong>不切实际预期</strong>的人，会去<strong>"想办法让"</strong>孩子睡整觉——而那些办法全是坏的。</p></blockquote>
+<p><strong>✅ 先纠正一个概念</strong>：儿科说的"睡整觉"是<strong>连续睡 6 小时</strong>，<strong>不是</strong>从晚上 8 点睡到早上 7 点。</p>
+<p><strong>✅ 发育基线</strong>（个体差异<strong>极大</strong>，这只是中位数）：</p>
+<table><thead><tr><th>月龄</th><th>夜间最长连续睡眠</th><th>夜奶</th><th>全天总睡眠</th></tr></thead><tbody>
+<tr><td>0–1 月</td><td>2–4 小时</td><td>每 2–3 小时一次</td><td>14–17 小时</td></tr>
+<tr><td>1–3 月</td><td>3–5 小时</td><td>2–3 次</td><td>14–17 小时</td></tr>
+<tr><td><strong>3–6 月</strong></td><td><strong>5–8 小时</strong>（开始出现"整觉"）</td><td>0–2 次</td><td>12–16 小时</td></tr>
+<tr><td>6–12 月</td><td>8–12 小时</td><td><strong>生理上已不需要</strong>（还醒 = 习惯，不是饿）</td><td>12–16 小时（含 2 次小睡）</td></tr>
+<tr><td>1–2 岁</td><td>10–12 小时</td><td>0</td><td>11–14 小时（1 次午睡）</td></tr>
+</tbody></table>
+<p><strong>✅ 还要知道「4 个月睡眠倒退」</strong>：很多孩子 3 个月睡得挺好，<strong>4 个月突然变差、频繁夜醒</strong>。</p>
+<p>这是<strong>正常的</strong>——睡眠周期在这时候成熟了（从新生儿的简单睡眠变成成人式的多阶段循环）。<strong>不是她带坏了，也不是孩子出问题了。</strong> 熬过去就好。</p>
+<blockquote><p><strong>她要是不知道这件事，4 个月那一波倒退来的时候，她会慌，会开始"想办法"。</strong></p></blockquote>
+<p><strong>❌ "两三个月就该睡整觉了"</strong> —— <strong>危险。</strong> 她有不切实际的预期，就会去想办法<strong>让</strong>孩子睡整觉</p>
+<p><strong>❌ "我带的孩子都是满月就睡整觉的"</strong> —— 要么吹牛，要么<strong>她做了什么</strong></p>
+<p><strong>❌ "夜里别喂，饿一饿就睡了"</strong> —— 6 个月以下的孩子夜里是真饿</p>
+<hr>
+<h1>九、哭</h1>
+<h3>Q：孩子哭了，你第一步做什么？</h3>
+<p><strong>✅ 先排查原因</strong>，按顺序过一遍：</p>
+<ol>
+<li><strong>饿了？</strong>（上次喂奶多久了）</li>
+<li><strong>尿了 / 拉了？</strong>（摸尿布）</li>
+<li><strong>困了？</strong>（揉眼睛、打哈欠、烦躁、眼神发直）</li>
+<li><strong>热了 / 冷了？</strong>（<strong>摸后颈</strong>）</li>
+<li><strong>不舒服？</strong>——胀气、肠绞痛、衣服标签硌着，还有一个很少人知道的：<strong>头发丝缠住了手指或脚趾</strong>（发丝缠绕综合征，真的会发生，会勒到坏死）</li>
+<li><strong>就是要抱</strong> —— 需要安抚也是正常需求，不是"惯坏了"</li>
+</ol>
+<p><strong>排查完再安抚</strong>：抱起来、竖抱、飞机抱（胀气）、襁褓、白噪音。</p>
+<p>❌ 直接抱起来摇</p>
+<p>❌ <strong>"哭一会儿没事，锻炼肺活量"</strong> —— <strong>一票否决</strong></p>
+<p>❌ 塞个奶嘴了事</p>
+<p>❌ 不耐烦、大声呵斥</p>
+<h3>Q：什么样的哭要看医生？</h3>
+<p><strong>✅</strong></p>
+<ul>
+<li><strong>哭声尖锐、高调、像在痛</strong></li>
+<li>哭得<strong>停不下来超过 2–3 小时</strong></li>
+<li>伴发烧、呕吐、拒食、精神差、皮肤花斑</li>
+<li><strong>突然的、剧烈的、和平时完全不一样的哭</strong> —— 可能是肠套叠、疝气嵌顿、骨折</li>
+</ul>
+<h3>Q：什么是肠绞痛？怎么办？</h3>
+<p><strong>✅</strong></p>
+<ul>
+<li><strong>典型表现（333 法则）</strong>：3 个月内的婴儿，每天<strong>固定时段</strong>（常在傍晚）哭闹<strong>超过 3 小时</strong>，一周 3 天以上，持续 3 周</li>
+<li><strong>处理</strong>：<strong>飞机抱</strong>（让孩子趴在你前臂上，头靠在肘弯）、<strong>排气操</strong>（蹬自行车、屈膝压腹）、<strong>顺时针揉肚子</strong>、襁褓、白噪音</li>
+<li><strong>会自己好</strong> —— 一般 3–4 个月缓解</li>
+</ul>
+<p>❌ 喂"消食片""七星茶"</p>
+<hr>
+<h1>十、辅食</h1>
+<h3>Q：什么时候开始加？</h3>
+<p><strong>✅ 满 6 个月</strong>（不早于 4 个月，不晚于 8 个月）。</p>
+<p><strong>看信号，不看月份</strong>：能<strong>坐稳</strong>、能<strong>自己撑住头</strong>、<strong>挺舌反射消失</strong>（不会用舌头把勺子顶出来）、<strong>对大人吃的东西感兴趣</strong>。</p>
+<p>❌ "4 个月就该加了"　❌ "米汤早点喝有营养"</p>
+<h3>Q：第一口吃什么？</h3>
+<p><strong>✅ 高铁米粉</strong>（婴儿专用、强化铁）或<strong>铁强化的肉泥</strong>。</p>
+<p><strong>为什么</strong>：6 个月后母乳里的铁不够了，<strong>缺铁性贫血是这个阶段最常见的问题</strong>。</p>
+<p>❌ 果汁　❌ 米汤 / 米油 / 白粥（几乎没营养）　❌ 蛋黄（铁吸收率很低）</p>
+<h3>Q：一次加几种？</h3>
+<p><strong>✅ 一次只加一种新食物，观察 2–3 天</strong>——看有没有过敏（皮疹、腹泻、呕吐、嘴周发红）。没问题再加下一种。</p>
+<p>❌ 一次加好几种 —— 过敏了都不知道是哪个引起的</p>
+<h3>Q：加不加盐？加不加糖？</h3>
+<p><strong>✅ 1 岁前不加盐、不加糖、不加酱油、不加任何调味料。</strong></p>
+<p><strong>为什么</strong>：婴儿肾脏发育不全，代谢不了钠；而且<strong>口味一旦重了，就不吃清淡的了</strong>。</p>
+<p><strong>✅ 1 岁前不能吃蜂蜜</strong> —— <strong>肉毒杆菌芽孢</strong>，婴儿肠道杀不死，会引起肉毒中毒，<strong>可致命</strong>。</p>
+<p>❌ <strong>"不加盐没味道，孩子不爱吃"</strong> —— 这句话本身就是危险信号</p>
+<h3>Q：鸡蛋、花生、海鲜什么时候能吃？</h3>
+<p><strong>✅ 早引入，别拖。</strong></p>
+<p>现在的证据是：<strong>辅食一开始（6 个月左右）就可以逐个引入常见过敏原</strong>——鸡蛋、花生制品、乳制品、鱼、小麦。</p>
+<p><strong>推迟引入反而会增加过敏风险。</strong></p>
+<p><strong>引入方式</strong>：少量、单一、观察 2–3 天。</p>
+<p>❌ <strong>"一岁前不能吃鸡蛋 / 海鲜"</strong> —— <strong>过时的观念</strong></p>
+<blockquote><p>💡 已经有严重湿疹或已知食物过敏的孩子，引入前先问医生。</p></blockquote>
+<h3>Q：3 岁前不能给什么？</h3>
+<p><strong>✅ 窒息高危食物：</strong></p>
+<table><thead><tr><th>禁止</th><th>怎么处理才能吃</th></tr></thead><tbody>
+<tr><td>整颗坚果、花生</td><td>花生<strong>酱</strong>可以，整颗不行</td></tr>
+<tr><td><strong>果冻</strong></td><td>完全禁止</td></tr>
+<tr><td>爆米花</td><td>完全禁止</td></tr>
+<tr><td>整颗葡萄、圣女果</td><td><strong>纵向切成四瓣</strong></td></tr>
+<tr><td>香肠、大块肉</td><td>切<strong>条</strong>，不切<strong>圆片</strong>（圆片正好卡住气管）</td></tr>
+<tr><td>硬糖、口香糖</td><td>完全禁止</td></tr>
+<tr><td>生胡萝卜条、大块苹果</td><td>蒸软 / 切碎</td></tr>
+</tbody></table>
+<p><strong>6–12 个月是异物窒息的最高危期。</strong></p>
+<h3>Q：一直吃泥行不行？</h3>
+<p><strong>✅ 不行。</strong> 要<strong>逐步过渡</strong>：泥 → 稠糊 → 碎末 → 小块。</p>
+<p><strong>8–10 个月是学咀嚼的关键期</strong>，一直吃泥会错过——以后不会嚼、拒绝有颗粒的东西、挑食。</p>
+<p>❌ 一岁了还在喝粥、吃泥</p>
+<hr>
+<h1>十一、卫生</h1>
+<h3>Q：什么时候要洗手？</h3>
+<p><strong>✅</strong></p>
+<ul>
+<li><strong>进门第一件事</strong></li>
+<li><strong>每次接触孩子前</strong></li>
+<li>做辅食前</li>
+<li>换完尿布后</li>
+<li>上完厕所后</li>
+<li>咳嗽、打喷嚏、擤鼻涕后</li>
+<li><strong>摸完手机后</strong>（手机比马桶脏）</li>
+</ul>
+<p><strong>✅ 肥皂 + 流动水，洗够 20 秒</strong>，指缝、指甲缝、手腕都要洗。</p>
+<p>❌ <strong>用湿巾擦一擦代替洗手</strong></p>
+<h3>Q：能不能亲孩子？</h3>
+<p><strong>✅ 不能亲嘴，也不能亲手</strong>（孩子会吃手）。</p>
+<p><strong>为什么</strong>：成人携带的<strong>单纯疱疹病毒（HSV-1，就是"上火起泡"那个）</strong>，对新生儿<strong>可能致命</strong>——新生儿疱疹感染死亡率很高，而且大人自己可能毫无症状。</p>
+<p>真要表达亲昵：亲头发、亲脚丫（他嘴够不到的地方），或者干脆不亲。</p>
+<p>❌ <strong>"亲一下有什么关系"</strong> —— <strong>红线</strong></p>
+<h3>Q：指甲怎么办？</h3>
+<p><strong>✅ 剪短、磨圆。不留长指甲，不涂指甲油，不戴戒指、手链、手表。</strong></p>
+<p><strong>为什么</strong>：划伤孩子；指甲缝藏细菌；首饰会刮伤，也可能被抓下来吞掉。</p>
+<h3>Q：从外面回来做什么？</h3>
+<p><strong>✅ 洗手 → 换掉外衣 → 再抱孩子。</strong></p>
+<p>休息日回家住的，<strong>回来先洗澡换衣服</strong>。</p>
+<hr>
+<h1>十二、边界与冲突</h1>
+<blockquote><p>这一类<strong>没有标准答案</strong>，但有<strong>好答案的样子</strong>。听的是她的<strong>思维方式</strong>，不是她的措辞。</p></blockquote>
+<h3>Q："我的做法和你的经验不一样，你怎么办？"</h3>
+<p><strong>✅ 好答案的样子：</strong></p>
+<blockquote><p>"听你们的。我会说说我以前是怎么做的、为什么这么做，但最后按你们说的来。孩子是你们的。"</p></blockquote>
+<p>好在三件事：<strong>① 明确表示会服从　② 但也愿意表达自己的看法（不是唯唯诺诺）　③ 知道边界在哪</strong></p>
+<p>🟡 <strong>"都听你们的"</strong> —— 服从，但没主见。她可能只是在说你想听的话。<strong>追问</strong></p>
+<p>❌ <strong>"我带过 X 个孩子了，你们年轻人不懂"</strong> —— 淘汰</p>
+<p>❌ 嘴上答应，一追问细节就露出不以为然</p>
+<p><strong>💡 一定要追问："那如果你觉得我们的做法对孩子不好呢？"</strong></p>
+<p><strong>✅ 好答案</strong>："我会跟你们说。说完你们还是要那么做，那我就照做。但如果是危险的事，我会一直说。"</p>
+<h3>Q："和老人意见不合怎么办？"（<strong>老人在场时问</strong>）</h3>
+<p><strong>✅ 好答案：</strong></p>
+<blockquote><p>"先听老人的，不当面顶。但如果是原则问题——比如喂药、把尿——我私下跟你们说，让你们去跟老人讲。"</p></blockquote>
+<p>好在：<strong>她知道自己不该越过雇主去和老人正面对抗，也知道该把问题往上报，而不是自己憋着、或者偷偷按自己的来。</strong></p>
+<p>❌ "我不会跟老人吵" —— 太笼统，等于没答。<strong>追问</strong></p>
+<p>❌ "老人说的也不一定对，我会跟她讲道理" —— <strong>危险</strong>，她会和老人正面冲突，最后是你收拾残局</p>
+<p>❌ "都听老人的" —— 那你定的规矩全废了</p>
+<h3>Q："上一份工作最不开心的是什么？"</h3>
+<p><strong>✅ 好答案的样子</strong>：说得<strong>具体、克制、就事论事</strong>，不做人身攻击。</p>
+<blockquote><p>"他们家老人不让我用消毒锅，说费电。我说了几次没用，后来就自己烧水煮。"</p></blockquote>
+<p>这说明：<strong>她遇到问题会想办法，而且能就事论事。</strong></p>
+<p>❌ <strong>抱怨人品</strong>："那家人特别抠""那女的脾气差得要命" —— <strong>逢人就说前雇主坏话的，直接排除。她下一个说的就是你。</strong></p>
+<p>❌ <strong>"没什么不开心的，都挺好的"</strong> —— 要么在演，要么没在思考。<strong>追问</strong>："一点都没有？总有点什么吧。"</p>
+<h3>Q："孩子半夜闹觉，连着哭一个小时，你会烦吗？"</h3>
+<p><strong>✅ 好答案：承认会烦</strong>，然后说她怎么处理。</p>
+<blockquote><p>"会啊，谁不烦。但烦归烦，该抱还得抱。实在受不了，我就先把他放回床上、走开半分钟喘口气，再进去。"</p></blockquote>
+<p><strong>承认负面情绪 + 有应对方法 = 真实、健康。</strong> 而且"先放回床上再走开"这个动作本身就是<strong>正确的</strong>（比抱着孩子发火安全一万倍）。</p>
+<p>❌ <strong>"不会，我特别有耐心"</strong> —— <strong>假话。</strong> 带过孩子的人不可能不烦。</p>
+<blockquote><p>⚠️ 这句话说明她要么<strong>在演</strong>，要么<strong>没有自我觉察</strong>。后者更危险——<strong>觉察不到自己在生气的人，情绪爆发时不会踩刹车。</strong></p></blockquote>
+<h3>Q："要是家里东西找不到了，我们问到你头上，你怎么办？"</h3>
+<p><strong>✅ 好答案</strong>：不激动，主动要求查。</p>
+<blockquote><p>"那就一起找，查监控。我不怕查。"</p></blockquote>
+<p>❌ 反应过度：立刻要辞职、"你们是不是怀疑我"</p>
+<p>❌ 太平静、无所谓 —— 也奇怪</p>
+<hr>
+<h2>自我评价（别用 OKR，用这四题）</h2>
+<blockquote><p><strong>为什么不能直接搬 OKR：</strong></p>
+<ol>
+<li><strong>她听不懂。</strong> "目标""关键结果""复盘""自评"不在她的词汇里。你只会把她逼成鹦鹉，测到的是她背话的能力</li>
+<li><strong>它选错人。</strong> 能把自评说漂亮的，往往是<strong>被中介辅导过的</strong>。而最好的阿姨，可能说不清自己在做什么，但做得完美</li>
+<li><strong>最要命的一条在上岗之后</strong>（→ <a href="#上岗后">上岗后.md</a> §别给她定 KPI）</li>
+</ol>
+<p><strong>但你想测的东西是对的</strong>——自我觉察确实高度预测她会不会瞒事。</p>
+<p><strong>换个问法：不让她定指标，让她评自己做过的具体事。</strong></p></blockquote>
+<h3>Q1："上一个孩子你带到几个月？你觉得自己带得怎么样？有没有哪件事，现在回想觉得当时可以做得更好？" ⭐</h3>
+<p><strong>✅ 好答案</strong>：<strong>具体、有一件真事、能说出学到了什么。</strong></p>
+<blockquote><p>"有一次给他洗澡，水放太烫了，他一下就哭了，我吓死了。从那以后我每次都用温度计，不敢用手试了。"</p></blockquote>
+<p><strong>这一题是整套面试里最值钱的。</strong></p>
+<p>因为它测的正是"她会不会瞒事"的<strong>前置人格</strong>：</p>
+<blockquote><p><strong>一个能主动承认自己出过错的人，出了事才会第一时间告诉你。</strong></p></blockquote>
+<p>❌ <strong>"我带得挺好的，没什么问题"</strong> —— 要么在演，要么<strong>没有自我觉察</strong>。后者更危险：<strong>觉察不到问题的人，不会去改</strong></p>
+<p>❌ 说不出任何具体的事 —— 她没在思考，或者在藏</p>
+<p>❌ 把错都推给别人（"是他们家老人非要……"）</p>
+<p><strong>💡 追问："那件事你后来跟雇主说了吗？"</strong></p>
+<p>✅ 说了 → 好</p>
+<p>❌ "没说，也没什么大事" → <strong>红旗。这就是瞒事的雏形</strong></p>
+<h3>Q2："你觉得一个好育儿嫂和一个一般的育儿嫂，差别在哪？"</h3>
+<p><strong>测的是：她心里有没有标准。没有标准的人，不可能改进。</strong></p>
+<p><strong>✅ 好答案</strong>：说得出<strong>可观察的</strong>差别。</p>
+<blockquote><p>"好的会看孩子的状态，一般的只按点喂。"</p>
+<p>"好的会主动说'我觉得他今天不太对'，一般的等你问。"</p></blockquote>
+<p>❌ <strong>空话</strong>："有爱心、有耐心、把孩子当自己的孩子" —— <strong>谁都会说，等于没说。追问："具体怎么看出来？"</strong></p>
+<h3>Q3："三个月后如果我们对你不满意，你觉得会是因为什么？"</h3>
+<p><strong>测的是：她有没有风险意识。</strong> 让她<strong>自己说出失败模式</strong>——比你去猜准得多。</p>
+<p><strong>✅ 好答案</strong>：能说出真实的摩擦点。</p>
+<blockquote><p>"可能是我跟老人处不好。"</p>
+<p>"可能是孩子一开始不跟我，你们着急。"</p>
+<p>"可能是我做的饭你们吃不惯。"</p></blockquote>
+<p><strong>她说出来的，就是她心里知道自己薄弱的地方。记下来，试工期重点看这条。</strong></p>
+<p>❌ <strong>"不会的，我肯定做得好"</strong> —— 没有风险意识，也没在认真回答</p>
+<h3>Q4："你现在还在学新东西吗？从哪学的？"</h3>
+<p><strong>✅</strong> 具体：短视频、别的阿姨、上过课、看医生的公众号、雇主教的</p>
+<p>🟡 <strong>"凭经验"</strong> —— 不是硬伤，但说明她<strong>停止更新</strong>了。育儿知识十年翻一遍（趴睡、辅食引入过敏原，都反过来了）</p>
+<p>❌ <strong>"我都带这么多年了，还学什么"</strong> —— 淘汰</p>
+<hr>
+<h1>十三、情景题 ⭐</h1>
+<blockquote><p><strong>这一类最能看出真人。</strong> 前面的技能题她可以背，情景题要现场组织——而且<strong>必须追问到底</strong>。</p></blockquote>
+<h3>情景 1：她一个人在家，孩子从床上摔下来了</h3>
+<blockquote><p><strong>"接下来五分钟你做什么？"</strong></p></blockquote>
+<p><strong>✅ 好答案：</strong></p>
+<ol>
+<li><strong>先看孩子</strong>——有没有意识？<strong>哭不哭？</strong>（<strong>会哭是好事</strong>，说明有意识）有没有出血？四肢能不能动？</li>
+<li><strong>不要马上抱起来猛晃</strong></li>
+<li><strong>立刻打电话告诉家长</strong></li>
+<li>观察：意识、呕吐、嗜睡、瞳孔、耳鼻有没有流液</li>
+<li><strong>3 个月以下，或有任何异常 → 直接去医院</strong></li>
+</ol>
+<p>❌ <strong>"先看看有没有事，没事就不说了"</strong> —— <strong>一票否决</strong></p>
+<p><strong>💡 追问一："如果他没哭呢？"</strong></p>
+<p><strong>✅</strong> <strong>不哭反而更危险</strong> —— 可能已经昏迷。<strong>立刻 120。</strong></p>
+<p><strong>💡 追问二："如果我电话打不通呢？"</strong></p>
+<p><strong>✅</strong> 打另一个人的、打 120、<strong>直接去医院</strong>。<strong>不能等。</strong></p>
+<h3>情景 2：孩子吃辅食噎住了，脸憋红，说不出话</h3>
+<blockquote><p><strong>"你做给我看。"</strong></p></blockquote>
+<p>→ <strong><a href="#急救">急救.md</a></strong>。<strong>必须现场演示，不接受口头描述。</strong></p>
+<h3>情景 3：孩子发烧 38.2℃，你们在上班回不来</h3>
+<p><strong>✅ 好答案：</strong></p>
+<ul>
+<li><strong>先打电话告诉你们</strong></li>
+<li><strong>3 个月以下 → 立刻去医院，不等</strong></li>
+<li>3 个月以上、精神好：多喝水、<strong>少穿点</strong>、<strong>温水擦身</strong>，<strong>不自行喂药</strong></li>
+<li><strong>看精神状态，比看体温重要</strong></li>
+<li>出现危险信号（抽搐、叫不醒、脖子硬、<strong>皮疹压不褪色</strong>、呼吸困难）→ <strong>立刻 120</strong></li>
+</ul>
+<p>❌ <strong>"我先给他吃点退烧药"</strong> —— <strong>红线第 2 条</strong></p>
+<p>❌ <strong>"捂汗发出来就好了"</strong> —— <strong>一票否决</strong>（捂热综合征能致死）</p>
+<p>❌ 酒精擦身 —— 婴儿经皮吸收会中毒</p>
+<h3>情景 4：她在做饭，孩子在客厅玩。听见"咚"一声，然后没声音了</h3>
+<p><strong>✅ 好答案</strong>：<strong>立刻冲过去。</strong>（"没声音"比"哭"更可怕。）</p>
+<p><strong>💡 但这题真正在测的是别的——追问："那你做饭的时候，孩子一般在哪儿？"</strong></p>
+<p><strong>✅ 好答案</strong>："我做饭的时候会把他放在餐椅里，<strong>放在我看得见的地方</strong>。"</p>
+<p>❌ "让他自己在客厅玩" —— 这才是真正的问题所在</p>
+<h3>情景 5：家里老人非要给孩子把尿</h3>
+<p><strong>✅ 好答案</strong>："我不会当面跟老人吵，但我会<strong>私下跟你们说，让你们去讲</strong>。"</p>
+<p>❌ "老人要把就把吧，我管不了" —— <strong>她会放弃你定的所有规矩</strong></p>
+<p>❌ "我会跟老人讲道理" —— 会起正面冲突</p>
+<h3>情景 6：孩子磕了个包，不严重。你们晚上才回来</h3>
+<blockquote><p><strong>"你什么时候告诉我们？"</strong></p></blockquote>
+<p><strong>✅ "马上打电话，不等你们回来。"</strong></p>
+<p>❌ "等你们回来说" / "不严重就不用说了吧" —— <strong>红线第 12 条，一票否决</strong></p>
+<blockquote><p>💡 <strong>这题是明着送分。</strong> 答错的人，是真的会瞒事。</p></blockquote>
+<h3>情景 7：孩子不肯吃饭，追着喂也不吃</h3>
+<p><strong>✅ 好答案：</strong></p>
+<ul>
+<li><strong>不追喂、不逼吃、不强塞</strong></li>
+<li>到点收桌，<strong>下一顿之间不给零食</strong></li>
+<li><strong>孩子有自己的饥饱感知，饿了自然会吃</strong></li>
+<li>记录下来告诉家长（是不是生病了？是不是零食吃多了？）</li>
+</ul>
+<p>❌ 追着喂、举着手机哄着喂、掰开嘴硬塞</p>
+<p>❌ <strong>"不吃就饿着，看他还犟不犟"</strong> —— 惩罚性质的，不行</p>
+<h3>情景 8：孩子把玩具扔了一地，让他捡不捡</h3>
+<p><strong>✅ 好答案</strong>：她能说出<strong>具体做法</strong>——蹲下来平视、简单的话、<strong>和他一起收</strong>、把收玩具变成游戏。</p>
+<p>❌ <strong>恐吓</strong>："再不收警察就来抓你了""不收就把你玩具全扔了"</p>
+<p>❌ 自己全收了（该教的没教）</p>
+<p>❌ 打手、吼</p>
+<hr>
+<h2>最后</h2>
+<p>面试完，回头看一件事：</p>
+<blockquote><p><strong>她答不上来的题，有没有说"我不知道，我去问 / 我去学"？</strong></p></blockquote>
+<p><strong>会说这句话的人，你能教。</strong> 什么都会但会瞒事的人，你教不了。</p>
+<hr>
+</section>
+<section id="急救" class="chapter">
+<h1>急救：标准答案对照表</h1>
+<blockquote><p><strong>用途</strong>：面试时她怎么答，你拿这张表对。</p>
+<p>⚠️ <strong>这张表不能替代正规急救培训。</strong> 它是判断"她会不会"的对照表，不是让你照着学。</p>
+<p>真要用，去红十字会或医院上一门婴幼儿急救课——<strong>你和她都该上</strong>。</p>
+<p><strong>不会急救的人，要么淘汰，要么上岗前你出钱送她去培训。</strong> 没有第三个选项。</p></blockquote>
+<hr>
+<h2>1. 异物窒息 ⭐（让她现场演示，别接受口头描述）</h2>
+<h3>婴儿（&lt; 1 岁）</h3>
+<p><strong>✅ 正确</strong></p>
+<ol>
+<li><strong>5 次背部拍击</strong>——脸朝下、<strong>头低脚高</strong>、趴在前臂上，用<strong>掌根</strong>拍两肩胛骨之间</li>
+<li><strong>5 次胸部按压</strong>——翻过来仰卧，<strong>两指</strong>按乳头连线下方的胸骨</li>
+<li><strong>交替进行</strong>，直到异物排出，或孩子失去意识</li>
+<li><strong>失去意识 → 立刻开始 CPR + 叫 120</strong></li>
+</ol>
+<p><strong>❌ 错误（说出这些就是不会）</strong></p>
+<ul>
+<li>用手抠喉咙 —— <strong>把异物推得更深</strong></li>
+<li>倒提双脚拍背 —— 老做法，危险</li>
+<li>直接送医院，路上什么都不做 —— 来不及</li>
+</ul>
+<h3>1 岁以上</h3>
+<p>才用<strong>腹部冲击</strong>（海姆立克）。<strong>1 岁以内绝对不能用腹部冲击。</strong></p>
+<hr>
+<h2>2. 婴儿心肺复苏（CPR）</h2>
+<ul>
+<li><strong>30 次按压 : 2 次人工呼吸</strong></li>
+<li><strong>两指</strong>按压胸骨下半部</li>
+<li>深度约 <strong>4 cm</strong>（胸廓前后径的三分之一）</li>
+<li>频率 <strong>100–120 次/分</strong></li>
+<li><strong>同时叫 120</strong>（有第二个人就让他打，只有一个人就开免提）</li>
+</ul>
+<hr>
+<h2>3. 发烧</h2>
+<h3>分水岭：3 个月</h3>
+<table><thead><tr><th>月龄</th><th>处置</th></tr></thead><tbody>
+<tr><td><strong>&lt; 3 个月</strong></td><td><strong>一发烧就必须立刻去医院。</strong> 不许在家观察，不许自行喂退烧药</td></tr>
+<tr><td>≥ 3 个月</td><td>≥38.5℃ 或明显不适才考虑用药，<strong>且必须先经家长同意</strong></td></tr>
+</tbody></table>
+<p><strong>可用</strong>：对乙酰氨基酚（≥3 月）、布洛芬（≥6 月）——<strong>剂量按体重，家长同意后才能喂</strong></p>
+<h3>❌ 禁用（说出任何一个 = 危险）</h3>
+<ul>
+<li><strong>阿司匹林</strong>（瑞氏综合征）</li>
+<li><strong>安乃近</strong>、<strong>尼美舒利</strong></li>
+<li><strong>酒精擦浴</strong> —— 婴儿经皮吸收，会中毒</li>
+<li><strong>捂汗退烧</strong> —— <strong>捂热综合征，真的能捂死人</strong></li>
+<li>冰水澡 —— 寒战反而升温</li>
+</ul>
+<h3>🚨 必须立刻叫 120</h3>
+<ul>
+<li>抽搐</li>
+<li>叫不醒 / 意识模糊</li>
+<li>脖子僵硬</li>
+<li><strong>皮疹压不褪色</strong>（拿透明玻璃杯压上去，红点不消失 → 可能是脑膜炎）</li>
+<li>呼吸困难</li>
+<li>囟门鼓起</li>
+<li><strong>尿量骤减</strong>（脱水）</li>
+</ul>
+<hr>
+<h2>4. 坠床 / 撞头</h2>
+<p><strong>✅ 正确</strong></p>
+<ol>
+<li><strong>不要立刻抱起来猛晃</strong></li>
+<li>检查有没有出血、变形、肢体活动异常</li>
+<li><strong>48 小时观察期</strong></li>
+</ol>
+<p><strong>🚨 出现任一条，立刻就医</strong></p>
+<ul>
+<li>意识改变、嗜睡叫不醒</li>
+<li><strong>喷射性呕吐</strong></li>
+<li>瞳孔不等大</li>
+<li>耳朵或鼻子流出液体</li>
+<li>抽搐</li>
+<li>持续哭闹不止、无法安抚</li>
+<li>肢体活动异常</li>
+</ul>
+<p><strong>⚠️ 3 个月以下坠床，一律直接就医，不观察。</strong></p>
+<hr>
+<h2>5. 烫伤</h2>
+<p><strong>✅ 五个字：冲、脱、泡、盖、送</strong></p>
+<ol>
+<li><strong>冲</strong> —— 流动冷水冲 <strong>15–20 分钟</strong>（这一步最关键，别省）</li>
+<li><strong>脱</strong> —— 衣服<strong>剪开</strong>，不要硬撕（会连皮撕下来）</li>
+<li><strong>泡</strong> —— 继续泡在冷水里</li>
+<li><strong>盖</strong> —— 干净纱布或保鲜膜盖住</li>
+<li><strong>送</strong> —— 去医院</li>
+</ol>
+<p><strong>❌ 禁止</strong></p>
+<ul>
+<li>涂酱油、牙膏、香油、紫药水、大酱、面粉</li>
+<li><strong>挑破水泡</strong></li>
+<li>用冰块直接敷（冻伤）</li>
+</ul>
+<hr>
+<h2>6. 误食</h2>
+<p><strong>✅ 正确</strong></p>
+<ol>
+<li><strong>不要盲目催吐</strong> —— 腐蚀性物质（洁厕灵、消毒液）和石油类（汽油、打火机油）催吐会<strong>二次灼伤食道</strong></li>
+<li><strong>保留包装和呕吐物</strong>，带去医院</li>
+<li>立刻就医</li>
+</ol>
+<p><strong>🚨 急诊中的急诊</strong></p>
+<ul>
+<li><strong>纽扣电池</strong> —— 卡在食道两小时内就能烧穿</li>
+<li><strong>磁力珠</strong>（尤其多颗） —— 会隔着肠壁互相吸引，导致肠穿孔</li>
+</ul>
+<p>这两样，<strong>别等，直接去急诊，路上打电话说明情况</strong>。</p>
+<hr>
+<h2>7. 呛奶</h2>
+<ol>
+<li>立刻<strong>侧身</strong>（别仰着，会呛进气管）</li>
+<li>清理口鼻</li>
+<li>拍背</li>
+<li><strong>面色青紫 / 没有呼吸 → 立刻背部拍击 + CPR + 120</strong></li>
+</ol>
+<hr>
+<h2>8. 最重要的一题 ⭐</h2>
+<p>面试时一定要问：</p>
+<blockquote><p><strong>"你一个人在家，孩子出事了。你做的第一件事是什么？"</strong></p></blockquote>
+<p><strong>✅ 正确答案：先急救 / 打 120，同时通知家长。</strong></p>
+<p>这题真正考的<strong>不是急救知识</strong>，是——</p>
+<blockquote><p><strong>她会不会因为怕担责任而隐瞒、拖延、先想说辞。</strong></p></blockquote>
+<p>一个技术不熟但第一时间打电话的人，好过一个技术娴熟但会瞒事的人。</p>
+<hr>
+<h2>9. 她知不知道？</h2>
+<ul>
+<li>家附近哪家<strong>儿童医院</strong>？开车多久？</li>
+<li><strong>打 120 怎么报地址？</strong>（小区名、几号楼、几单元、门牌——让她说一遍）</li>
+<li>家里的急救箱在哪？</li>
+<li>你和伴侣的电话，她背得下来吗？（手机没电怎么办）</li>
+</ul>
+<hr>
+<h2>上岗前</h2>
+<p><strong>送她去上一门婴幼儿急救课。</strong> 钱不多，是这份工作里性价比最高的一笔投入。</p>
+<p><strong>你自己也去上。</strong></p>
+<hr>
+</section>
+<section id="陋习清单" class="chapter">
+<h1>民间陋习清单</h1>
+<blockquote><p>年纪大一点的阿姨，<strong>默认动作里全是这些</strong>。不是她坏，是她那辈人就这么带孩子的。</p>
+<p>所以不能靠"她答应了"来解决——要靠<strong>问出来</strong> + <strong>写进红线</strong> + <strong>摄像头</strong>。</p></blockquote>
+<hr>
+<h2>怎么问（这一节比清单本身重要）</h2>
+<p><strong>❌ 别问是非题</strong></p>
+<blockquote><p>"你会不会把尿？"</p></blockquote>
+<p>她知道标准答案是"不会"。<strong>你什么都问不出来。</strong></p>
+<p><strong>✅ 用预设式</strong> —— 把陋习当成默认前提，让她在你的前提里回答</p>
+<table><thead><tr><th>问</th><th>在测什么</th></tr></thead><tbody>
+<tr><td>"你之前带的孩子，<strong>一般几个月开始把尿</strong>？"</td><td>把屎把尿</td></tr>
+<tr><td>"孩子<strong>多大开始喂水</strong>的？"</td><td>6 个月内喂水</td></tr>
+<tr><td>"孩子发烧了，你<strong>怎么</strong>帮他降温？"</td><td>捂汗、酒精擦浴</td></tr>
+<tr><td>"孩子便秘了，你一般怎么办？"</td><td>开塞露、肥皂条</td></tr>
+<tr><td>"孩子<strong>多大开始加盐</strong>的？菜里放不放酱油？"</td><td>1 岁内加盐</td></tr>
+<tr><td>"<strong>头型</strong>怎么睡好看？"</td><td>硬枕头、定型枕</td></tr>
+<tr><td>"孩子哭得厉害停不下来，你怎么哄？"</td><td>摇晃、抛高高</td></tr>
+<tr><td>"孩子<strong>新生儿那会儿</strong>，乳头要不要处理一下？"</td><td>挤新生儿乳头</td></tr>
+</tbody></table>
+<p><strong>✅ 或者开放式</strong> —— 不给方向，看她第一个想到什么</p>
+<p><strong>⚠️ 绝对不要给暗示</strong></p>
+<blockquote><p>"我们家是不让把尿的哦，你会把尿吗？"</p></blockquote>
+<p>——这题白问了。</p>
+<hr>
+<h2>清单</h2>
+<h3>喂养</h3>
+<table><thead><tr><th>陋习</th><th>危害</th></tr></thead><tbody>
+<tr><td>6 个月内喂水 / 葡萄糖水 / 茶水 / 米汤</td><td>占肚子、影响奶量；过量会<strong>水中毒</strong></td></tr>
+<tr><td><strong>1 岁内加盐、加糖</strong></td><td>肾脏负担、口味重</td></tr>
+<tr><td><strong>1 岁内喂蜂蜜</strong></td><td><strong>肉毒杆菌中毒</strong></td></tr>
+<tr><td><strong>嚼碎了喂 / 嘴对嘴喂 / 用嘴试奶温 / 共用餐具</strong></td><td><strong>幽门螺杆菌、疱疹病毒</strong>（对新生儿可能致命）</td></tr>
+<tr><td>用奶瓶喂米糊</td><td>呛咳、过量</td></tr>
+<tr><td>追着喂 / 逼吃 / 强迫喂</td><td>厌食、进食创伤</td></tr>
+<tr><td>给孩子喝大人的汤、粥、饮料</td><td>盐、糖、嘌呤</td></tr>
+<tr><td>冲奶<strong>先粉后水</strong></td><td>浓度不准</td></tr>
+<tr><td>奶粉<strong>多舀一勺"长得快"</strong></td><td>肾脏负担、便秘</td></tr>
+<tr><td>剧烈摇晃奶瓶</td><td>大量气泡 → 胀气、肠绞痛</td></tr>
+</tbody></table>
+<h3>护理</h3>
+<table><thead><tr><th>陋习</th><th>危害</th></tr></thead><tbody>
+<tr><td><strong>把屎把尿</strong></td><td>髋关节、脱肛、盆底肌</td></tr>
+<tr><td><strong>挤新生儿乳头</strong></td><td>乳腺炎、感染</td></tr>
+<tr><td><strong>挑马牙 / 挑鹅口疮</strong></td><td>感染</td></tr>
+<tr><td>剃胎毛 / 剃眉毛 / 刮头</td><td>毛囊感染</td></tr>
+<tr><td><strong>绑腿 / 蜡烛包</strong>（"防罗圈腿"）</td><td><strong>髋关节发育不良</strong></td></tr>
+<tr><td>硬枕头 / 书本 / 绿豆枕 睡头型</td><td>扁头、斜颈</td></tr>
+<tr><td><strong>定型枕、任何枕头</strong>（1 岁内）</td><td><strong>窒息</strong></td></tr>
+<tr><td>戴银锁、银手镯</td><td>勒伤、误吞、划伤</td></tr>
+<tr><td>穿开裆裤</td><td>细菌、外伤</td></tr>
+<tr><td>长指甲不剪 / <strong>戴手套防抓脸</strong></td><td><strong>线头缠指坏死</strong></td></tr>
+<tr><td>掏耳朵、挖鼻孔</td><td>损伤</td></tr>
+<tr><td>湿疹不涂保湿、只用偏方</td><td>湿疹护理的核心就是保湿</td></tr>
+</tbody></table>
+<h3>生病（危害最大的一组）</h3>
+<table><thead><tr><th>陋习</th><th>危害</th></tr></thead><tbody>
+<tr><td><strong>捂汗退烧</strong></td><td><strong>捂热综合征——真的能捂死人</strong></td></tr>
+<tr><td><strong>酒精擦浴</strong></td><td><strong>婴儿经皮吸收，酒精中毒</strong></td></tr>
+<tr><td>冰水澡 / 冰敷</td><td>寒战反而升温</td></tr>
+<tr><td><strong>自行喂退烧药、抗生素</strong></td><td>剂量、禁忌（阿司匹林 / 安乃近 / 尼美舒利）</td></tr>
+<tr><td>喂"七星茶""猴枣散"<strong>"保婴丹"</strong></td><td><strong>保婴丹含朱砂，即硫化汞</strong></td></tr>
+<tr><td>开塞露 / 肥皂条通便</td><td>依赖、黏膜损伤</td></tr>
+<tr><td><strong>孩子病了或磕了，瞒着不说</strong></td><td><strong>最危险的一条</strong>——延误的是抢救时间</td></tr>
+</tbody></table>
+<h3>安全</h3>
+<table><thead><tr><th>陋习</th><th>危害</th></tr></thead><tbody>
+<tr><td><strong>摇晃哄睡 / 抛高高 / 举高高转圈</strong></td><td><strong>婴儿摇晃综合征</strong>——脑出血、致残致死</td></tr>
+<tr><td><strong>学步车</strong></td><td>髋关节；翻倒、坠楼（多国已禁售）</td></tr>
+<tr><td>拽胳膊把孩子提起来</td><td><strong>牵拉肘</strong>（桡骨头半脱位）</td></tr>
+<tr><td>抱着孩子坐副驾 / 不用安全座椅</td><td>车祸时孩子就是安全气囊的缓冲垫</td></tr>
+<tr><td><strong>把孩子单独留在床上、沙发、浴盆、车里</strong></td><td>坠落、溺水、中暑——<strong>哪怕一秒</strong></td></tr>
+<tr><td>给孩子玩塑料袋、<strong>纽扣电池、磁力珠</strong></td><td>窒息、烧穿食道、肠穿孔</td></tr>
+<tr><td>3 岁前给整颗坚果 / 果冻 / 爆米花 / 整颗葡萄</td><td><strong>窒息</strong>（6–12 个月是异物窒息最高危期）</td></tr>
+<tr><td>叼着奶瓶睡</td><td>奶瓶龋、呛奶</td></tr>
+</tbody></table>
+<h3>管教</h3>
+<table><thead><tr><th>陋习</th><th>危害</th></tr></thead><tbody>
+<tr><td>恐吓（"警察抓你""医生打针""不要你了"）</td><td>安全感、恐惧泛化</td></tr>
+<tr><td>打手、打屁股、拍脸</td><td>——</td></tr>
+<tr><td>关小黑屋</td><td>——</td></tr>
+<tr><td>拿手机 / 电视哄</td><td>屏幕暴露、注意力</td></tr>
+<tr><td>逗孩子尝酒、尝辣</td><td>——</td></tr>
+<tr><td>"你妈妈不要你了"这种玩笑</td><td>——</td></tr>
+</tbody></table>
+<hr>
+<h2>落地</h2>
+<p>问出来只是第一步。<strong>真正管住这些的是三样东西：</strong></p>
+<ol>
+<li><strong><a href="#红线清单">模板/红线清单.md</a></strong> —— 逐条签字，作为合同附件</li>
+<li><strong>摄像头</strong> —— 公共区域 + 婴儿房</li>
+<li><strong><a href="#每日记录表">模板/每日记录表.md</a></strong> —— 留痕。异常记录不上表，就是隐瞒</li>
+</ol>
+<hr>
+</section>
+<section id="月龄重点" class="chapter">
+<h1>按月龄：重点和头号风险</h1>
+<blockquote><p>孩子多大，决定了面试时<strong>技能题的全部权重</strong>。</p>
+<p>带过 2 岁孩子的阿姨，不一定会带 2 个月的——<strong>这是两个工种。</strong></p></blockquote>
+<hr>
+<h2>速查</h2>
+<table><thead><tr><th>月龄</th><th>技能重点</th><th><strong>头号风险</strong></th></tr></thead><tbody>
+<tr><td><strong>0–3 月</strong></td><td>拍嗝、护颈抱姿、脐带护理、黄疸、肠绞痛、夜奶</td><td><strong>睡眠窒息（SIDS）</strong></td></tr>
+<tr><td><strong>3–6 月</strong></td><td>翻身、大运动、辅食准备、认生</td><td><strong>坠床</strong></td></tr>
+<tr><td><strong>6–12 月</strong></td><td>辅食与过敏原引入、爬行、出牙、分离焦虑</td><td><strong>异物窒息（最高危期）</strong></td></tr>
+<tr><td><strong>1–3 岁</strong></td><td>语言、如厕、情绪、外出、大运动</td><td><strong>摔伤、误食、走失</strong></td></tr>
+</tbody></table>
+<hr>
+<h2>0–3 月</h2>
+<p><strong>技能题</strong></p>
+<ul>
+<li>拍嗝（现场演示）、拍不出来怎么办</li>
+<li>怎么抱？<strong>护头颈</strong>。几个月能竖抱？</li>
+<li>脐带没脱落怎么洗澡？渗血渗液怎么办？</li>
+<li>黄疸：怎么看？什么情况要去医院？</li>
+<li>肠绞痛：怎么判断？怎么缓解？（飞机抱、排气操）</li>
+<li>夜奶：几点喂、喂多少、喂完怎么放下</li>
+</ul>
+<p><strong>头号风险：睡眠窒息</strong></p>
+<p>必问：</p>
+<ul>
+<li><strong>孩子该怎么躺？</strong> → <strong>仰卧</strong></li>
+<li><strong>床上能放什么？</strong> → <strong>什么都不能放</strong>（枕头、被子、床围、毛绒玩具、定型枕，一样都不行）</li>
+<li>能不能和大人同床？→ <strong>同房不同床</strong></li>
+<li><strong>能不能趴睡？</strong> → <strong>不能</strong>（清醒且有人盯着的 tummy time 除外）</li>
+</ul>
+<blockquote><p><strong>发烧特别注意：3 个月以下一发烧就必须立刻去医院</strong>，不许在家观察。→ <a href="#急救">急救.md</a></p></blockquote>
+<hr>
+<h2>3–6 月</h2>
+<p><strong>技能题</strong></p>
+<ul>
+<li>会翻身了，换尿布/放床上怎么防坠落</li>
+<li>被动操、抚触</li>
+<li>什么时候开始准备辅食？怎么判断可以加了？（能坐稳、挺舌反射消失、对食物有兴趣）</li>
+</ul>
+<p><strong>头号风险：坠床</strong></p>
+<p>孩子突然会翻身，往往是<strong>在阿姨没预期到的那一天</strong>。必问：</p>
+<ul>
+<li>换尿布时你的手放哪？</li>
+<li>会不会把孩子单独放在床上、沙发上去拿东西？</li>
+<li><strong>孩子摔下来了，你怎么办？</strong> → <a href="#急救">急救.md</a> §坠床</li>
+</ul>
+<hr>
+<h2>6–12 月</h2>
+<p><strong>技能题</strong></p>
+<ul>
+<li><strong>辅食</strong>：第一口吃什么？一次加几种？（<strong>一种，观察 3 天</strong>）</li>
+<li><strong>加不加盐？</strong> → 1 岁内<strong>不加盐、不加糖、不加蜂蜜</strong></li>
+<li><strong>过敏原怎么引入？</strong> 过敏了怎么看、怎么办？</li>
+<li>出牙：怎么护理？流口水、牙龈痒</li>
+<li>爬行期的家居安全：插座、桌角、楼梯、清洁剂</li>
+</ul>
+<p><strong>头号风险：异物窒息（一生中最高危的窗口）</strong></p>
+<p>必问 + <strong>必须现场演示</strong>：</p>
+<ul>
+<li><strong>"孩子噎住了，你做给我看。"</strong> → <a href="#急救">急救.md</a> §异物窒息</li>
+<li>3 岁前不能给什么？→ 整颗坚果、果冻、爆米花、整颗葡萄（要切开）、大块肉</li>
+<li>家里的<strong>纽扣电池、磁力珠</strong>放哪？她知不知道这两样是急诊中的急诊？</li>
+</ul>
+<hr>
+<h2>1–3 岁</h2>
+<p><strong>技能题</strong></p>
+<ul>
+<li>语言：会不会跟孩子说话、读绘本？（<strong>不是只管喂饱</strong>）</li>
+<li>如厕训练：什么时候开始？怎么开始？（<strong>不是把尿</strong>）</li>
+<li>情绪：孩子发脾气、打人、抢玩具，怎么处理？</li>
+<ul>
+<li>❌ 恐吓（"警察抓你"）、打手、关小黑屋</li>
+</ul>
+<li>外出：能不能单独带出门？规则是什么？</li>
+<li>分床、分离焦虑</li>
+</ul>
+<p><strong>头号风险：摔伤、误食、走失</strong></p>
+<ul>
+<li>出门规则：不许离开小区？不许上别人的车？不许给陌生人抱？</li>
+<li><strong>能不能给孩子看手机 / 电视？</strong> → 红线</li>
+<li>安全座椅</li>
+</ul>
+<hr>
+<h2>一个提醒</h2>
+<p><strong>别默认"带过大孩子的会带小的"。</strong> 面试时按你家孩子的<strong>当前月龄</strong>加权，不看她带过多少个。</p>
+<p>同时问一句：<strong>"再过半年孩子 ___ 个月了，那时候你打算怎么带？"</strong> ——看她有没有往前看。</p>
+<hr>
+</section>
+<section id="危险信号" class="chapter">
+<h1>危险信号</h1>
+<hr>
+<h2>一票否决（命中任何一条，直接结束，不要犹豫）</h2>
+<h3>材料</h3>
+<ul>
+<li>身份证 / 无犯罪记录 / 体检 / 征信，<strong>拒绝提供</strong>，或造假、代检</li>
+<li>征信有<strong>呆账、核销、资产处置、保证人代偿</strong></li>
+<li>征信公共信息里有<strong>强制执行、民事判决、欠税</strong></li>
+<li>在<strong>失信被执行人</strong>名单上</li>
+</ul>
+<h3>背调</h3>
+<ul>
+<li>前雇主反馈有实质负面：<strong>虐待、偷窃、隐瞒事故</strong></li>
+</ul>
+<h3>面试</h3>
+<ul>
+<li><strong>抽烟</strong></li>
+<li>说 <strong>"孩子哭一会儿没事，是锻炼肺活量"</strong></li>
+<li>承认或流露出<strong>打过、骂过、恐吓过</strong>孩子</li>
+<li><strong>主动打听你家的财产、房子、收入、什么时候家里没人</strong></li>
+<li><strong>拒绝公共区域摄像头</strong></li>
+<li><strong>拒绝填每日记录表</strong>（"我记性好，不用记" / "你们年轻人事真多"）</li>
+<li>简历时间线对不上，<strong>空窗期说不清</strong></li>
+</ul>
+<blockquote><p>拒绝留痕的人，出了事你手上什么证据都没有。这一条没有商量余地。</p></blockquote>
+<hr>
+<h2>高度警惕（不一定淘汰，但要追问到底，并且在评分表上扣重分）</h2>
+<h3>财务</h3>
+<ul>
+<li><strong>半年内硬查询 ≥ 6 次</strong>（"贷款审批""信用卡审批"）——哪怕报告上一条逾期都没有</li>
+<li><strong>网贷 / 小额贷 &gt; 3 笔</strong>（笔数比金额危险）</li>
+<li>信用卡使用率长期 &gt; 90%</li>
+<li>有<strong>担保记录</strong>（或有负债——问清楚给谁担保的）</li>
+<li><strong>频繁提到缺钱、想预支工资</strong></li>
+<li><strong>工资要求打别人的卡</strong>（她自己的账户可能被冻结）</li>
+</ul>
+<h3>履历</h3>
+<ul>
+<li><strong>每份工作都做不满 3 个月</strong></li>
+<li>半年内换过 3 家以上</li>
+<li><strong>给不出前雇主电话</strong>，只能提供中介的"好评"</li>
+<li>前雇主接了电话但<strong>支支吾吾</strong>、"还行吧"就没了</li>
+</ul>
+<h3>态度</h3>
+<ul>
+<li><strong>全程盯着你说话，从不看孩子一眼</strong></li>
+<li>张口就是 <strong>"我带过 X 个孩子，我有经验，你们年轻人不懂"</strong></li>
+<li><strong>逢人就说前雇主坏话</strong> —— 她下一个说的就是你</li>
+<li>"我什么都会"，<strong>一实操就露馅</strong></li>
+<li>对"不许亲孩子""不许喂药""要填表"表现出抵触，或觉得你<strong>事儿多</strong></li>
+</ul>
+<h3>稳定性</h3>
+<ul>
+<li><strong>她自己的孩子还很小</strong>（随时可能被叫回去）</li>
+<li>家里有随时可能爆的事：老人重病、丈夫失业、盖房、打官司、孩子中高考</li>
+<li>未来一年有确定要请长假的计划</li>
+</ul>
+<h3>卫生</h3>
+<ul>
+<li>长指甲、涂指甲油、戴戒指手链</li>
+<li>进门直接伸手摸孩子，<strong>不洗手</strong></li>
+<li>身上有烟味</li>
+</ul>
+<hr>
+<h2>上岗后的危险信号</h2>
+<ul>
+<li>记录表<strong>太干净</strong>（时间整点、实喝量永远等于计划量、"异常"栏一个月全空白）</li>
+</ul>
+<p>  → <a href="#每日记录表">模板/每日记录表.md</a> §怎么识别"编的表"</p>
+<ul>
+<li>记录表和<strong>摄像头对不上</strong></li>
+<li>夜醒次数远少于摄像头显示的</li>
+<li>孩子<strong>身上出现不明淤青、掐痕</strong></li>
+<li>孩子见到她<strong>哭、躲、僵</strong></li>
+<li>她开始<strong>回避摄像头的角度</strong></li>
+<li>出了小事<strong>没第一时间说</strong>，是你自己发现的</li>
+</ul>
+<blockquote><p><strong>发现一次隐瞒，就按红线第 12 条处理。</strong> 不要给第二次机会——第一次隐瞒的是小事，第二次隐瞒的可能就不是了。</p></blockquote>
+<hr>
+<h1>怎么判断孩子被喂了药</h1>
+<h2>先扔掉一个错误指标：「睡得久」</h2>
+<p><strong>"孩子睡得比以前久" 不是信号。</strong></p>
+<p>婴儿的睡眠<strong>本来就会随月龄变长</strong>——3–6 个月开始能连睡 6 小时，6 个月后能睡 8–12 小时。这是<strong>发育</strong>。</p>
+<p>（发育基线 → <a href="#标准答案">标准答案.md</a> §八「孩子几个月能睡整觉？」）</p>
+<p>拿"睡得久"去怀疑人，<strong>假阳性高到没有意义</strong>，而且会毁掉你和她的关系。</p>
+<p><strong>真正的判据是：药物性镇静和生理性睡眠，「质地」完全不同。</strong></p>
+<hr>
+<h2>判据一：记录表上的签名 ⭐（最实用）</h2>
+<p><strong>镇静药不只让孩子睡——它会连带压制吃、尿、拉。</strong> 这几件事会在记录表上留下一组<strong>互相矛盾</strong>的痕迹。</p>
+<table><thead><tr><th></th><th><strong>发育性</strong>（正常，不用管）</th><th><strong>药物性</strong>（危险）</th></tr></thead><tbody>
+<tr><td><strong>夜间连续睡眠</strong></td><td>逐渐变长，<strong>以周为单位</strong></td><td><strong>突然变长，以天为单位</strong></td></tr>
+<tr><td><strong>奶量</strong></td><td><strong>稳定或上升</strong>（白天吃得更集中）</td><td><strong>下降</strong></td></tr>
+<tr><td><strong>尿不湿</strong></td><td>稳定（≥6 片 / 天）</td><td><strong>变少</strong></td></tr>
+<tr><td><strong>大便</strong></td><td>正常</td><td><strong>变少、便秘</strong>（抗组胺药抑制肠蠕动）</td></tr>
+<tr><td><strong>醒来时的状态</strong></td><td><strong>精神好、有眼神、马上要吃</strong></td><td><strong>懵、软、叫不太醒、吸吮无力</strong></td></tr>
+<tr><td><strong>白天小睡</strong></td><td>逐渐<strong>变少、变规律</strong></td><td><strong>也变长</strong>（"全天都在睡"）</td></tr>
+<tr><td><strong>出现的时机</strong></td><td>渐进，<strong>和月龄对得上</strong></td><td><strong>和「她的需求」对得上</strong></td></tr>
+</tbody></table>
+<blockquote><h3>一句话</h3>
+<p><strong>单看"睡得久"，没意义。</strong></p>
+<p><strong>但「睡得久 + 奶量降 + 尿不湿变少」三个一起出现——那不是发育，是有东西压着他。</strong></p>
+<p><strong>发育性的睡眠延长，奶量是稳的甚至升的。药物性的，一定是降的。</strong></p></blockquote>
+<p><strong>这就是每天记录表存在的意义</strong>——没有那张表，你根本看不出这三条线的走向。</p>
+<hr>
+<h2>判据二：醒来的状态，比睡了多久重要</h2>
+<ul>
+<li><strong>睡饱的孩子</strong>：醒来<strong>精神好、有眼神、会笑、马上找吃的</strong></li>
+<li><strong>被药倒的孩子</strong>：<strong>醒了也是懵的</strong>——眼神呆滞、反应慢、<strong>叫不太醒</strong>、<strong>吃奶没力气</strong>、身体软塌塌</li>
+</ul>
+<blockquote><p><strong>"睡得久" 和 "叫不醒" 是两回事。</strong></p>
+<p>正常婴儿的睡眠<strong>很轻</strong>：有动静会动、会哼唧、会翻身、会做鬼脸。</p>
+<p><strong>一动不动、抱起来不醒、换尿布不醒、大声也不醒 —— 这不正常。</strong></p></blockquote>
+<h2>判据三：生理体征</h2>
+<p>抗组胺药（扑尔敏、苯海拉明——<strong>感冒药里就有，最便宜最易得</strong>）的典型副作用：</p>
+<ul>
+<li><strong>口干</strong> —— 婴儿表现为<strong>嘴唇干、口水明显变少</strong></li>
+<li><strong>便秘</strong></li>
+<li>心跳快</li>
+<li>面色潮红或异常苍白</li>
+<li><strong>醒来后异常烦躁</strong> —— 儿童对抗组胺药可能有<strong>反常兴奋</strong>反应</li>
+</ul>
+<h2>判据四：时机的规律性 ⭐</h2>
+<ul>
+<li><strong>正常睡眠是不规律的</strong> —— 今天这样明天那样</li>
+<li><strong>药物是跟着「她的需求」走的</strong></li>
+</ul>
+<p><strong>拿记录表去对摄像头。</strong> 如果"孩子长睡"总是发生在<strong>她想出门、想打电话、想自己睡一会儿之前</strong>——<strong>那不是巧合。</strong></p>
+<h2>判据五：摄像头，但要看对地方</h2>
+<p><strong>别指望拍到她喂药</strong>——她会背对镜头、会找死角。</p>
+<p><strong>要看的是孩子入睡的过程：</strong></p>
+<ul>
+<li><strong>正常</strong>：哄睡有过程 —— 拍、抱、放下、扭动、哼唧、慢慢睡着</li>
+<li><strong>异常</strong>：<strong>没有哄睡过程，孩子在很短时间内直接"塌"下去</strong></li>
+</ul>
+<p>也看她在孩子睡着<strong>之后</strong>干什么。如果她立刻出门 / 打游戏 / 自己睡——<strong>动机就在那儿了。</strong></p>
+<h2>判据六：物理证据</h2>
+<ul>
+<li>她的房间、包里有没有：<strong>感冒药、扑尔敏、"安神"类中成药</strong>、注射器 / 滴管</li>
+<li><strong>家里的药有没有少</strong></li>
+<li>孩子的奶瓶、辅食里有没有异味或异常颜色</li>
+</ul>
+<h2>判据七：核选项 —— 验尿 / 验血</h2>
+<p>真的高度怀疑 → <strong>带孩子去医院做药物筛查</strong>（毒物筛查 / 血药浓度）。抗组胺药能查出来。</p>
+<p><strong>但做之前先把摄像头看完。</strong> 这一步不可逆，做错了关系就没了。</p>
+<hr>
+<h2>但最重要的一句：这一整套都是「事后侦查」</h2>
+<p><strong>真正的防线在事前，一共五道：</strong></p>
+<ol>
+<li><strong><a href="#红线清单">红线</a>第 2 条</strong> —— 不经家长同意不许喂任何东西，<strong>逐条签字</strong></li>
+<li><strong>把药全部锁起来 / 带走。</strong> 家里不留任何成人感冒药、安眠药在她拿得到的地方</li>
+<li><strong>摄像头 + <a href="#每日记录表">每日记录表</a></strong> —— 表是让你看得见趋势的唯一工具</li>
+<li><strong>面试时的情景题</strong> —— 她对"不许喂药"的第一反应（→ <a href="#标准答案">标准答案.md</a> §十三 情景 3）</li>
+<li><strong>最根本的一道：别让她有动机。</strong></li>
+</ol>
+<blockquote><p>她为什么要药倒一个孩子？</p>
+<p><strong>因为孩子太难带，而她累到崩溃了。</strong></p>
+<p>一个每天工作 16 小时、夜里起三次、没有休息日、还要被老人挑剔的阿姨——<strong>这个动机是你亲手创造的。</strong></p>
+<p><strong>给足休息、给足人手、别把她逼到极限。这比任何监控都有效。</strong></p></blockquote>
+<hr>
+</section>
+<section id="候选人评分表" class="chapter">
+<h1>候选人评分表</h1>
+<blockquote><p><strong>面试完立刻填，别靠回忆。</strong> 见了三个人之后，你一定会记混。</p>
+<p>⚠️ 填好的版本含个人信息，<strong>不要提交到公开仓库</strong> —— 放 <code>本地/</code> 或仓库外面。</p></blockquote>
+<hr>
+<h2>第一步：一票否决（先过闸，再打分）</h2>
+<p>任何一格打 ❌ → <strong>直接淘汰，不用打分了。</strong> 完整清单 → <a href="#危险信号">参考/危险信号.md</a></p>
+<table><thead><tr><th>闸门</th><th>A</th><th>B</th><th>C</th></tr></thead><tbody>
+<tr><td>身份证 / 无犯罪记录，齐全且真实</td><td></td><td></td><td></td></tr>
+<tr><td>体检（含 HP、胸片、粪培）合格，且是<strong>你陪同</strong>做的</td><td></td><td></td><td></td></tr>
+<tr><td>征信：无呆账 / 核销 / 强制执行 / 失信被执行人</td><td></td><td></td><td></td></tr>
+<tr><td><strong>背调：前雇主说"还会再请她"</strong></td><td></td><td></td><td></td></tr>
+<tr><td>不抽烟</td><td></td><td></td><td></td></tr>
+<tr><td>接受摄像头</td><td></td><td></td><td></td></tr>
+<tr><td><strong>接受每日填记录表</strong>（不是"我记性好"）</td><td></td><td></td><td></td></tr>
+<tr><td>没说过"哭一会儿没事，锻炼肺活量"</td><td></td><td></td><td></td></tr>
+<tr><td>简历时间线对得上，无不明空窗</td><td></td><td></td><td></td></tr>
+</tbody></table>
+<hr>
+<h2>第二步：打分（满分 100）</h2>
+<table><thead><tr><th>维度</th><th>分值</th><th>怎么打</th><th>A</th><th>B</th><th>C</th></tr></thead><tbody>
+<tr><td><strong>急救</strong> ⭐</td><td>25</td><td>海姆立克<strong>演示对了</strong>给满分；只会说不会做减半；不会 0 分（→ 培训后再议）<br>发烧、坠床、烫伤、误食各答对加分</td><td></td><td></td><td></td></tr>
+<tr><td><strong>陋习筛查</strong></td><td>20</td><td>用预设式问，<strong>每命中一条陋习扣 4 分</strong>（捂汗 / 酒精 / 私自喂药 / 把尿 / 摇晃 / 嘴对嘴）<br>能主动说出"这样不行"的加分</td><td></td><td></td><td></td></tr>
+<tr><td><strong>实操</strong></td><td>20</td><td>冲奶 / 拍嗝 / 换尿布 / 洗澡，各 5 分<br><strong>换尿布时把孩子单独留在台面上 → 这一项直接 0</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>卫生习惯</strong></td><td>15</td><td>进门第一个动作（洗手 = 满分，直接摸孩子 = 0）<br>指甲、烟味、"会不会亲孩子"</td><td></td><td></td><td></td></tr>
+<tr><td><strong>边界与冲突</strong></td><td>10</td><td>听不听雇主 / 和老人怎么处 / <strong>说不说前雇主坏话</strong>（说了直接 0）</td><td></td><td></td><td></td></tr>
+<tr><td><strong>记录表</strong></td><td>10</td><td>愿不愿填（不愿 = 已在闸门淘汰）<br>当场填的那张：数字对不对、细不细、有没有抱怨</td><td></td><td></td><td></td></tr>
+<tr><td><strong>合计</strong></td><td><strong>100</strong></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<hr>
+<h2>第三步：不打分，但要写下来</h2>
+<p>这几项<strong>不要分数化</strong>。它们经常比分数准。</p>
+<table><thead><tr><th>观察项</th><th>A</th><th>B</th><th>C</th></tr></thead><tbody>
+<tr><td><strong>孩子的反应</strong>——在她怀里身体是软的还是僵的？她靠近时孩子什么表情？</td><td></td><td></td><td></td></tr>
+<tr><td><strong>她看谁</strong>——全程盯着你说话，还是会自然地看向孩子？</td><td></td><td></td><td></td></tr>
+<tr><td><strong>老人的感觉</strong>（老人要跟她朝夕相处，老人的直觉值钱）</td><td></td><td></td><td></td></tr>
+<tr><td><strong>伴侣的感觉</strong></td><td></td><td></td><td></td></tr>
+<tr><td>你自己说不上来但觉得不对的地方</td><td></td><td></td><td></td></tr>
+</tbody></table>
+<blockquote><p><strong>如果分数很高但家里人都觉得不对劲——听家里人的。</strong></p>
+<p>分数只能量化"她会不会"，量化不了"她是个什么人"。</p></blockquote>
+<hr>
+<h2>第四步：红旗记录</h2>
+<p>命中 <a href="#危险信号">参考/危险信号.md</a> 里的"高度警惕"项，逐条记下来：</p>
+<p><strong>候选人 A</strong></p>
+<ul>
+<li>☐ ______________________________________</li>
+<li>☐ ______________________________________</li>
+</ul>
+<p><strong>候选人 B</strong></p>
+<ul>
+<li>☐ ______________________________________</li>
+<li>☐ ______________________________________</li>
+</ul>
+<p><strong>候选人 C</strong></p>
+<ul>
+<li>☐ ______________________________________</li>
+<li>☐ ______________________________________</li>
+</ul>
+<hr>
+<h2>决策</h2>
+<table><thead><tr><th></th><th>A</th><th>B</th><th>C</th></tr></thead><tbody>
+<tr><td>闸门全过？</td><td></td><td></td><td></td></tr>
+<tr><td>得分</td><td></td><td></td><td></td></tr>
+<tr><td>红旗数</td><td></td><td></td><td></td></tr>
+<tr><td>家里人的直觉</td><td></td><td></td><td></td></tr>
+<tr><td><strong>进入试工？</strong></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<blockquote><p><strong>进入试工不等于录用。</strong> 试工是第五关，还能刷人 → <a href="#6-试工">流程/6-试工.md</a></p>
+<p><strong>宁可多面几个，也不要将就。</strong> 请错人的代价，不是重新招一次那么简单。</p></blockquote>
+<hr>
+</section>
+<section id="红线清单" class="chapter">
+<h1>红线清单</h1>
+<blockquote><p><strong>两个用法：</strong></p>
+<ol>
+<li><strong>面试末尾逐条念给她听</strong> —— 不是为了吓她，是看反应。表现出抵触或不以为然的，就是答案。</li>
+<li><strong>作为合同附件，逐条签字。</strong> 打印下面的签字页。</li>
+</ol></blockquote>
+<hr>
+<h2>13 条</h2>
+<table><thead><tr><th>#</th><th>内容</th><th>为什么</th></tr></thead><tbody>
+<tr><td>1</td><td>不亲孩子；不嘴对嘴喂；不用嘴试奶温；不嚼碎了喂</td><td>成人携带的疱疹病毒对新生儿<strong>可能致命</strong>；幽门螺杆菌</td></tr>
+<tr><td>2</td><td><strong>不经家长同意，不喂任何药物、保健品、偏方</strong></td><td>退烧药、感冒药、钙、益生菌、七星茶、猴枣散、<strong>保婴丹（含朱砂＝汞）</strong>、开塞露</td></tr>
+<tr><td>3</td><td>3 个月内不趴睡；婴儿床上不放枕头、被子、床围、毛绒玩具、定型枕</td><td><strong>睡眠窒息是婴儿头号杀手</strong></td></tr>
+<tr><td>4</td><td>不摇晃孩子，不抛高高</td><td><strong>婴儿摇晃综合征</strong>——脑出血，致残致死</td></tr>
+<tr><td>5</td><td>不把孩子单独留在床上、沙发、浴盆、车里——<strong>哪怕一秒</strong></td><td>坠落、溺水、中暑</td></tr>
+<tr><td>6</td><td>不把尿</td><td>髋关节、脱肛、盆底肌</td></tr>
+<tr><td>7</td><td>带孩子时不玩手机；不用手机 / 电视哄孩子</td><td>一秒钟就够出事</td></tr>
+<tr><td>8</td><td>不带任何外人进家门；不把孩子交给外人抱</td><td>——</td></tr>
+<tr><td>9</td><td>不拍孩子照片发朋友圈或发给外人</td><td>隐私、安全</td></tr>
+<tr><td>10</td><td>不抽烟</td><td>三手烟留在头发和衣服上</td></tr>
+<tr><td>11</td><td>不恐吓、体罚、辱骂</td><td>包括"警察抓你""不要你了"</td></tr>
+<tr><td>12</td><td><strong>任何意外（磕碰、坠落、发烧、误食），第一时间告知，不隐瞒。隐瞒一次，立刻解约</strong></td><td><strong>隐瞒延误的是抢救时间</strong></td></tr>
+<tr><td>13</td><td><strong>每日记录表当场填、如实填，不编造。编造记录等同隐瞒</strong></td><td>→ <a href="#每日记录表">每日记录表.md</a></td></tr>
+</tbody></table>
+<hr>
+<h2>讲给她听的话</h2>
+<p>红线要立，但话要说明白。原话建议这么讲：</p>
+<blockquote><p>"这些规矩看着多，但每一条背后都有原因，我一条一条跟你说清楚，不是不信任你。</p>
+<p><strong>而且这些规矩也是保护你的</strong>——真出了事，白纸黑字写着、记录本上记着，谁做了什么一清二楚。没有这些，出了事就是一笔糊涂账，对你也不公平。"</p></blockquote>
+<hr>
+<hr>
+<h1>签字页（打印这一页）</h1>
+<h2>育儿嫂工作红线确认书</h2>
+<p>本人已逐条阅读并理解以下条款，承诺在工作期间严格遵守。</p>
+<p><strong>违反任何一条，雇主有权立即解除劳务合同。</strong></p>
+<table><thead><tr><th>#</th><th>内容</th><th>本人确认（签字）</th></tr></thead><tbody>
+<tr><td>1</td><td>不亲孩子；不嘴对嘴喂；不用嘴试奶温；不嚼碎了喂</td><td></td></tr>
+<tr><td>2</td><td>不经家长同意，不喂任何药物、保健品、偏方</td><td></td></tr>
+<tr><td>3</td><td>3 个月内不趴睡；婴儿床上不放枕头、被子、床围、毛绒玩具、定型枕</td><td></td></tr>
+<tr><td>4</td><td>不摇晃孩子，不抛高高</td><td></td></tr>
+<tr><td>5</td><td>不把孩子单独留在床上、沙发、浴盆、车里——哪怕一秒</td><td></td></tr>
+<tr><td>6</td><td>不把尿</td><td></td></tr>
+<tr><td>7</td><td>带孩子时不玩手机；不用手机 / 电视哄孩子</td><td></td></tr>
+<tr><td>8</td><td>不带任何外人进家门；不把孩子交给外人抱</td><td></td></tr>
+<tr><td>9</td><td>不拍孩子照片发朋友圈或发给外人</td><td></td></tr>
+<tr><td>10</td><td>不抽烟</td><td></td></tr>
+<tr><td>11</td><td>不恐吓、体罚、辱骂</td><td></td></tr>
+<tr><td>12</td><td>任何意外第一时间告知，不隐瞒</td><td></td></tr>
+<tr><td>13</td><td>每日记录表当场填、如实填，不编造</td><td></td></tr>
+</tbody></table>
+<p><br></p>
+<p><strong>育儿嫂签字：__________________</strong></p>
+<p><strong>身份证号：____________________________</strong></p>
+<p><strong>日期：________年______月______日</strong></p>
+<p><br></p>
+<p><strong>雇主签字：__________________</strong></p>
+<p><strong>日期：________年______月______日</strong></p>
+<p><br></p>
+<blockquote><p>本确认书作为《劳务合同》附件，与合同具有同等效力。</p></blockquote>
+<hr>
+</section>
+<section id="合同条款" class="chapter">
+<h1>合同必写的 15 条</h1>
+<blockquote><p>⚠️ 这是<strong>条款清单</strong>，不是合同范本。具体措辞和当地合规要求，请咨询律师。</p>
+<p>家政多为<strong>劳务关系</strong>（不是劳动关系），双方权利义务基本靠合同约定——<strong>没写的，就等于没有。</strong></p></blockquote>
+<hr>
+<h2>1. 双方身份信息</h2>
+<p>姓名、身份证号、联系方式、紧急联系人。<strong>附身份证复印件。</strong></p>
+<h2>2. 工作内容清单 ⭐</h2>
+<p><strong>穷举，不许写"等""其他"。</strong></p>
+<p>从 <a href="#岗位定义">岗位定义.md</a> 里逐条抄过来：</p>
+<ul>
+<li>带孩子（具体到：喂、哄睡、洗澡、换尿布、辅食、互动早教……）</li>
+<li><strong>每日填写记录表</strong>（→ <a href="#每日记录表">每日记录表.md</a>）</li>
+<li>做饭？给几个人做？几餐？</li>
+<li>洗衣？洗谁的？</li>
+<li>打扫？打扫到什么程度？</li>
+<li>买菜？</li>
+</ul>
+<blockquote><p><strong>这一条说不清楚，三个月后必吵架。</strong></p></blockquote>
+<h2>3. 工作时间与休息</h2>
+<ul>
+<li>每天几点到几点</li>
+<li>一天休息多久、午休多久</li>
+<li><strong>月休几天</strong>、固定还是灵活</li>
+<li>法定节假日怎么算</li>
+<li><strong>春节安排</strong>（写死）</li>
+</ul>
+<h2>4. 夜间照护的界定 ⭐</h2>
+<ul>
+<li>几点到几点算夜班</li>
+<li>起夜几次在约定范围内</li>
+<li><strong>夜奶谁喂</strong></li>
+<li>超出约定次数怎么算钱</li>
+</ul>
+<blockquote><p>夜班是成本大头，也是最容易翻脸的一条。<strong>必须量化。</strong></p></blockquote>
+<h2>5. 薪资</h2>
+<ul>
+<li>金额、发薪日</li>
+<li><strong>打她本人的卡</strong>（要求打别人卡的，追问为什么）</li>
+<li>试用期薪资（<strong>试工必须带薪</strong>）</li>
+</ul>
+<h2>6. 涨薪机制</h2>
+<p>多久一评、依据什么。</p>
+<h2>7. 请假与生病</h2>
+<ul>
+<li>病假 / 事假流程，<strong>提前多久说</strong></li>
+<li><strong>她生病期间不得接触孩子</strong>——谁顶班、扣不扣钱</li>
+</ul>
+<blockquote><p>不写这条，她会瞒着带病上岗。</p></blockquote>
+<h2>8. 离职通知期 ⭐</h2>
+<p><strong>至少提前 30 天书面通知</strong>，以及违约责任。</p>
+<blockquote><p>不写这条，她哪天说走就走，你家直接瘫痪。</p></blockquote>
+<h2>9. 摄像头知情同意 ⭐</h2>
+<ul>
+<li>明确安装范围：<strong>公共区域 + 婴儿房</strong></li>
+<li><strong>明确不装：她的卧室、卫生间</strong>（装了违法）</li>
+<li>她签字知情同意</li>
+</ul>
+<blockquote><p>这一条既是你的权利，也是她的保障——写清楚范围，她才不会觉得被偷拍。</p></blockquote>
+<h2>10. 保密条款</h2>
+<ul>
+<li>不得拍摄、传播孩子的照片和视频</li>
+<li>不得向外泄露家庭信息（住址、财产、作息、家庭成员）</li>
+<li>离职后继续有效</li>
+</ul>
+<h2>11. 红线清单作为附件 ⭐</h2>
+<p>→ <a href="#红线清单">红线清单.md</a>，<strong>逐条签字</strong>，与合同同等效力。</p>
+<h2>12. 安全责任与保险</h2>
+<ul>
+<li>意外发生时的责任划分</li>
+<li><strong>雇主责任险</strong>（通过中介的，问中介有没有；没有的，自己买）</li>
+<li>她本人的意外险</li>
+</ul>
+<h2>13. 财物条款</h2>
+<ul>
+<li>不得动用家庭财物</li>
+<li><strong>不得以任何名义向雇主或邻里借贷、代购、集资</strong></li>
+<li>贵重物品清单（可选）</li>
+</ul>
+<h2>14. 试用期</h2>
+<ul>
+<li>几天（3–7 天）</li>
+<li><strong>带薪</strong></li>
+<li>不合适如何解除、怎么结算</li>
+</ul>
+<h2>15. 中介方责任（如果通过中介）</h2>
+<ul>
+<li><strong>多久内可以免费换人？换几次？</strong></li>
+<li>换人期间的费用怎么算</li>
+<li>退费条件</li>
+<li>中介有没有做背景调查？做到什么程度？（<strong>不管中介说做了什么，你自己还是要做一遍</strong>）</li>
+</ul>
+<hr>
+<h2>三个最容易被漏掉、代价最大的</h2>
+<ol>
+<li><strong>第 2 条（工作内容穷举）</strong> —— 漏了 → 三个月后天天扯皮</li>
+<li><strong>第 4 条（夜班量化）</strong> —— 漏了 → 成本失控 + 翻脸</li>
+<li><strong>第 8 条（30 天通知期）</strong> —— 漏了 → 她说走就走，你请假在家带娃</li>
+</ol>
+<hr>
+</section>
+<section id="每日记录表" class="chapter">
+<h1>每日记录表：用法</h1>
+<blockquote><p>空白打印版 → <a href="#每日记录表-空白">每日记录表-空白.md</a></p></blockquote>
+<hr>
+<h2>为什么必须有这张表</h2>
+<p>不是形式主义，是四件事：</p>
+<p><strong>1. 发现问题</strong></p>
+<p>奶量连续下降、尿量不足、大便颜色异常——这些是<strong>婴儿生病最早的信号</strong>，而且<strong>只有记下来才看得出趋势</strong>。凭记忆是看不出"这两天奶量少了 20%"的。</p>
+<p><strong>2. 留痕</strong></p>
+<p>出了事，表是唯一的客观记录。</p>
+<p><strong>3. 保护她</strong></p>
+<p>孩子生病了，表能证明她做了该做的事：喂了多少、什么时候发现的异常、什么时候报告的。</p>
+<blockquote><p><strong>这一点要当面讲给她听。</strong> 她才不会觉得你在防贼。</p></blockquote>
+<p><strong>4. 交接</strong></p>
+<p>你、老人、她之间靠表说话，不靠"我以为你喂过了"。</p>
+<hr>
+<h2>表格（带示例）</h2>
+<h3>A. 喂奶（每次一行，当场填）</h3>
+<table><thead><tr><th>时间</th><th>奶别</th><th>计划量</th><th>实喝</th><th>拍嗝</th><th>吐奶</th><th>备注</th></tr></thead><tbody>
+<tr><td>06:20</td><td>配方奶</td><td>120 ml</td><td>100 ml</td><td>✓ 打出</td><td>无</td><td></td></tr>
+<tr><td>09:10</td><td>母乳亲喂</td><td>左 10 分 右 8 分</td><td>—</td><td>✗ 没打出</td><td>少量溢奶</td><td>有点闹</td></tr>
+</tbody></table>
+<ul>
+<li><strong>奶别</strong>：母乳亲喂 / 母乳瓶喂 / 配方奶</li>
+<li><strong>计划量</strong>：配方奶填 ml；母乳亲喂填左右各几分钟</li>
+<li><strong>拍嗝</strong>：<code>✓ 打出</code> / <code>✗ 没打出</code></li>
+<li><strong>吐奶</strong>：<code>无</code> / <code>少量溢奶</code> / <code>大量</code> / <strong><code>喷射状</code> 🚨 立即打电话</strong></li>
+</ul>
+<blockquote><p><strong>日终小计：喂奶 ___ 次，总奶量 ___ ml</strong></p></blockquote>
+<h3>B. 大小便</h3>
+<table><thead><tr><th>时间</th><th>小便</th><th>大便</th><th>性状</th><th>颜色</th></tr></thead><tbody>
+<tr><td>08:15</td><td>✓</td><td>—</td><td></td><td></td></tr>
+<tr><td>11:40</td><td>✓</td><td>✓</td><td>糊状</td><td>黄</td></tr>
+</tbody></table>
+<ul>
+<li><strong>性状</strong>：糊状 / 成形 / 稀水样 / 干硬球状</li>
+<li><strong>颜色</strong>：黄 / 绿 / 褐 / <strong>🚨 白陶土色</strong> / <strong>🚨 带血丝</strong> / <strong>🚨 黑色</strong></li>
+</ul>
+<blockquote><p><strong>日终小计：尿不湿 ___ 片，大便 ___ 次</strong></p></blockquote>
+<h3>C. 睡眠</h3>
+<table><thead><tr><th>入睡</th><th>醒来</th><th>时长</th><th>哄睡方式</th></tr></thead><tbody>
+<tr><td>09:00</td><td>10:30</td><td>1h30m</td><td>拍睡</td></tr>
+</tbody></table>
+<blockquote><p><strong>日终小计：白天睡 ___ 小时，夜间睡 ___ 小时，夜醒 ___ 次</strong></p></blockquote>
+<h3>D. 体温 / 用药 / 异常</h3>
+<table><thead><tr><th>项</th><th>内容</th></tr></thead><tbody>
+<tr><td><strong>体温</strong>（仅异常时测）</td><td>时间 ___　___ ℃　部位 ___</td></tr>
+<tr><td><strong>用药</strong></td><td>药名 ___　剂量 ___　时间 ___　<strong>家长事先同意签字：______</strong></td></tr>
+<tr><td><strong>异常事件</strong></td><td>磕碰 / 坠落 / 呛咳 / 皮疹 / 哭闹不止 / 其他：___<br><strong>已电话报告：□ 是（时间 ___）　□ 否</strong></td></tr>
+</tbody></table>
+<blockquote><p><strong>用药栏没有家长签字 = 违反<a href="#红线清单">红线</a>第 2 条，立刻解约。</strong></p></blockquote>
+<h3>E. 每日确认</h3>
+<blockquote><p>育儿嫂签字：______　家长确认：______　日期：______</p></blockquote>
+<hr>
+<h2>填写规则（写进合同）</h2>
+<ol>
+<li><strong>当场填，不许事后补。</strong> 喂完一顿填一行</li>
+<li><strong>每天下班前（或睡前）拍照发家庭群</strong></li>
+<li><strong>计划奶量由家长 / 儿保医生定，她只如实记录实喝量。</strong> 她不能自作主张加量减量</li>
+<li><strong>家长每天签字确认</strong> —— 这既是核对，也是给她的凭据</li>
+<li><strong>🚨 出现下面任何一项，立刻打电话，不等下班：</strong></li>
+</ol>
+<table><thead><tr><th>信号</th><th></th></tr></thead><tbody>
+<tr><td>吐奶呈<strong>喷射状</strong></td><td></td></tr>
+<tr><td>大便<strong>白陶土色 / 带血 / 黑色</strong></td><td>顺便拍照</td></tr>
+<tr><td><strong>一天尿不湿少于 6 片</strong></td><td>可能脱水</td></tr>
+<tr><td><strong>奶量比平时少三分之一以上</strong></td><td></td></tr>
+<tr><td>体温异常</td><td></td></tr>
+<tr><td>任何磕碰、坠落</td><td></td></tr>
+</tbody></table>
+<hr>
+<h2>怎么从表里看出问题</h2>
+<p><strong>这张表的价值在趋势，不在单行。</strong></p>
+<table><thead><tr><th>表上的信号</th><th>可能是什么</th></tr></thead><tbody>
+<tr><td>奶量连续 2–3 天下降</td><td>生病前兆（感染、鹅口疮、中耳炎）</td></tr>
+<tr><td><strong>尿不湿 &lt; 6 片 / 天</strong></td><td><strong>脱水</strong></td></tr>
+<tr><td>大便由黄转<strong>白陶土色</strong></td><td><strong>胆道闭锁——急症，有手术时间窗，越早越好</strong></td></tr>
+<tr><td>大便带血 / 黑色</td><td>消化道出血、过敏</td></tr>
+<tr><td><strong>喷射状吐奶</strong></td><td>幽门狭窄 / 颅内压高</td></tr>
+<tr><td>拍嗝一栏<strong>总是"✗ 没打出"</strong></td><td>她的拍嗝手法有问题，回炉</td></tr>
+<tr><td>夜醒次数<strong>远多于</strong>她口头说的</td><td>她在虚报夜班工作量，或哄睡方式有问题</td></tr>
+<tr><td><strong>「睡得久」+「奶量降」+「尿不湿变少」三条同时出现</strong></td><td><strong>孩子可能被喂了镇静药。</strong> 见下</td></tr>
+</tbody></table>
+<h3>⚠️ 「睡得久」单独一条，什么都不说明</h3>
+<p>婴儿的睡眠<strong>本来就会随月龄变长</strong>——这是发育，不是异常。</p>
+<p>（基线 → <a href="#标准答案">参考/标准答案.md</a> §八「几个月能睡整觉」）</p>
+<p><strong>但发育性的睡眠延长，奶量是稳的、甚至是升的。</strong></p>
+<p><strong>镇静药不只让孩子睡——它连带压制吃、尿、拉。</strong> 所以：</p>
+<table><thead><tr><th></th><th>发育性（正常）</th><th><strong>药物性（危险）</strong></th></tr></thead><tbody>
+<tr><td>睡眠变长的速度</td><td>以<strong>周</strong>为单位，渐进</td><td>以<strong>天</strong>为单位，<strong>突然</strong></td></tr>
+<tr><td><strong>奶量</strong></td><td><strong>稳定或上升</strong></td><td><strong>下降</strong></td></tr>
+<tr><td><strong>尿不湿</strong></td><td>稳定（≥6 片）</td><td><strong>变少</strong></td></tr>
+<tr><td>醒来的状态</td><td>精神好、马上找吃的</td><td><strong>懵、软、叫不太醒、吸吮无力</strong></td></tr>
+</tbody></table>
+<blockquote><p><strong>这就是这张表存在的意义</strong>——没有它，你根本看不出这三条线的走向，只能凭"感觉孩子最近睡得多"瞎猜。</p></blockquote>
+<p>完整的判据（生理体征、摄像头怎么看、事前五道防线）→ <strong><a href="#危险信号">参考/危险信号.md</a> §怎么判断孩子被喂了药</strong></p>
+<hr>
+<h2>怎么识别"编的表"</h2>
+<p><strong>真实的一天是乱的。太干净的表本身就是红旗。</strong></p>
+<table><thead><tr><th>症状</th><th>说明</th></tr></thead><tbody>
+<tr><td><strong>时间整齐得不像话</strong> —— 每次喂奶都是整点，间隔精确 3 小时</td><td>真实的婴儿不这样</td></tr>
+<tr><td><strong>实喝量永远等于计划量</strong> —— 120 计划、120 喝完，天天如此</td><td><strong>几乎不可能</strong></td></tr>
+<tr><td><strong>"异常"栏永远空白</strong>，一个月都没填过一次</td><td>真实的一天总会有点什么</td></tr>
+<tr><td><strong>笔迹和墨色完全一致</strong></td><td>一天七顿奶如果是当场填的，笔迹会有深浅、有涂改。<strong>一模一样 = 下班前一口气补的</strong></td></tr>
+<tr><td><strong>跟摄像头对不上</strong></td><td>最硬的一招：随机抽一天，拿表去对回放，看喂奶时间点对不对得上</td></tr>
+</tbody></table>
+<blockquote><p><strong>发现一次编表，按隐瞒处理</strong> —— 和<a href="#红线清单">红线</a>第 12 条是同一件事。</p></blockquote>
+<hr>
+<h2>她写不来怎么办</h2>
+<p>文化程度低但踏实的阿姨很多，<strong>别一刀切</strong>。</p>
+<p>改方案：<strong>打勾式表格 + 语音报数</strong> —— 她每次喂完在群里发一条语音（"六点二十，一百二十毫升，喝了一百，嗝打出来了"），你或老人代填。</p>
+<p><strong>关键是留痕，不是她亲手写。</strong></p>
+<p>但有一条不能商量：</p>
+<blockquote><p><strong>"我记性好，不用记" —— 一票否决。</strong></p></blockquote>
+<hr>
+<h2>最后：你得看</h2>
+<p><strong>你不看，她三天就不填了。</strong></p>
+<p>每天她发上来，<strong>回一句</strong>——哪怕只是"收到"。这一句是整个机制能不能活下去的关键。</p>
+<hr>
+</section>
+<section id="每日记录表-空白" class="chapter">
+<h1>每日记录表</h1>
+<p><strong>日期：______ 年 ___ 月 ___ 日　　记录人：__________</strong></p>
+<blockquote><p>用法说明 → <a href="#每日记录表">每日记录表.md</a>　　<strong>当场填，不许事后补。</strong></p></blockquote>
+<hr>
+<h2>A. 喂奶</h2>
+<table><thead><tr><th>时间</th><th>奶别</th><th>计划量</th><th>实喝</th><th>拍嗝</th><th>吐奶</th><th>备注</th></tr></thead><tbody>
+<tr><td>：</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>：</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>：</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>：</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>：</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>：</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>：</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>：</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>：</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>：</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<p><strong>奶别</strong>：母乳亲喂 / 母乳瓶喂 / 配方奶</p>
+<p><strong>拍嗝</strong>：✓ 打出　/　✗ 没打出</p>
+<p><strong>吐奶</strong>：无 / 少量溢奶 / 大量 / <strong>喷射状 🚨 立即打电话</strong></p>
+<blockquote><p><strong>小计：喂奶 ______ 次　　总奶量 ______ ml</strong></p></blockquote>
+<hr>
+<h2>B. 大小便</h2>
+<table><thead><tr><th>时间</th><th>小便</th><th>大便</th><th>性状</th><th>颜色</th></tr></thead><tbody>
+<tr><td>：</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>：</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>：</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>：</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>：</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>：</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>：</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>：</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>：</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>：</td><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<p><strong>性状</strong>：糊状 / 成形 / 稀水样 / 干硬球状</p>
+<p><strong>颜色</strong>：黄 / 绿 / 褐 / <strong>白陶土色 🚨 / 带血丝 🚨 / 黑色 🚨（拍照 + 立即打电话）</strong></p>
+<blockquote><p><strong>小计：尿不湿 ______ 片　　大便 ______ 次</strong></p>
+<p><strong>🚨 尿不湿少于 6 片 → 立即打电话（可能脱水）</strong></p></blockquote>
+<hr>
+<h2>C. 睡眠</h2>
+<table><thead><tr><th>入睡</th><th>醒来</th><th>时长</th><th>哄睡方式</th></tr></thead><tbody>
+<tr><td>：</td><td>：</td><td></td><td></td></tr>
+<tr><td>：</td><td>：</td><td></td><td></td></tr>
+<tr><td>：</td><td>：</td><td></td><td></td></tr>
+<tr><td>：</td><td>：</td><td></td><td></td></tr>
+<tr><td>：</td><td>：</td><td></td><td></td></tr>
+<tr><td>：</td><td>：</td><td></td><td></td></tr>
+</tbody></table>
+<blockquote><p><strong>小计：白天 ______ 小时　　夜间 ______ 小时　　夜醒 ______ 次</strong></p></blockquote>
+<hr>
+<h2>D. 体温 / 用药 / 异常</h2>
+<p><strong>体温</strong>（仅异常时测）　时间 __________　__________ ℃　部位 __________</p>
+<hr>
+<p><strong>用药</strong>　药名 __________________　剂量 __________　时间 __________</p>
+<blockquote><p><strong>家长事先同意签字：__________________</strong></p>
+<p><strong>没有家长签字，不得喂任何药物、保健品、偏方。</strong></p></blockquote>
+<hr>
+<p><strong>异常事件</strong>　□ 今日无</p>
+<p>　□ 磕碰　□ 坠落　□ 呛咳　□ 皮疹　□ 哭闹不止　□ 其他</p>
+<p>　经过：________________________________________________</p>
+<p>　____________________________________________________</p>
+<blockquote><p><strong>已电话报告家长：　□ 是（时间 __________）　　□ 否</strong></p>
+<p><strong>任何意外必须第一时间打电话，不许等到下班。</strong></p></blockquote>
+<hr>
+<h2>E. 确认</h2>
+<p><strong>育儿嫂签字：__________________　　家长确认：__________________</strong></p>
+<hr>
+</section>
+<section id="上岗后" class="chapter">
+<h1>上岗之后</h1>
+<blockquote><p><strong>选对人只是开始，机制才是长期保障。</strong></p>
+<p>招聘做得再好，没有机制，三个月后一切都会松掉。</p></blockquote>
+<hr>
+<h2>六个机制</h2>
+<h3>1. 每日记录表</h3>
+<p>→ <a href="#每日记录表">模板/每日记录表.md</a></p>
+<ul>
+<li>她每天拍照发家庭群</li>
+<li><strong>你每天回一句</strong> —— 哪怕只是"收到"</li>
+</ul>
+<blockquote><p><strong>你不看，她三天就不填了。</strong> 这一句回复是整个机制能不能活下去的关键。</p></blockquote>
+<h3>2. 摄像头</h3>
+<ul>
+<li>公共区域 + 婴儿房（<strong>不装她的卧室和卫生间</strong>）</li>
+<li>每周随机抽 <strong>1–2 小时</strong>回放</li>
+<li><strong>至少每月抽一次，拿记录表去对回放</strong> —— 这是识别"编表"最硬的一招</li>
+</ul>
+<p>  → <a href="#每日记录表">模板/每日记录表.md</a> §怎么识别"编的表"</p>
+<h3>3. 不定时回家</h3>
+<p><strong>别形成规律。</strong> 一旦她摸清了你的作息，摄像头之外的时间就全是盲区。</p>
+<h3>4. 每周 15 分钟复盘</h3>
+<ul>
+<li><strong>正向沟通，不是审问</strong></li>
+<li>先说她做得好的</li>
+<li>再说要调整的</li>
+<li><strong>然后问她：有什么需要我们配合的？</strong></li>
+<li><strong>她提的问题，你要真的解决</strong> —— 不然下次她就不提了，问题会转到地下</li>
+</ul>
+<blockquote><p>⚠️ <strong>复盘的是「过程」，不是「结果」。</strong> 为什么——见下一节。</p></blockquote>
+<h3>5. 看孩子的身体</h3>
+<p>洗澡的时候看：<strong>淤青、掐痕、异常红肿、抓伤。</strong></p>
+<p>不用刻意，洗澡本来就要看。</p>
+<h3>6. 看孩子的反应</h3>
+<ul>
+<li>她靠近时，孩子什么表情？</li>
+<li>见到她哭不哭？躲不躲？身体僵不僵？</li>
+<li>她走了以后，孩子什么反应？</li>
+</ul>
+<blockquote><p><strong>孩子不会撒谎。</strong></p></blockquote>
+<p>等孩子会说话了，<strong>定期单独问孩子</strong>。</p>
+<hr>
+<h2>⚠️ 别给她定 KPI</h2>
+<p>如果你在公司做 OKR，会很自然地想给她也定几个指标：<strong>睡整觉、奶量达标、不生病、体重达标。</strong></p>
+<p><strong>千万别。</strong></p>
+<p><strong>任何挂在她考核上的结果指标，都会被优化——而优化的代价，长在孩子身上。</strong></p>
+<table><thead><tr><th>你定的指标</th><th>她会怎么"达成"</th></tr></thead><tbody>
+<tr><td><strong>睡整觉</strong></td><td><strong>哭声免疫</strong>（让他哭到累）／ 睡前过度喂 ／ <strong>喂镇静药</strong></td></tr>
+<tr><td><strong>奶量达标</strong></td><td><strong>强喂、追着喂、灌</strong></td></tr>
+<tr><td><strong>体重达标</strong></td><td>过度喂养</td></tr>
+<tr><td><strong>不生病</strong></td><td><strong>隐瞒症状</strong> ← 这条直接生产你的头号红线</td></tr>
+<tr><td><strong>不哭闹</strong></td><td><strong>手机、电视、恐吓</strong> —— 甚至喂药</td></tr>
+</tbody></table>
+<p>最后一栏你多看两眼：</p>
+<blockquote><p><strong>"不生病"这个 KPI，是一台专门制造隐瞒的机器。</strong></p>
+<p>她越是被"不能让孩子生病"考核，就越不敢告诉你孩子有点咳嗽。</p>
+<p><strong>而隐瞒，恰恰是你<a href="#红线清单">红线清单</a>的第 12 条——那条你说"隐瞒一次，立刻解约"的。</strong></p>
+<p><strong>别自己造一个机器，去逼她违反你自己的红线。</strong></p></blockquote>
+<p>而且这些结果<strong>根本不归她管</strong>：孩子几个月睡整觉，是<strong>发育</strong>决定的；孩子生不生病，很大程度是运气。<strong>拿她控制不了的事考核她，只会逼她去操纵她能控制的那部分——也就是孩子的身体。</strong></p>
+<h3>那用什么评价她？</h3>
+<p><strong>锚定在她能控制的事上——全是过程，不是结果：</strong></p>
+<table><thead><tr><th>✅ 该看的（过程）</th><th>❌ 不该看的（结果）</th></tr></thead><tbody>
+<tr><td><strong>红线零违反</strong></td><td>孩子几个月睡整觉</td></tr>
+<tr><td><strong>记录表如实、当场填、不编</strong></td><td>奶量、体重达没达标</td></tr>
+<tr><td><strong>主动上报</strong> —— "我觉得他这两天奶量少了""我今天没抱稳，磕了一下"</td><td>孩子有没有生病</td></tr>
+<tr><td>卫生习惯、急救会不会</td><td>孩子会不会走路说话</td></tr>
+<tr><td>和老人相处</td><td>孩子哭不哭</td></tr>
+</tbody></table>
+<p><strong>涨薪就按这一列涨。</strong></p>
+<p>一年下来<strong>零隐瞒、记录表填得实、还主动发现过问题</strong>的人——<strong>这就是最好的育儿嫂</strong>，哪怕孩子期间生过三次病。</p>
+<p>反过来，<strong>孩子长得白白胖胖，但你发现她瞒过一次事——那不是好，那是你还没发现的坏。</strong></p>
+<hr>
+<h2>上岗后的危险信号</h2>
+<table><thead><tr><th>信号</th><th>怎么办</th></tr></thead><tbody>
+<tr><td>记录表<strong>太干净</strong>（时间整点、实喝量永远等于计划量、"异常"栏一个月全空白）</td><td>拿摄像头对一天</td></tr>
+<tr><td>记录表和摄像头<strong>对不上</strong></td><td>按隐瞒处理</td></tr>
+<tr><td>夜醒次数远少于摄像头显示的</td><td>她在虚报夜班工作量</td></tr>
+<tr><td><strong>白天睡眠时长异常地长</strong></td><td><strong>立刻查摄像头</strong> —— 她可能在用某种方式让孩子"安静"</td></tr>
+<tr><td>孩子身上有<strong>不明淤青、掐痕</strong></td><td>立刻查回放</td></tr>
+<tr><td>孩子见到她<strong>哭、躲、僵</strong></td><td>立刻查回放</td></tr>
+<tr><td>她开始<strong>回避摄像头的角度</strong></td><td>——</td></tr>
+<tr><td>出了小事<strong>没第一时间说</strong>，是你自己发现的</td><td><strong>红线第 12 条</strong></td></tr>
+</tbody></table>
+<blockquote><p><strong>发现一次隐瞒，就按红线第 12 条处理。不要给第二次机会。</strong></p>
+<p>第一次隐瞒的是小事，第二次隐瞒的可能就不是了。</p></blockquote>
+<hr>
+<h2>别只做监督</h2>
+<p>监督是底线，不是全部。<strong>留住一个好阿姨，比再招一个便宜得多。</strong></p>
+<ul>
+<li><strong>该涨的钱要涨</strong> —— 她在市场上是有价的，你不涨，别人会</li>
+<li><strong>红包、节礼、她生病时的关心</strong> —— 这些不是施舍，是投资</li>
+<li><strong>她提的合理诉求要解决</strong> —— 房间冷、饭不合口、老人说话难听</li>
+<li><strong>别当着孩子的面数落她</strong> —— 孩子会学，她会记</li>
+<li><strong>老人和她的矛盾，你要当裁判，不能装看不见</strong> —— 这是住家阿姨走人的头号原因</li>
+</ul>
+<blockquote><p>一个待了三年的阿姨，价值远高于每年换一个新的。</p>
+<p><strong>前面五道关是为了筛掉坏的；上岗之后的功夫，是为了留住好的。</strong></p></blockquote>
+</section>
+</body>
+</html>

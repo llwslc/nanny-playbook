@@ -1,0 +1,12 @@
+#!/bin/sh
+# 改了任何 md（或 onepage 工具本身）→ 重建打印合订本并一起提交。
+# 构建失败（比如新 md 没进 tools/onepage.order）→ 拒绝提交。
+#
+# 启用：git config core.hooksPath .githooks
+
+set -e
+
+if git diff --cached --name-only | grep -qE '\.md$|tools/onepage\.order$|tools/build-onepage\.mjs$'; then
+  node tools/build-onepage.mjs
+  git add ONEPAGE.md ONEPAGE.html
+fi
