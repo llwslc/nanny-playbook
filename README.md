@@ -24,8 +24,14 @@
 
 ## 🖨️ 要打印？用合订本
 
-**[`ONEPAGE.html`](ONEPAGE.html)** —— 全部内容合成一份，浏览器打开 `Cmd+P` 直接印（A4、每章自动分页、表格不跨页断行）。
-**[`ONEPAGE.md`](ONEPAGE.md)** —— 同样的内容，GitHub 上能直接看。
+### → **[打开合订本，直接打印](https://llwslc.github.io/nanny-playbook/ONEPAGE.html)**
+
+全部内容合成一份，浏览器里 `Cmd+P` 就能印（A4、每章自动分页、表格不跨页断行）。
+
+**[`ONEPAGE.md`](ONEPAGE.md)** —— 同样的内容，在 GitHub 上直接看、能 diff。
+
+> 仓库里的 `ONEPAGE.html` 点开只会看到一堆源码——**GitHub 不渲染 HTML 文件**。
+> 要看渲染好的，用上面那个链接（GitHub Pages 提供）。
 
 两份都是**自动生成**的，不要手改。改内容改源 md，提交时 `pre-commit` 钩子会自动重建。
 
