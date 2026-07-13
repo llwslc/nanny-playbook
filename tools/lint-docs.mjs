@@ -122,7 +122,11 @@ for (const file of mdFiles) {
       if (m) hits.push({ rel, ln: i + 1, hit: m[0], why, print, line: line.trim().slice(0, 70) });
     }
 
-    for (const m of line.matchAll(RED_REF)) redRefs.push({ rel, ln: i + 1, n: +m[1], hit: m[0] });
+    // 红线引用后面必须跟「（关键词）」，关键词得是那一条的原文片段——见下面的核对
+    for (const m of line.matchAll(RED_REF)) {
+      const g = line.slice(m.index + m[0].length).match(/^\s*[（(]([^）)]+)[）)]/);
+      redRefs.push({ rel, ln: i + 1, n: +m[1], hit: m[0].trim(), gist: g ? g[1].trim() : null });
+    }
 
     // §数字 —— 禁止
     for (const m of line.matchAll(SEC_NUM)) secNumHits.push({ rel, ln: i + 1, hit: m[0].trim() });
@@ -166,8 +170,30 @@ if (!fs.existsSync(RED)) {
   if (String(sig) !== String(main))
     numErrs.push(`红线签字页和对照表对不上：签字页 [${sig.join(',') || '空'}]，对照表 [${main.join(',')}] —— 签字页才是签下去生效的那版`);
 
-  for (const r of redRefs.filter((r) => main.length && !main.includes(r.n)))
-    numErrs.push(`${r.rel}:${r.ln}  「${r.hit}」—— 红线清单只有 ${main.length} 条，没有第 ${r.n} 条`);
+  // 对照表每行的「内容」列（去掉粗体标记），用来核对引用带的关键词。
+  // 光查「第 N 条在不在范围内」是不够的——在前面插一条，第 12 条被挤成第 13 条，
+  // 编号依然连续、引用依然在范围内，照样绿灯、照样静默指错。
+  // 所以每处引用必须带一个**原文片段**：条目的内容一变，关键词就对不上，当场红灯。
+  // （对读者也更好：拿着一沓打印纸的人，看见「红线第 2 条」根本不知道那是什么。）
+  const rowText = new Map();
+  for (const m of head.matchAll(/^\|\s*(\d+)\s*\|([^|]*)\|/gm))
+    rowText.set(+m[1], m[2].replace(/\*\*/g, '').trim());
+
+  for (const r of redRefs) {
+    if (!main.length) break;
+    if (!main.includes(r.n)) {
+      numErrs.push(`${r.rel}:${r.ln}  「${r.hit}」—— 红线清单只有 ${main.length} 条，没有第 ${r.n} 条`);
+      continue;
+    }
+    const row = rowText.get(r.n) ?? '';
+    if (!r.gist) {
+      numErrs.push(`${r.rel}:${r.ln}  「${r.hit}」—— 后面要带关键词：「${r.hit}（…）」。` +
+        `关键词得是第 ${r.n} 条的原文片段，例如「${row.slice(0, 10)}」`);
+      continue;
+    }
+    if (!row.includes(r.gist))
+      numErrs.push(`${r.rel}:${r.ln}  「${r.hit}（${r.gist}）」—— 对不上。第 ${r.n} 条其实是：「${row}」`);
+  }
 }
 
 // §数字：一律禁止 —— 插一章就静默指错，而且照样"合法"，门禁抓不住
