@@ -17,9 +17,19 @@ const die = (msg) => { console.error(`\x1b[31m✗ onepage: ${msg}\x1b[0m`); proc
 // ── 读清单 ───────────────────────────────────────────────
 const orderFile = path.join(ROOT, 'tools/onepage.order');
 if (!fs.existsSync(orderFile)) die('缺少 tools/onepage.order');
-const order = fs.readFileSync(orderFile, 'utf8')
+
+// 一行一个文件。可选 `文件 | 章节标题` —— 覆盖该文件自己的 H1。
+// 源文件不动（README 的 `# nanny-playbook` 在 GitHub 上该留着），
+// 只把印出来的那一份换掉：目录和章首都用覆盖的标题。
+const entries = fs.readFileSync(orderFile, 'utf8')
   .split('\n').map(l => l.trim())
-  .filter(l => l && !l.startsWith('#'));
+  .filter(l => l && !l.startsWith('#'))
+  .map(l => {
+    const [file, title] = l.split('|').map(s => s.trim());
+    return { file, title: title || null };
+  });
+const order = entries.map(e => e.file);
+const titleOf = new Map(entries.filter(e => e.title).map(e => [e.file, e.title]));
 
 // ── 门禁 1：清单里的文件都得存在 ──────────────────────────
 const missing = order.filter(f => !fs.existsSync(path.join(ROOT, f)));
@@ -59,9 +69,12 @@ const chapters = order.map((file) => {
   // 去掉标了 onepage:skip 的段落（仓库自身的说明，印在纸上是噪音）
   md = md.replace(/<!--\s*onepage:skip-start\s*-->[\s\S]*?<!--\s*onepage:skip-end\s*-->/g, '');
 
-  // 章节标题取该文件自己的一级标题（比文件名可读），拿不到就退回文件名
+  // 章节标题：onepage.order 里的覆盖优先 → 文件自己的一级标题 → 退回文件名
   const h1 = md.match(/^#\s+(.+?)\s*$/m);
-  const title = h1 ? h1[1] : anchorOf(file);
+  const title = titleOf.get(file) || (h1 ? h1[1] : anchorOf(file));
+
+  // 有覆盖时，正文里那个 H1 也要一起换——否则目录印新名字、章首还印着旧的
+  if (titleOf.has(file) && h1) md = md.replace(/^#\s+.+?\s*$/m, () => `# ${title}`);
 
   // 跨文件链接 → 页内锚点。
   // 标签若是文件路径（"模板/候选人评分表.md"），换成干净的名字——
