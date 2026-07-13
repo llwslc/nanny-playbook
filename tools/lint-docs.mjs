@@ -50,20 +50,18 @@ const RULES = [
 // 必须带「红线」前缀——合同条款.md 里的「第 2 条」说的是它自己的条款，不是红线。
 const RED_REF = /红线(?:清单)?(?:\.md)?(?:\]\([^)]*\))?\s*第\s*(\d+)\s*条/g;
 
-// 「§八」这类**按编号**引用的章节。
-// 后面紧跟汉字的不算：`§坠床` `§怎么识别"编的表"` 是**按标题**引用的——
-// 那是文字不是编号，章节重排也不会断，不归这个门禁管。
-const SEC_REF = /§\s*([一二三四五六七八九十]+)(?![一-龥])/g;
-
-const CN = '零一二三四五六七八九';
-const cn2n = (s) => {
-  if (s === '十') return 10;
-  const i = s.indexOf('十');
-  if (i < 0) return CN.indexOf(s);                         // 一…九
-  const hi = i === 0 ? 1 : CN.indexOf(s[0]);               // 十X / X十Y
-  const lo = i === s.length - 1 ? 0 : CN.indexOf(s[i + 1]);
-  return hi * 10 + lo;
-};
+// 「§xxx」跨文件引用。两种写法，只有一种是安全的：
+//
+//   ❌ §八     按编号。往前面插一章，编号全部平移——这个引用**依然在范围内、依然合法**，
+//              但已经指向另一章了。静默指错，谁都不会发现。
+//              （真出过：插入「大便与便秘」「黄疸」之后，§九 从「睡眠」变成了「黄疸」，
+//               而 危险信号.md 还写着「基线 → §九 孩子几个月能睡整觉」。）
+//   ✅ §睡眠   按标题。章节怎么重排、怎么改号，都指得着。
+//
+// 所以：**数字引用一律报错**；标题引用去目标文件里核对，找不到那个标题也报错。
+const SEC_NUM   = /§\s*([一二三四五六七八九十]+)(?![一-龥])/g;   // 禁止
+const SEC_TITLE = /§\s*([^\s「」|*<>，。、）)]+)/g;              // 核对
+const MD_LINK   = /\]\(([^)]*?\.md)(?:#[^)]*)?\)/g;             // 这一行引的是哪个文件
 
 // 剥掉引语和行内代码：里面是别人说的话 / 字面量，不是指南的叙述
 const strip = (s) => s
@@ -91,13 +89,23 @@ const overridden = new Set(
     : [],
 );
 
+const mdFiles = walk(ROOT).filter((f) => f.endsWith('.md') && !SKIP.has(path.relative(ROOT, f)));
+
+// 每个文件的全部标题行（去掉 # 和 ⭐ 之类），用来核对 §标题 引用
+const headings = new Map(mdFiles.map((f) => [
+  path.basename(f),
+  fs.readFileSync(f, 'utf8').split('\n')
+    .filter((l) => /^#{1,6}\s/.test(l))
+    .map((l) => l.replace(/^#+\s*/, '').trim()),
+]));
+
 const hits = [];
 const redRefs = [];
 const secRefs = [];
+const secNumHits = [];
 
-for (const file of walk(ROOT).filter((f) => f.endsWith('.md'))) {
+for (const file of mdFiles) {
   const rel = path.relative(ROOT, file);
-  if (SKIP.has(rel)) continue;
   let printed = true;   // 当前行是否会进合订本
   let h1Done = false;   // 该文件的第一个 H1 是否已经过了（build 只换第一个）
   fs.readFileSync(file, 'utf8').split('\n').forEach((line, i) => {
@@ -113,8 +121,20 @@ for (const file of walk(ROOT).filter((f) => f.endsWith('.md'))) {
       const m = (print ? line : bare).match(re); // 仓库残留查原文，不剥引号
       if (m) hits.push({ rel, ln: i + 1, hit: m[0], why, print, line: line.trim().slice(0, 70) });
     }
+
     for (const m of line.matchAll(RED_REF)) redRefs.push({ rel, ln: i + 1, n: +m[1], hit: m[0] });
-    for (const m of line.matchAll(SEC_REF)) secRefs.push({ rel, ln: i + 1, n: cn2n(m[1]), hit: m[0].trim() });
+
+    // §数字 —— 禁止
+    for (const m of line.matchAll(SEC_NUM)) secNumHits.push({ rel, ln: i + 1, hit: m[0].trim() });
+
+    // §标题 —— 去目标文件核对。目标 = 该行 § 之前最后一个 .md 链接；没有链接就是引自己
+    for (const m of line.matchAll(SEC_TITLE)) {
+      if (/^[一二三四五六七八九十]+$/.test(m[1])) continue;   // 数字的上面已经报过
+      let target = rel;
+      for (const l of line.matchAll(MD_LINK)) if (l.index < m.index) target = l[1];
+      secRefs.push({ rel, ln: i + 1, title: m[1], target: path.basename(target), hit: m[0].trim() });
+    }
+
     if (/<!--\s*onepage:skip-end\s*-->/.test(line)) printed = true;
   });
 }
@@ -150,20 +170,16 @@ if (!fs.existsSync(RED)) {
     numErrs.push(`${r.rel}:${r.ln}  「${r.hit}」—— 红线清单只有 ${main.length} 条，没有第 ${r.n} 条`);
 }
 
-// 标准答案：章节号连续 + 所有「§N」引用都指得着
-const ANS = path.join(ROOT, '参考/标准答案.md');
-if (!fs.existsSync(ANS)) {
-  numErrs.push('找不到 参考/标准答案.md');
-} else {
-  const secs = [...fs.readFileSync(ANS, 'utf8').matchAll(/^#\s+([一二三四五六七八九十]+)、/gm)].map((m) => cn2n(m[1]));
-  const seq = secs.map((_, i) => i + 1);
+// §数字：一律禁止 —— 插一章就静默指错，而且照样"合法"，门禁抓不住
+for (const h of secNumHits)
+  numErrs.push(`${h.rel}:${h.ln}  「${h.hit}」—— 按编号引用会静默指错（前面插一章，它就指向另一章了，而且依然"合法"）。改成按标题引，例如 §睡眠`);
 
-  if (!secs.length) numErrs.push('标准答案.md 里一个「# 一、xxx」章节都没读到');
-  else if (String(secs) !== String(seq))
-    numErrs.push(`标准答案.md 章节号不连续：${secs.join(',')} —— 应该是 1…${secs.length}`);
-
-  for (const r of secRefs.filter((r) => secs.length && !secs.includes(r.n)))
-    numErrs.push(`${r.rel}:${r.ln}  「${r.hit}」—— 标准答案.md 只有 ${secs.length} 章，没有第 ${r.n} 章`);
+// §标题：目标文件里必须真有这个标题
+for (const r of secRefs) {
+  const hs = headings.get(r.target);
+  if (!hs) { numErrs.push(`${r.rel}:${r.ln}  「${r.hit}」—— 找不到目标文件 ${r.target}`); continue; }
+  if (!hs.some((h) => h.includes(r.title)))
+    numErrs.push(`${r.rel}:${r.ln}  「${r.hit}」—— ${r.target} 里没有标题含「${r.title}」的小节（改名了？）`);
 }
 
 // ── 报告 ──────────────────────────────────────────────────
