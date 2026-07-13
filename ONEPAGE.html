@@ -31,18 +31,14 @@
   .chapter { page-break-before: always; }
   .chapter:first-of-type { page-break-before: avoid; }
 
-  /* 左右各留 20mm：订书针 / 打孔要地方，手指也要地方捏。
-     原来是 12mm——针脚直接压在正文上，而且正文宽 186mm，
-     9.5pt 中文一行排到 55 字，一行太长，眼睛回不了行。
-     20mm 之后正文 170mm，约 44 字/行，两个问题一起好了。
-     左右对称，所以单面、双面打印都留得出装订边。 */
+  /* 左右 20mm 是装订边（订书针 / 打孔），别收窄。左右对称，单双面打印都留得出。 */
   @page { size: A4; margin: 15mm 20mm; }
   @media print {
     body { max-width: none; padding: 0; font-size: 9.5pt; }
     a { border-bottom: 0; }
     h1, h2, h3, h4 { page-break-after: avoid; }
     table, blockquote, ul, ol { page-break-inside: auto; }
-    p, li { orphans: 2; widows: 2; }   /* 别让孤零零一行被甩到下一页 */
+    p, li { orphans: 2; widows: 2; }
   }
 </style>
 </head>

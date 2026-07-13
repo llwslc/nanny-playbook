@@ -14,10 +14,8 @@
 //    （README 里那些 git 说明就在里面），对它们不设这条限制。
 //    这类不剥引号：印在纸上的 `本地/` 换成等宽字体也还是天书。
 //
-// 3. 编号引用 —— 「红线第 12 条」「标准答案 §八」被别的文档**硬编码**引用。
-//    编号是接口：只能追加，不能插队、不能重排。
-//    重排**不会报错**——那些引用会静默地指向另一条规则 / 另一章，谁都不会发现。
-//    所以这里当门禁：编号本身连不连续、所有引用指不指得着，都得对上。
+// 3. 跨文件引用 —— 章节按标题引（`§睡眠`），红线按条号 + 关键词引（`红线第 2 条（不喂任何药物）`）。
+//    两种都去目标里核对。光凭编号的引用禁掉：它在范围内也可能早就指向别处了。
 //
 // .claude/ 和 tools/ 不扫（规则文件本身就要列举这些反面词）。
 
@@ -50,18 +48,11 @@ const RULES = [
 // 必须带「红线」前缀——合同条款.md 里的「第 2 条」说的是它自己的条款，不是红线。
 const RED_REF = /红线(?:清单)?(?:\.md)?(?:\]\([^)]*\))?\s*第\s*(\d+)\s*条/g;
 
-// 「§xxx」跨文件引用。两种写法，只有一种是安全的：
-//
-//   ❌ §八     按编号。往前面插一章，编号全部平移——这个引用**依然在范围内、依然合法**，
-//              但已经指向另一章了。静默指错，谁都不会发现。
-//              （真出过：插入「大便与便秘」「黄疸」之后，§九 从「睡眠」变成了「黄疸」，
-//               而 危险信号.md 还写着「基线 → §九 孩子几个月能睡整觉」。）
-//   ✅ §睡眠   按标题。章节怎么重排、怎么改号，都指得着。
-//
-// 所以：**数字引用一律报错**；标题引用去目标文件里核对，找不到那个标题也报错。
-const SEC_NUM   = /§\s*([一二三四五六七八九十]+)(?![一-龥])/g;   // 禁止
-const SEC_TITLE = /§\s*([^\s「」|*<>，。、）)]+)/g;              // 核对
-const MD_LINK   = /\]\(([^)]*?\.md)(?:#[^)]*)?\)/g;             // 这一行引的是哪个文件
+// 章节引用。`§八` 这种按编号引的禁掉——插一章、编号平移，它依然"合法"却指向了另一章。
+// `§睡眠` 按标题引，去目标文件核对；目标 = 该行 § 之前最后一个 .md 链接，没有链接就是引自己。
+const SEC_NUM   = /§\s*([一二三四五六七八九十]+)(?![一-龥])/g;
+const SEC_TITLE = /§\s*([^\s「」|*<>，。、）)]+)/g;
+const MD_LINK   = /\]\(([^)]*?\.md)(?:#[^)]*)?\)/g;
 
 // 剥掉引语和行内代码：里面是别人说的话 / 字面量，不是指南的叙述
 const strip = (s) => s
@@ -76,9 +67,7 @@ const walk = (d) => fs.readdirSync(d, { withFileTypes: true })
   .filter((e) => !['.git', 'node_modules', 'tools', '.claude', '本地', 'local'].includes(e.name))
   .flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
 
-// onepage.order 里写了 `文件 | 章节标题` 的，build 会把该文件的 H1 换成覆盖的标题。
-// 那一行印不到纸上，所以 print 规则跳过它——README 的 `# nanny-playbook` 就是这么来的：
-// 在 GitHub 上留着，在合订本里换成「怎么用这份指南」。
+// onepage.order 里 `文件 | 标题` 覆盖过的 H1，build 会换掉——那一行印不到纸上，print 规则跳过它。
 const orderFile = path.join(ROOT, 'tools/onepage.order');
 const overridden = new Set(
   fs.existsSync(orderFile)
@@ -122,18 +111,15 @@ for (const file of mdFiles) {
       if (m) hits.push({ rel, ln: i + 1, hit: m[0], why, print, line: line.trim().slice(0, 70) });
     }
 
-    // 红线引用后面必须跟「（关键词）」，关键词得是那一条的原文片段——见下面的核对
     for (const m of line.matchAll(RED_REF)) {
       const g = line.slice(m.index + m[0].length).match(/^\s*[（(]([^）)]+)[）)]/);
       redRefs.push({ rel, ln: i + 1, n: +m[1], hit: m[0].trim(), gist: g ? g[1].trim() : null });
     }
 
-    // §数字 —— 禁止
     for (const m of line.matchAll(SEC_NUM)) secNumHits.push({ rel, ln: i + 1, hit: m[0].trim() });
 
-    // §标题 —— 去目标文件核对。目标 = 该行 § 之前最后一个 .md 链接；没有链接就是引自己
     for (const m of line.matchAll(SEC_TITLE)) {
-      if (/^[一二三四五六七八九十]+$/.test(m[1])) continue;   // 数字的上面已经报过
+      if (/^[一二三四五六七八九十]+$/.test(m[1])) continue;   // 数字的 SEC_NUM 已经报过
       let target = rel;
       for (const l of line.matchAll(MD_LINK)) if (l.index < m.index) target = l[1];
       secRefs.push({ rel, ln: i + 1, title: m[1], target: path.basename(target), hit: m[0].trim() });
@@ -170,11 +156,8 @@ if (!fs.existsSync(RED)) {
   if (String(sig) !== String(main))
     numErrs.push(`红线签字页和对照表对不上：签字页 [${sig.join(',') || '空'}]，对照表 [${main.join(',')}] —— 签字页才是签下去生效的那版`);
 
-  // 对照表每行的「内容」列（去掉粗体标记），用来核对引用带的关键词。
-  // 光查「第 N 条在不在范围内」是不够的——在前面插一条，第 12 条被挤成第 13 条，
-  // 编号依然连续、引用依然在范围内，照样绿灯、照样静默指错。
-  // 所以每处引用必须带一个**原文片段**：条目的内容一变，关键词就对不上，当场红灯。
-  // （对读者也更好：拿着一沓打印纸的人，看见「红线第 2 条」根本不知道那是什么。）
+  // 引用带的关键词要跟条目原文核对：条号在范围内不代表指对了——
+  // 在前面插一条，第 12 条就被挤成了别的东西，而编号依然连续。
   const rowText = new Map();
   for (const m of head.matchAll(/^\|\s*(\d+)\s*\|([^|]*)\|/gm))
     rowText.set(+m[1], m[2].replace(/\*\*/g, '').trim());
@@ -196,11 +179,9 @@ if (!fs.existsSync(RED)) {
   }
 }
 
-// §数字：一律禁止 —— 插一章就静默指错，而且照样"合法"，门禁抓不住
 for (const h of secNumHits)
   numErrs.push(`${h.rel}:${h.ln}  「${h.hit}」—— 按编号引用会静默指错（前面插一章，它就指向另一章了，而且依然"合法"）。改成按标题引，例如 §睡眠`);
 
-// §标题：目标文件里必须真有这个标题
 for (const r of secRefs) {
   const hs = headings.get(r.target);
   if (!hs) { numErrs.push(`${r.rel}:${r.ln}  「${r.hit}」—— 找不到目标文件 ${r.target}`); continue; }
