@@ -59,11 +59,14 @@ const anchorOf = (file) => path.basename(file, '.md');
 const linkMap = new Map(order.map(f => [anchorOf(f), slug(anchorOf(f))]));
 
 function slug(s) {
-  return s.toLowerCase().replace(/[^\w一-龥-]+/g, '-').replace(/^-+|-+$/g, '');
+  s = s.toLowerCase().replace(/[^\w一-龥-]+/g, '-').replace(/^-+|-+$/g, '');
+  // CSS 的 ID 选择器不能以数字开头，而排版引擎会拿 href 去 querySelector——
+  // `#1-初筛` 会直接抛 SyntaxError，整个分页就停在第一页。
+  return /^\d/.test(s) ? `ch-${s}` : s;
 }
 
 // ── 逐个读取、清洗 ────────────────────────────────────────
-const chapters = order.map((file) => {
+const chapters = order.map((file, idx) => {
   let md = fs.readFileSync(path.join(ROOT, file), 'utf8');
 
   // 去掉标了 onepage:skip 的段落（仓库自身的说明，印在纸上是噪音）
@@ -73,8 +76,9 @@ const chapters = order.map((file) => {
   const h1 = md.match(/^#\s+(.+?)\s*$/m);
   const title = titleOf.get(file) || (h1 ? h1[1] : anchorOf(file));
 
-  // 有覆盖时，正文里那个 H1 也要一起换——否则目录印新名字、章首还印着旧的
-  if (titleOf.has(file) && h1) md = md.replace(/^#\s+.+?\s*$/m, () => `# ${title}`);
+  // 章首 H1 带上章号，和目录的序号一致——在一沓纸里翻章，认数字比认标题快。
+  // （标题覆盖也在这里一并生效——否则目录印新名字、章首还印着旧的）
+  if (h1) md = md.replace(/^#\s+.+?\s*$/m, () => `# ${idx + 1} · ${title}`);
 
   // 跨文件链接 → 页内锚点。
   // 标签若是文件路径（"模板/候选人评分表.md"），换成干净的名字——
@@ -217,52 +221,92 @@ function mdToHtml(src) {
 
 const body = mdToHtml(mdOut);
 
+// 目录列表标上 class——CSS 靠它给每一项补页码（target-counter 由排版引擎结算）。
+// 找不到就直接失败：目录页码悄悄消失，比构建失败糟得多。
+const bodyHtml = body.replace('<h2>目录</h2>\n<ol>', '<h2>目录</h2>\n<ol class="toc">');
+if (bodyHtml === body) die('没找到「目录」列表——目录页码没法标注');
+
+// 排版引擎（vendor 进仓库，MIT）：把文档排成真正的 A4 页。
+// 页脚页码、页眉章节名、目录页码都出自同一次排版，和纸上印出来的天然一致——
+// 在构建机上"预测"浏览器分页迟早会静默指错，这里不猜。
+const VENDOR = path.join(ROOT, 'tools/vendor/paged.polyfill.js');
+if (!fs.existsSync(VENDOR)) die('缺少 tools/vendor/paged.polyfill.js（页码排版引擎）');
+const pagedjs = fs.readFileSync(VENDOR, 'utf8');
+
 const html = `<!doctype html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>育儿嫂招聘与管理 · 打印合订本</title>
 <style>
+  /* 文末内联的排版引擎会把正文切成真正的 A4 页：页眉印章节名，页脚印页码，
+     目录页码用 target-counter 从同一次排版里取。
+     打印时在浏览器对话框里关掉它自带的页眉页脚，别和页面里的叠在一起。 */
   :root { --line:#d5d5d5; --muted:#666; --accent:#8a1c1c; }
   * { box-sizing: border-box; }
-  body {
-    font: 10.5pt/1.65 -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    color:#111; max-width: 820px; margin: 0 auto; padding: 32px 24px;
+  html {
+    font: 9.5pt/1.65 -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color:#111;
   }
-  h1 { font-size: 20pt; margin: 0 0 .6em; padding-bottom:.3em; border-bottom: 3px solid var(--accent); }
+  body { margin: 0; }
+  h1 { font-size: 20pt; margin: 0 0 .6em; padding-bottom:.3em; border-bottom: 3px solid var(--accent); string-set: chaptitle content(text); }
   h2 { font-size: 14pt; margin: 1.6em 0 .5em; padding-left:.4em; border-left: 4px solid var(--accent); }
   h3 { font-size: 12pt; margin: 1.2em 0 .4em; }
   h4 { font-size: 11pt; margin: 1em 0 .3em; color: var(--muted); }
-  p, li { margin: .35em 0; }
+  h1, h2, h3, h4 { break-after: avoid; }
+  p, li { margin: .35em 0; orphans: 2; widows: 2; }
   ul, ol { padding-left: 1.6em; margin: .4em 0; }
   code { background:#f2f2f2; padding: .1em .35em; border-radius:3px; font-size: .9em; }
   hr { border:0; border-top:1px solid var(--line); margin: 1.4em 0; }
-  a { color: inherit; text-decoration: none; border-bottom: 1px dotted #aaa; }
+  a { color: inherit; text-decoration: none; }
   blockquote {
     margin: .8em 0; padding: .6em 1em; background:#faf7f2;
-    border-left: 3px solid #c9a227; page-break-inside: avoid;
+    border-left: 3px solid #c9a227; break-inside: avoid;
   }
   blockquote > :first-child { margin-top:0; } blockquote > :last-child { margin-bottom:0; }
   table { border-collapse: collapse; width: 100%; margin: .8em 0; font-size: 9.5pt; }
   th, td { border: 1px solid var(--line); padding: .45em .6em; text-align: left; vertical-align: top; }
   th { background:#f4f2ef; font-weight: 600; }
-  tr { page-break-inside: avoid; }
-  .chapter { page-break-before: always; }
-  .chapter:first-of-type { page-break-before: avoid; }
+  tr { break-inside: avoid; }
+  .chapter { break-before: page; }
 
-  /* 左右 20mm 是装订边（订书针 / 打孔），别收窄。左右对称，单双面打印都留得出。 */
-  @page { size: A4; margin: 15mm 20mm; }
+  /* 目录：标题靠左，页码靠右。
+     排版引擎不认 leader() 点线——content 里混进它，整条声明会被判非法，页码直接消失。 */
+  .toc { padding-left: 2.2em; }
+  .toc li { margin: .45em 0; position: relative; padding-right: 3em; }
+  .toc a::after { content: target-counter(attr(href), page); position: absolute; right: 0; }
+
+  /* 左右 20mm 是装订边（订书针 / 打孔），别收窄。左右对称，单双面打印都留得出。
+     页眉页脚排在上下边距里。 */
+  @page {
+    size: A4;
+    margin: 15mm 20mm;
+    @top-center { content: string(chaptitle); font-size: 8pt; color: #999; }
+    @bottom-center { content: "第 " counter(page) " 页 · 共 " counter(pages) " 页"; font-size: 8pt; color: #999; }
+  }
+  @page :first { @top-center { content: none; } }  /* 封面页自己就是大标题 */
+
+  /* 屏幕上：按纸张的样子预览 */
+  @media screen {
+    body { background: #d9d9d9; }
+    .pagedjs_page { background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.28); margin: 16px auto; }
+  }
   @media print {
-    body { max-width: none; padding: 0; font-size: 9.5pt; }
-    a { border-bottom: 0; }
-    h1, h2, h3, h4 { page-break-after: avoid; }
-    table, blockquote, ul, ol { page-break-inside: auto; }
-    p, li { orphans: 2; widows: 2; }
+    body { background: none; }
+    .pagedjs_page { box-shadow: none; margin: 0; }
   }
 </style>
 </head>
 <body>
-${body}
+${bodyHtml}
+<script>
+  // 排版完成的信号：无头浏览器出 PDF 时等它，别在排到一半时出片。
+  window.PagedConfig = { after: () => { window.__pagedjsDone = true; } };
+</script>
+<script>
+${pagedjs}
+</script>
 </body>
 </html>
 `;
