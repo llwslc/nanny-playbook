@@ -75,8 +75,10 @@
      避免首帧闪一下未分页的裸文档 */
   .paged body > :not(.pagedjs_pages) { display: none; }
 
-  /* 手机 / 平板（.plain）：普通网页，正常字号、自动换行，宽表格横向滚动 */
-  .plain body { max-width: 820px; margin: 0 auto; padding: 24px 16px; font-size: 15px; line-height: 1.75; }
+  /* 手机 / 平板（.plain）：普通网页，正常字号、自动换行，宽表格横向滚动。
+     overflow-wrap: anywhere——超长的填空线（____…）是不可断串，不许它断
+     就会从段落里漏出去，把整页撑宽，右边多出一条空白。 */
+  .plain body { max-width: 820px; margin: 0 auto; padding: 24px 16px; font-size: 15px; line-height: 1.75; overflow-wrap: anywhere; }
   .plain table { display: block; overflow-x: auto; }
 </style>
 </head>
