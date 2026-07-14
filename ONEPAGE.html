@@ -52,15 +52,8 @@
   }
   @page :first { @top-center { content: none; } }  /* 封面页自己就是大标题 */
 
-  /* 屏幕上：按纸张的样子预览 */
-  @media screen {
-    body { background: #d9d9d9; }
-    .pagedjs_page { background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.28); margin: 16px auto; }
-  }
-  @media print {
-    body { background: none; }
-    .pagedjs_page { box-shadow: none; margin: 0; }
-  }
+  /* 屏幕预览的样式（灰底、白纸、居中）不在这里——排版引擎会重写这个样式表，
+     @media screen 的块会被它吃掉。见文末排版完成回调：那里注入的才归浏览器管。 */
 </style>
 </head>
 <body>
@@ -2829,8 +2822,19 @@
 <p><strong>前面六道关是为了筛掉坏的；上岗之后的功夫，是为了留住好的。</strong></p></blockquote>
 </section>
 <script>
-  // 排版完成的信号：无头浏览器出 PDF 时等它，别在排到一半时出片。
-  window.PagedConfig = { after: () => { window.__pagedjsDone = true; } };
+  window.PagedConfig = {
+    after: () => {
+      // 屏幕预览样式（灰底、白纸居中、页间距）。必须等排版结束再注入：
+      // head 里的样式表会被排版引擎重写，@media screen 的块活不下来。
+      // margin auto 在窄屏上自动退化成 0——页面比屏宽时靠左、可滚动，不会两边裁切。
+      const s = document.createElement('style');
+      s.textContent = '@media screen { body { background: #d9d9d9; } ' +
+        '.pagedjs_page { background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.28); margin: 16px auto; } }';
+      document.head.appendChild(s);
+      // 排版完成的信号：无头浏览器出 PDF 时等它，别在排到一半时出片。
+      window.__pagedjsDone = true;
+    },
+  };
 </script>
 <script>
 /**
