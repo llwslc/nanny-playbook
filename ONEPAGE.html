@@ -2,10 +2,17 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<!-- A4 页面固定 794px 宽。布局视口定成 页宽 + 两侧留白：手机自动把整页缩到屏幕宽
-     （双指还能放大细看），桌面浏览器不理这一行。 -->
-<meta name="viewport" content="width=826">
-<script>document.documentElement.className = 'js';</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  // 只有带鼠标的设备（桌面/笔记本——会拿去打印的设备）才排成 A4 预览（.paged）；
+  // 手机、平板没人打印，按普通网页渲染（.plain），正常字号、自动换行。
+  // 类要在首帧前挂上：.paged 的「藏住未分页正文」规则靠它，不闪裸文档。
+  var paged = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  document.documentElement.className = paged ? 'paged' : 'plain';
+  // auto:false 时排版引擎装载后不动手。after 是排版完成的信号：
+  // 无头浏览器出 PDF 时等它，别在排到一半时出片。
+  window.PagedConfig = { auto: paged, after: function () { window.__pagedjsDone = true; } };
+</script>
 <title>育儿嫂招聘与管理 · 打印合订本</title>
 <style>
   /* 文末内联的排版引擎会把正文切成真正的 A4 页：页眉印章节名，页脚印页码，
@@ -57,16 +64,20 @@
 
 </style>
 <style media="screen">
-  /* 屏幕预览：灰底、白纸居中、页间距。
-     media="screen" 一石二鸟：打印时浏览器天然忽略；排版引擎收集样式表时
-     也明确跳过 media~='screen' 的表——所以这套样式从加载那一刻就生效，
-     不会先靠边裸排、排完页码再跳到中间。
-     margin auto 在窄屏自动退化成 0：页面比屏宽时靠左、可横向滚动，不裁两边。 */
-  body { background: #d9d9d9; }
+  /* 屏幕上的样式。media="screen" 一石二鸟：打印时浏览器天然忽略；
+     排版引擎收集样式表时也明确跳过 media~='screen' 的表——
+     所以这一套从加载那一刻就生效，且不会被引擎重写。 */
+
+  /* 桌面（.paged）：灰底上一叠居中的 A4 纸，预览即打印效果 */
+  .paged body { background: #d9d9d9; }
   .pagedjs_page { background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.28); margin: 16px auto; }
   /* 排版引擎启动后才把正文收进页面容器；在那之前把原始正文藏住，
-     避免首帧闪一下未分页的裸文档。不开 JS 就没有 .js 类，原文照常显示、照常能印。 */
-  .js body > :not(.pagedjs_pages) { display: none; }
+     避免首帧闪一下未分页的裸文档 */
+  .paged body > :not(.pagedjs_pages) { display: none; }
+
+  /* 手机 / 平板（.plain）：普通网页，正常字号、自动换行，宽表格横向滚动 */
+  .plain body { max-width: 820px; margin: 0 auto; padding: 24px 16px; font-size: 15px; line-height: 1.75; }
+  .plain table { display: block; overflow-x: auto; }
 </style>
 </head>
 <body>
@@ -2834,10 +2845,6 @@
 <blockquote><p>一个待了三年的阿姨，价值远高于每年换一个新的。</p>
 <p><strong>前面六道关是为了筛掉坏的；上岗之后的功夫，是为了留住好的。</strong></p></blockquote>
 </section>
-<script>
-  // 排版完成的信号：无头浏览器出 PDF 时等它，别在排到一半时出片。
-  window.PagedConfig = { after: () => { window.__pagedjsDone = true; } };
-</script>
 <script>
 /**
  * @license Paged.js v0.4.3 | MIT | https://gitlab.coko.foundation/pagedjs/pagedjs
