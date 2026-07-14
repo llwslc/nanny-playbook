@@ -237,7 +237,10 @@ const html = `<!doctype html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- A4 页面固定 794px 宽。布局视口定成 页宽 + 两侧留白：手机自动把整页缩到屏幕宽
+     （双指还能放大细看），桌面浏览器不理这一行。 -->
+<meta name="viewport" content="width=826">
+<script>document.documentElement.className = 'js';</script>
 <title>育儿嫂招聘与管理 · 打印合订本</title>
 <style>
   /* 文末内联的排版引擎会把正文切成真正的 A4 页：页眉印章节名，页脚印页码，
@@ -296,6 +299,9 @@ const html = `<!doctype html>
      margin auto 在窄屏自动退化成 0：页面比屏宽时靠左、可横向滚动，不裁两边。 */
   body { background: #d9d9d9; }
   .pagedjs_page { background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.28); margin: 16px auto; }
+  /* 排版引擎启动后才把正文收进页面容器；在那之前把原始正文藏住，
+     避免首帧闪一下未分页的裸文档。不开 JS 就没有 .js 类，原文照常显示、照常能印。 */
+  .js body > :not(.pagedjs_pages) { display: none; }
 </style>
 </head>
 <body>
